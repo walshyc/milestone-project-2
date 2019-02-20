@@ -1,0 +1,28 @@
+/* General Styles */
+body{
+    background-color: #C7D64F;
+    font-family: 'Roboto', sans-serif !important;
+
+}
+
+/* Nav Bar */
+
+.bg-primary {
+    background-color: #188C99 !important;
+}
+
+/* Buttons */
+
+.btn-grey {
+    background-color: #d1dbdc;
+    
+}
+
+.btn-city {
+   width:90px;
+   margin-bottom: 10px;
+   font-size: 10px;
+   height: 50px;
+  background-color: #188c99 !important;
+  
+}
