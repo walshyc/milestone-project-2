@@ -1,28 +1,27 @@
 /* General Styles */
-body{
-    background-color: #C7D64F;
-    font-family: 'Roboto', sans-serif !important;
-
+body {
+  background-color: #c7d64f;
+  font-family: "Roboto", sans-serif !important;
 }
 
 /* Nav Bar */
 
 .bg-primary {
-    background-color: #188C99 !important;
+  background-color: #188c99 !important;
 }
 
 /* Buttons */
 
 .btn-grey {
-    background-color: #d1dbdc;
-    
+  background-color: #d1dbdc;
 }
 
 .btn-city {
-   width:90px;
-   margin-bottom: 10px;
-   font-size: 10px;
-   height: 50px;
-  background-color: #188c99 !important;
-  
+  width: 80px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+  height: 50px;
+  background: #188c99 !important;
+  color: #d1dbdc;
+  padding: 0;
 }
