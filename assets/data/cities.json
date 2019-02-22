@@ -1,0 +1,61 @@
+{
+    "city": [
+        {
+            "name": "Amsterdam",
+            "country": "Netherlands",
+            "stadium": "Johan Cruyff Arena",
+            "stadiumLat": 52.1851,
+            "stadiumLng": 4.5631,
+            "fanzone": "Community Garden, Sloterdijkerweg 20, 1014 CB Amsterdam, Netherlands",
+            "fanzoneLat": 52.3876128,
+            "fanzoneLng": 4.8527389,
+            "capacity": "54,990",
+            "flagIcon": "../flags/4x3/nl.svg",
+            "markerIcon": "../img/nl.png",
+            "games": [
+                {
+                    "one": [
+                        {
+                            "team1": "Group C",
+                            "team2": "Group C",
+                            "matchNumber": "5",
+                            "date": "2020-06-14",
+                            "stage": "Group Stage",
+                            "group": "Group C"
+                        }
+                    ],
+                    "two": [
+                        {
+                            "team1": "Group C",
+                            "team2": "Group C",
+                            "matchNumber": "17",
+                            "date": "2020-06-18",
+                            "stage": "Group Stage",
+                            "group": "Group C"
+                        }
+                    ],
+                    "three": [
+                        {
+                            "team1": "Group C",
+                            "team2": "Group C",
+                            "matchNumber": "29",
+                            "date": "2020-06-22",
+                            "stage": "Group Stage",
+                            "group": "Group C"
+                        }
+                    ],
+                    "four": [
+                        {
+                            "team1": "Group A Winner",
+                            "team2": "Group B Runner-Up",
+                            "matchNumber": "38",
+                            "date": "2020-06-27",
+                            "stage": "Round of 16",
+                            "group": "Group C"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
