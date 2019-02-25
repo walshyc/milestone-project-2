@@ -26,7 +26,7 @@ body {
   padding: 0;
 }
 
-
+/* Main Section */
 
 #map {
     margin-top: 10px;
@@ -37,4 +37,29 @@ body {
 
 .cities {
   padding: 0!important;
+}
+
+
+
+/* Media Queries */
+@media only screen and (min-width: 900px) {
+  .btn-city{
+    width: 100px;
+    height: 75px;
+    font-size: 1em;
+  }
+
+  .flag-icon{
+    margin: 7px;
+  }
+}
+
+
+
+@media only screen and (min-width: 1050px) {
+  .btn-city{
+    width: 120px;
+    height: 80px;
+    font-size: 1.05em;
+  }
 }

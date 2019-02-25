@@ -1,20 +1,9 @@
-var xhr = new XMLHttpRequest();
-var data;
-
-xhr.open("GET", "../data/cities.json");
-xhr.send();
-
-function setData(jsonData) {
-    data = jsonData;
-}
-
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        setData(JSON.parse(this.responseText));
-    };
-}
-
-console.log(data);
+$(document).ready(function() {
+    $.getJSON('../data/cities.json', function(data) {
+        var city = data.city;
+        console.log(city);
+    });
+});
 
 
 function initMap() {
@@ -25,4 +14,39 @@ function initMap() {
     
     var marker = new google.maps.Marker({position:{lat:52.3144, lng:4.9420},map: map, icon: "assets/img/marker-logo.png"});
     
+}
+
+function displayCityInfo() {
+    $("#ams-btn").click(function (e) { 
+        e.preventDefault();
+        $("#bku-btn").hide();
+        $("#bil-btn").hide();
+        $("#buc-btn").hide();
+        $("#bud-btn").hide();
+        $("#cop-btn").hide();
+        $("#dub-btn").hide();
+        $("#gla-btn").hide();
+        $("#ldn-btn").hide();
+        $("#mun-btn").hide();
+        $("#rom-btn").hide();
+        $("#stp-btn").hide();
+        
+    });
+
+    $("#stp-btn").click(function (e) { 
+        e.preventDefault();
+        $("#bku-btn").hide();
+        $("#bil-btn").hide();
+        $("#buc-btn").hide();
+        $("#bud-btn").hide();
+        $("#cop-btn").hide();
+        $("#dub-btn").hide();
+        $("#gla-btn").hide();
+        $("#ldn-btn").hide();
+        $("#mun-btn").hide();
+        $("#rom-btn").hide();
+        $("#ams-btn").hide();
+        $("#stp-btn").siblings
+        
+    });
 }
