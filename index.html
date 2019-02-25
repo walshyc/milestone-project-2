@@ -2,71 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Euro 2020 City Guide</title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Euro 2020 City Guide</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/flag-icon.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- Header -->
+        <!-- Header -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <a class="navbar-brand mx-auto" href="#"> <img src="assets/img/logo.png" alt="Euro 2020 Logo"></a>
+                <a class="navbar-brand mx-auto" href="#"> <img src="assets/img/logo.png" alt="Euro 2020 Logo"></a>
 
-    </nav>
-    <!-- Buttons -->
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col">
-                <button type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
-            </div>
+        </nav>
+        <!-- Buttons -->
+        <div class="container-fluid">
+                <div class="row justify-content-center">
+                        <div class="col">
+                                <button type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
+                        </div>
+                </div>
+                <div class="row mt-4 text-center justify-content-center">
+
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-nl"></span><br>Amsterdam
+                                </button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-az"></span><br>Baku</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ro"></span><br>Bucharest</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-hu"></span><br>Budapest</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-dk"></span><br>Copenhagen</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ie"></span><br>Dublin</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-gb-sct"></span><br>Glasgow</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-gb-eng"></span><br>London</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-de"></span><br>Munich</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-it"></span><br>Rome</button></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ru"></span><br>Petersburg</button>
+                        </div>
+                </div>
+
+                <!-- Different Buttons -->
+                <!-- <div class="row mt-4 text-center justify-content-center">
+
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities"src="assets/img/buttons/amsterdam.png"
+                                        id="ams-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam.png"
+                                        id="bku-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam.png"
+                                        id="bil-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam23.png"
+                                        id="buc-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam23.png"
+                                        id="bud-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam23.png"
+                                        id="cop-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam2.png"
+                                        id="dub-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam2.png"
+                                        id="gla-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam2.png"
+                                        id="ldn-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam.png"
+                                        id="mun-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam.png"
+                                        id="rom-btn"></div>
+                        <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities" src="assets/img/buttons/amsterdam.png"
+                                        id="stp-btn"></div>
+
+                </div> -->
+
+                <div id="map"></div>
         </div>
-        <div class="row mt-4 text-center justify-content-center">
 
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" class="btn btn-primary btn-city">Amsterdam
-                    <span class=""></span></button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Baku</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Bilbao</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Bucharest</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Budapest</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Copenhagen</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Dublin</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Glasgow</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">London</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Munich</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Rome</button></div>
-            <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                    class="btn btn-primary btn-city">Petersburg</button>
-            </div>
-        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="assets/js/map.js"></script>
 
-
-        <div id="map"></div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="assets/js/map.js"></script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejsMu6razkEu1Coxd8sB5pHrrnWcxJD4&callback=initMap">
-        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejsMu6razkEu1Coxd8sB5pHrrnWcxJD4&callback=initMap">
+                </script>
 </body>
 
 </html>
