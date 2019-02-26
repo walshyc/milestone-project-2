@@ -1,61 +1,111 @@
-{
-    "city": [
-        {
-            "name": "Amsterdam",
-            "country": "Netherlands",
-            "stadium": "Johan Cruyff Arena",
-            "stadiumLat": 52.1851,
-            "stadiumLng": 4.5631,
-            "fanzone": "Community Garden, Sloterdijkerweg 20, 1014 CB Amsterdam, Netherlands",
-            "fanzoneLat": 52.3876128,
-            "fanzoneLng": 4.8527389,
-            "capacity": "54,990",
-            "flagIcon": "../flags/4x3/nl.svg",
-            "markerIcon": "../img/nl.png",
-            "games": [
-                {
-                    "one": [
-                        {
-                            "team1": "Group C",
-                            "team2": "Group C",
-                            "matchNumber": "5",
-                            "date": "2020-06-14",
-                            "stage": "Group Stage",
-                            "group": "Group C"
-                        }
-                    ],
-                    "two": [
-                        {
-                            "team1": "Group C",
-                            "team2": "Group C",
-                            "matchNumber": "17",
-                            "date": "2020-06-18",
-                            "stage": "Group Stage",
-                            "group": "Group C"
-                        }
-                    ],
-                    "three": [
-                        {
-                            "team1": "Group C",
-                            "team2": "Group C",
-                            "matchNumber": "29",
-                            "date": "2020-06-22",
-                            "stage": "Group Stage",
-                            "group": "Group C"
-                        }
-                    ],
-                    "four": [
-                        {
-                            "team1": "Group A Winner",
-                            "team2": "Group B Runner-Up",
-                            "matchNumber": "38",
-                            "date": "2020-06-27",
-                            "stage": "Round of 16",
-                            "group": "Group C"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "name": "Amsterdam",
+        "country": "Netherlands",
+        "stadium": "Johan Cruyff Arena",
+        "stadiumLat": 52.3143691,
+        "stadiumLng": 4.9417827,
+        "capacity": "54,990",
+        "flagIcon": "assets/flags/4x3/nl.svg"
+        
+    },
+    {
+        "name": "Baku",
+        "country": "Azerbaijan",
+        "stadium": "Olympic Stadium",
+        "stadiumLat": 40.4300,
+        "stadiumLng": 49.9196,
+        "capacity": "68,700",
+        "flagIcon": "assets/flags/4x3/az.svg"
+    },
+    {
+        "name": "Bilbao",
+        "country": "Spain",
+        "stadium": "San Mamés",
+        "stadiumLat": 43.2641,
+        "stadiumLng": -2.9494,
+        "capacity": "53,332",
+        "flagIcon": "assets/flags/4x3/ie.svg"
+    },
+    {
+        "name": "Bucharest",
+        "country": "Romania",
+        "stadium": "Arena Națională",
+        "stadiumLat": 44.4371,
+        "stadiumLng": 26.1526,
+        "capacity": "55,600",
+        "flagIcon": "assets/flags/4x3/ro.svg"
+    },
+    {
+        "name": "Budapest",
+        "country": "Hungary",
+        "stadium": "Puskás Arena",
+        "stadiumLat": 47.5032,
+        "stadiumLng": 19.0970,
+        "capacity": "67,889",
+        "flagIcon": "assets/flags/4x3/hu.svg"
+    },
+    {
+        "name": "Copenhagen",
+        "country": "Denmark",
+        "stadium": "Parken Stadium",
+        "stadiumLat": 55.7023,
+        "stadiumLng": 12.5716,
+        "capacity": "38,065",
+        "flagIcon": "assets/flags/4x3/dk.svg"
+    },
+    {
+        "name": "Dublin",
+        "country": "Republic of Ireland",
+        "stadium": "Lansdowne Road",
+        "stadiumLat": 53.3352,
+        "stadiumLng": -6.2285,
+        "capacity": "54,990",
+        "flagIcon": "assets/flags/4x3/ie.svg"
+    },
+    {
+        "name": "Glasgow",
+        "country": "Scotland",
+        "stadium": "Hampden Park",
+        "stadiumLat": 55.8258277,
+        "stadiumLng": -4.252143,
+        "capacity": "52,063",
+        "flagIcon": "assets/flags/4x3/ie.svg"
+    },
+    {
+        "name": "London",
+        "country": "England",
+        "stadium": "Wembley Stadium",
+        "stadiumLat": 51.5559933,
+        "stadiumLng": -0.2797552,
+        "capacity": "90,000",
+        "flagIcon": "assets/flags/4x3/gb-sco.svg"
+    },
+    {
+        "name": "Munich",
+        "country": "Germany",
+        "stadium": "Allianz Arena",
+        "stadiumLat": 48.218828,
+        "stadiumLng": 11.6245606,
+        "capacity": "70,000",
+        "flagIcon": "assets/flags/4x3/de.svg"
+    },
+    {
+        "name": "Rome",
+        "country": "Italy",
+        "stadium": "Stadio Olimpico",
+        "stadiumLat": 41.9340938,
+        "stadiumLng": 12.4546554,
+        "capacity": "72,698",
+        "flagIcon": "assets/flags/4x3/it.svg"
+    },
+    {
+        "name": "St. Petersburg",
+        "country": "Russia",
+        "stadium": "Krestovsky Stadium",
+        "stadiumLat": 59.9727,
+        "stadiumLng": 30.2214,
+        "capacity": "68,134",
+        "flagIcon": "assets/flags/4x3/ru.svg"
+    }
+]
