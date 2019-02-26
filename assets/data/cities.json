@@ -6,8 +6,8 @@
         "stadiumLat": 52.3143691,
         "stadiumLng": 4.9417827,
         "capacity": "54,990",
-        "flagIcon": "assets/flags/4x3/nl.svg"
-        
+        "flag": "assets/flags/4x3/nl.svg",
+        "flagIcon": "nl"
     },
     {
         "name": "Baku",
@@ -16,7 +16,9 @@
         "stadiumLat": 40.4300,
         "stadiumLng": 49.9196,
         "capacity": "68,700",
-        "flagIcon": "assets/flags/4x3/az.svg"
+        "flag": "assets/flags/4x3/az.svg",
+        "flagIcon": "az"
+        
     },
     {
         "name": "Bilbao",
@@ -25,7 +27,8 @@
         "stadiumLat": 43.2641,
         "stadiumLng": -2.9494,
         "capacity": "53,332",
-        "flagIcon": "assets/flags/4x3/ie.svg"
+        "flag": "assets/flags/4x3/es.svg",
+        "flagIcon": "es"
     },
     {
         "name": "Bucharest",
@@ -34,7 +37,8 @@
         "stadiumLat": 44.4371,
         "stadiumLng": 26.1526,
         "capacity": "55,600",
-        "flagIcon": "assets/flags/4x3/ro.svg"
+        "flag": "assets/flags/4x3/ro.svg",
+        "flagIcon": "ro"
     },
     {
         "name": "Budapest",
@@ -43,7 +47,8 @@
         "stadiumLat": 47.5032,
         "stadiumLng": 19.0970,
         "capacity": "67,889",
-        "flagIcon": "assets/flags/4x3/hu.svg"
+        "flag": "assets/flags/4x3/hu.svg",
+        "flagIcon": "hu"
     },
     {
         "name": "Copenhagen",
@@ -52,7 +57,8 @@
         "stadiumLat": 55.7023,
         "stadiumLng": 12.5716,
         "capacity": "38,065",
-        "flagIcon": "assets/flags/4x3/dk.svg"
+        "flag": "assets/flags/4x3/dk.svg",
+        "flagIcon": "dk"
     },
     {
         "name": "Dublin",
@@ -61,7 +67,8 @@
         "stadiumLat": 53.3352,
         "stadiumLng": -6.2285,
         "capacity": "54,990",
-        "flagIcon": "assets/flags/4x3/ie.svg"
+        "flag": "assets/flags/4x3/ie.svg",
+        "flagIcon": "ie"
     },
     {
         "name": "Glasgow",
@@ -70,7 +77,8 @@
         "stadiumLat": 55.8258277,
         "stadiumLng": -4.252143,
         "capacity": "52,063",
-        "flagIcon": "assets/flags/4x3/ie.svg"
+        "flag": "assets/flags/4x3/gb-sco.svg",
+        "flagIcon": "gb-sct"
     },
     {
         "name": "London",
@@ -79,7 +87,8 @@
         "stadiumLat": 51.5559933,
         "stadiumLng": -0.2797552,
         "capacity": "90,000",
-        "flagIcon": "assets/flags/4x3/gb-sco.svg"
+        "flag": "assets/flags/4x3/gb-eng.svg",
+        "flagIcon": "gb-eng"
     },
     {
         "name": "Munich",
@@ -88,7 +97,8 @@
         "stadiumLat": 48.218828,
         "stadiumLng": 11.6245606,
         "capacity": "70,000",
-        "flagIcon": "assets/flags/4x3/de.svg"
+        "flag": "assets/flags/4x3/de.svg",
+        "flagIcon": "de"
     },
     {
         "name": "Rome",
@@ -97,7 +107,8 @@
         "stadiumLat": 41.9340938,
         "stadiumLng": 12.4546554,
         "capacity": "72,698",
-        "flagIcon": "assets/flags/4x3/it.svg"
+        "flag": "assets/flags/4x3/it.svg",
+        "flagIcon": "it"
     },
     {
         "name": "St. Petersburg",
@@ -106,6 +117,7 @@
         "stadiumLat": 59.9727,
         "stadiumLng": 30.2214,
         "capacity": "68,134",
-        "flagIcon": "assets/flags/4x3/ru.svg"
+        "flag": "assets/flags/4x3/ru.svg",
+        "flagIcon": "ru"
     }
 ]
