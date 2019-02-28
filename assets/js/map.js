@@ -1,6 +1,6 @@
 function initMap() {
     var mapCenter = { lat: 50.7436337, lng: 18.4208038 };
-
+    var activeInfoWindow;
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
     $.getJSON('assets/data/cities.json', function (data) {
@@ -28,27 +28,31 @@ function initMap() {
             <p>Capacity: ${stadiumCapacity}</p>
         </div>`;
 
-            var infowindow = new google.maps.InfoWindow({});
+            
 
-            infowindow = new google.maps.InfoWindow({
+             var infoWindow = new google.maps.InfoWindow({
                 position: new google.maps.LatLng(cityLat, cityLng),
                 content: infoWindowContent
             });
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            })
+            
+            google.maps.event.addListener(marker, 'click', function() {
+                activeInfoWindow&&activeInfoWindow.close();
+                infoWindow.open(map, marker);
+                activeInfoWindow = infoWindow;
+              });
+            
+            
 
+            // marker.addListener('click', function () {
+            //     if (!marker.open) {
 
-            marker.addListener('click', function () {
-                if (!marker.open) {
-
-                    infowindow.open(map, marker);
-                    marker.open = true
-                } else {
-                    infowindow.close();
-                    marker.open = false;
-                }
-            });
+            //         infowindow.open(map, marker);
+            //         marker.open = true
+            //     } else {
+            //         infowindow.close();
+            //         marker.open = false;
+            //     }
+            // });
 
 
 
