@@ -27,33 +27,55 @@
                                 <button type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
                         </div>
                 </div>
-                <div class="row mt-4 text-center justify-content-center">
 
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCityInfo()" id="ams-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-nl"></span><br>Amsterdam
-                                </button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"  id="bku-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-az"></span><br>Baku</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ro"></span><br>Bucharest</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bud-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-hu"></span><br>Budapest</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="cop-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-dk"></span><br>Copenhagen</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="dub-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ie"></span><br>Dublin</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="gla-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-gb-sct"></span><br>Glasgow</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ldn-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-gb-eng"></span><br>London</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="mun-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-de"></span><br>Munich</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="rom-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-it"></span><br>Rome</button></div>
-                        <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCityInfo()" id="stp-btn"
-                                        class="btn btn-primary btn-city"><span class="flag-icon flag-icon-ru"></span><br>Petersburg</button>
+                <div id="buttons-container">
+                        <div class="row mt-4 text-center justify-content-center">
+
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                                onclick="displayCity()" id="ams-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-nl"></span><br>Amsterdam
+                                        </button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bku-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-az"></span><br>Baku</button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-ro"></span><br>Bucharest</button>
+                                </div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bud-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-hu"></span><br>Budapest</button>
+                                </div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="cop-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-dk"></span><br>Copenhagen</button>
+                                </div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="dub-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-ie"></span><br>Dublin</button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="gla-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-gb-sct"></span><br>Glasgow</button>
+                                </div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ldn-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-gb-eng"></span><br>London</button>
+                                </div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="mun-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-de"></span><br>Munich</button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="rom-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-it"></span><br>Rome</button></div>
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                                onclick="displayCityInfo()" id="stp-btn"
+                                                class="btn btn-primary btn-city"><span
+                                                        class="flag-icon flag-icon-ru"></span><br>Petersburg</button>
+                                </div>
                         </div>
                 </div>
 
@@ -87,7 +109,47 @@
 
                 </div> -->
 
-                <div id="map"></div>
+
+
+                <div id="map-info-container">
+                        <div class="row">
+                                <!-- <div id="cityInfo" class="col-md-4 col-xs-12"> -->
+                                <!-- <div id="cityInfo" class=""> -->
+                                        <!-- <div class="card text-white bg-primary city-info-${cityName}">
+                                                <div class="card-header"><span class="flag-icon flag-icon-nl"></span>
+                                                        Amsterdam</div>
+                                                <div class="card-body">
+                                                        <h4 class="card-title">Johan Cruijff ArenA</h4>
+                                                        <ul>
+                                                                <li><span class="list-text">Capacity: 52,145</span></li>
+                                                                <li><span class="list-text">The first stadium in Europe with a sliding roof, originally called the Amsterdam ArenA</span></li>
+                                                                <li><span class="list-text">The venue was renamed Johan Cruijff ArenA in 2018 in honour of Ajax's former player and coach, who was born in Amsterdam</span></li>
+                                                                <li><span class="list-text">Staged the 1998 UEFA Champions League final and the 2013 Europa League decider</span></li>
+                                                                <li><span class="list-text">Hosted five matches during UEFA EURO 2000, including the Netherlands' semi-final shoot-out defeat by Italy.</span></li>                     
+                                                        </ul>
+
+                                                        <h4 class="card-title">Euro 2020 Games</h4>
+                                                        <ul>
+                                                                <li><span class="list-text">14 June – Group C match</span></li>
+                                                                <li><span class="list-text">18 June – Group C match</span></li>
+                                                                <li><span class="list-text">22 June – Group C match</span></li>
+                                                                <li><span class="list-text">27 June – Round of 16 (2A v 2B)</span></li>
+                                                                                  
+                                                        </ul>
+
+                                                        
+                                                        
+                                                </div>
+                                        </div> -->
+                                <!-- </div> -->
+
+
+                                <div id="map" class="col"></div>
+                                <!-- <div id="map" class="col-md-8 col-xs-12"></div> -->
+                        </div>
+                </div>
+
+        
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"

@@ -33,12 +33,36 @@ body {
     height: 80vh;
     width: 100%;
     margin-bottom: 20px;
+  padding: 0 15px;
 }
 
 .cities {
   padding: 0!important;
 }
 
+
+/* Card */
+
+.card{
+  margin-top: 10px;
+  
+  margin-bottom: 20px;
+}
+.card-header {
+  font-size: 25px;
+}
+
+li{
+  padding-bottom:5px;
+  list-style-image: url("../img/list-logo.png");
+}
+
+.list-text {
+  top: -4px;
+  position: relative;
+  font-size: 15px;
+
+}
 
 
 /* Media Queries */

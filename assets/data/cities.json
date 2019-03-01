@@ -7,7 +7,23 @@
         "stadiumLng": 4.9417827,
         "capacity": "54,990",
         "flag": "assets/flags/4x3/nl.svg",
-        "flagIcon": "nl"
+        "flagIcon": "nl",
+        "facts": [
+            {
+                "one": "The first stadium in Europe with a sliding roof, it was originally called the Amsterdam ArenA",
+                "two": " The venue was renamed Johan Cruijff ArenA in 2018 in honour of Ajax's former player and coach",
+                "three": "The 1998 UEFA Champions League final between Real Madrid & Juventus was staged here aswell as the 2013 Europa League Final where Chelsea beat Benfica",
+                "four": "The stadium Hosted five matches during UEFA EURO 2000, including the Netherlands' semi-final shoot-out defeat by Italy."
+            }
+        ],
+        "games": [
+            {
+                "one": "14th June – Group C match",
+                "two": "18th June – Group C match",
+                "three": "22nd June – Group C match",
+                "four": "27th June – Round of 16 (2A v 2B)"
+            }
+        ]
     },
     {
         "name": "Baku",
@@ -17,8 +33,23 @@
         "stadiumLng": 49.9196,
         "capacity": "68,700",
         "flag": "assets/flags/4x3/az.svg",
-        "flagIcon": "az"
-        
+        "flagIcon": "az",
+        "facts": [
+            {
+                "one": "The Olympic Stadium was completed in 2015",
+                "two": " 2019 Europa League Final will be staged here",
+                "three": " The President of Azerbaijan, and those of FIFA and UEFA, attended a ceremony to lay the first stone of the stadium on 6 June 2011, as part of celebrations marking 100 years of Azerbaijani football.",
+                "four": "Azerbaijan hope to one day host the Olympic games in this stadium."
+            }
+        ],
+        "games": [
+            {
+                "one": "13th June – Group A match",
+                "two": "17th June – Group A match",
+                "three": "21st June – Group A match",
+                "four": "4th July – 1/4 Final"
+            }
+        ]
     },
     {
         "name": "Bilbao",
@@ -28,7 +59,23 @@
         "stadiumLng": -2.9494,
         "capacity": "53,332",
         "flag": "assets/flags/4x3/es.svg",
-        "flagIcon": "es"
+        "flagIcon": "es",
+        "facts": [
+            {
+                "one": "Opened in 2013, the new stadium replaced the old Estadio de San Mamés which was built in 1913 and staged games at the 1982 FIFA World Cup.",
+                "two": "The new venue hosted the 2018 European Rugby Challenge Cup and Champions Cup finals before holding matches at UEFA EURO 2020.",
+                "three": "A statue of goalscoring legend Pichichi was moved from the old stadium to the new; visiting club captains traditionally present a bouquet at the statue to mark their first visit.",
+                "four": "The stadium can be illuminated from the outside."
+            }
+        ],
+        "games": [
+            {
+                "one": "15th June – Group E match",
+                "two": "20th June – Group E match",
+                "three": "24th June – Group E match",
+                "four": "28th June – Round of 16 (1B v 3A/D/E/F)"
+            }
+        ]
     },
     {
         "name": "Bucharest",
@@ -38,7 +85,23 @@
         "stadiumLng": 26.1526,
         "capacity": "55,600",
         "flag": "assets/flags/4x3/ro.svg",
-        "flagIcon": "ro"
+        "flagIcon": "ro",
+        "facts": [
+            {
+                "one": "Completed in 2011, the National Arena stands on the site of the old National Stadum",
+                "two": "The stadium's biggest event to date was the 2012 UEFA Europa League final, where Atlético Madrid beat Athletic Bilbao 3-0.",
+                "three": "The National Arena is around 4km from central Bucharest and 7km from the main railway station",
+                "four": "The st=adium has a retractable roof"
+            }
+        ],
+        "games": [
+            {
+                "one": "14th June – Group C match",
+                "two": "18th June – Group C match",
+                "three": "22nd June – Group C match",
+                "four": "29th June – Round of 16 (1F v 3A/B/C)"
+            }
+        ]
     },
     {
         "name": "Budapest",
@@ -48,7 +111,23 @@
         "stadiumLng": 19.0970,
         "capacity": "67,889",
         "flag": "assets/flags/4x3/hu.svg",
-        "flagIcon": "hu"
+        "flagIcon": "hu",
+        "facts": [
+            {
+                "one": "Work began on Budapest's new stadium, named after its most famous footballing export, in 2016 and is expected to finish in 2019",
+                "two": "The completed venue will have an all-seated capacity of over 65,000, and it will become the new home of the Hungarian national team.",
+                "three": "The old ground witnessed England's heaviest international defeat; they lost 7-1 to Hungary on 23 May 1954.",
+                "four": "Non-footballing stars to have played at the original venue include Queen, Genesis, U2, Guns'n'Roses, the Rolling Stones, Michael Jackson and Depeche Mode."
+            }
+        ],
+        "games": [
+            {
+                "one": "16th June – Group F match",
+                "two": "18th June – Group F match",
+                "three": "22nd June – Group F match",
+                "four": "27th June – Round of 16 (1C v 3D/E/F)"
+            }
+        ]
     },
     {
         "name": "Copenhagen",
@@ -58,7 +137,23 @@
         "stadiumLng": 12.5716,
         "capacity": "38,065",
         "flag": "assets/flags/4x3/dk.svg",
-        "flagIcon": "dk"
+        "flagIcon": "dk",
+        "facts": [
+            {
+                "one": "Parken Stadium is the largest football stadium in Denmark",
+                "two": "Hosted the 1994 European Cup Winners' Cup final and the UEFA Cup final six years later, both involving Arsenal.",
+                "three": "The home of FC København and the senior men's national team.",
+                "four": "Completed in 1992, the stadium is located just north of the city centre, roughly 4km from the main train station"
+            }
+        ],
+        "games": [
+            {
+                "one": "13th June – Group B match",
+                "two": "18th June – Group B match",
+                "three": "22nd June – Group B match",
+                "four": "29th June – Round of 16 (2D v 2E)"
+            }
+        ]
     },
     {
         "name": "Dublin",
@@ -68,7 +163,23 @@
         "stadiumLng": -6.2285,
         "capacity": "54,990",
         "flag": "assets/flags/4x3/ie.svg",
-        "flagIcon": "ie"
+        "flagIcon": "ie",
+        "facts": [
+            {
+                "one": "The venue stands on the site of the old Lansdowne Road ground, which had been, for the most part, the Irish football team's stadium of choice since the 1980s.",
+                "two": "There was also only one goal scored when, in 2011, the Dublin Arena staged the all-Portuguese UEFA Europa League final, Radamel Falcao getting Porto's winner against Braga.",
+                "three": "Ángel Di María's 20th-minute strike in Argentina's 1-0 friendly win over Ireland on 11 August 2010 was the first international goal at the new arena",
+                "four": "The stadium is located in the Ballsbridge area on Dublin just a 20 minute walk from the city centre. The stadium has it's own rail station "
+            }
+        ],
+        "games": [
+            {
+                "one": "15th June – Group C match",
+                "two": "19th June – Group C match",
+                "three": "24th June – Group C match",
+                "four": "30th June – Round of 16 (1D v 2F)"
+            }
+        ]
     },
     {
         "name": "Glasgow",
@@ -78,7 +189,23 @@
         "stadiumLng": -4.252143,
         "capacity": "52,063",
         "flag": "assets/flags/4x3/gb-sco.svg",
-        "flagIcon": "gb-sct"
+        "flagIcon": "gb-sct",
+        "facts": [
+            {
+                "one": "The world's biggest stadium from 1908-50, Hampden Park held a crowd of 149,415 for a 1937 Scotland v England match.",
+                "two": "Hampden Park held one of the great European Cup finals – Real Madrid's 7-3 defeat of Eintracht Frankfurt in 1960.",
+                "three": "It also witnessed one of the outstanding UEFA Champions League final goals: Zinédine Zidane's volley against Leverkusen in Real Madrid's 2002 success.",
+                "four": "City giants Celtic and Rangers have their own stadiums; Hampden Park is home to the Scottish national team and amateur side Queens Park"
+            }
+        ],
+        "games": [
+            {
+                "one": "15th June – Group D match",
+                "two": "19th June – Group D match",
+                "three": "23rd June – Group D match",
+                "four": "30th June – Round of 16 (1E v 3A/B/C/D)"
+            }
+        ]
     },
     {
         "name": "London",
@@ -88,7 +215,26 @@
         "stadiumLng": -0.2797552,
         "capacity": "90,000",
         "flag": "assets/flags/4x3/gb-eng.svg",
-        "flagIcon": "gb-eng"
+        "flagIcon": "gb-eng",
+        "facts": [
+            {
+                "one": "Wembley, the UK's largest stadium and home to the English Football Association, has welcomed over 21 million visitors since reopening in 2007.",
+                "two": "The original Wembley staged five European Cup finals, plus the finals of the 1966 FIFA World Cup and 'EURO 96.",
+                "three": "With its complete reconstruction, from 2003–07, a gigantic arch replaced the twin towers as the 90,000-capacity venue's visual hook.",
+                "four": "The new stadium held its first UEFA Champions League finals in 2011 and 2013."
+            }
+        ],
+        "games": [
+            {
+                "one": "14th June – Group D match",
+                "two": "19th June – Group D match",
+                "three": "23rd June – Group D match",
+                "four": "27th June – Round of 16 (1A v 2C)",
+                "five": "7th July - Semi-Final",
+                "six": "8th July - Semi-Final",
+                "seven": "12 July - Final"
+            }
+        ]
     },
     {
         "name": "Munich",
@@ -98,7 +244,23 @@
         "stadiumLng": 11.6245606,
         "capacity": "70,000",
         "flag": "assets/flags/4x3/de.svg",
-        "flagIcon": "de"
+        "flagIcon": "de",
+        "facts": [
+            {
+                "one": "Home of Bayern München, the Allianz Arena was completed in April 2005, in time to stage games at the 2006 FIFA World Cup.",
+                "two": " Accessible by underground train, the stadium lies on Werner-Heisenberg-Allee, named after a German atomic physicist and 1932 Nobel Prize for Physics winner.",
+                "three": " The stadium's outer shell consists of diamond-shaped foil panels, lit from within by LED lights, which can shine in 16 million different colours.",
+                "four": "The stadium staged the 2012 UEFA Champions League final, which Bayern lost to Chelsea on penalties after a 1-1 draw."
+            }
+        ],
+        "games": [
+            {
+                "one": "16th June – Group F match",
+                "two": "20th June – Group F match",
+                "three": "24th June – Group F match",
+                "four": "3rd July – 1/4 Final"
+            }
+        ]
     },
     {
         "name": "Rome",
@@ -108,7 +270,23 @@
         "stadiumLng": 12.4546554,
         "capacity": "72,698",
         "flag": "assets/flags/4x3/it.svg",
-        "flagIcon": "it"
+        "flagIcon": "it",
+        "facts": [
+            {
+                "one": "The Stadium has staged four European Champion Clubs' Cup finals: 1977, 1984, 1996 and 2009.",
+                "two": "Hosted the Olympics in 1960 and the finals of the 1968 UEFA European Championship and 1990 FIFA World Cup, as well as a number of Italy matches.",
+                "three": "Lazio and Roma share the stadium, although both clubs plan to have their own purpose-built arenas in the future.",
+                "four": "The stadium is part of the Foro Italico sport complex, which also features the beautiful Stadio dei Marmi as well as a swimming stadium and tennis centre."
+            }
+        ],
+        "games": [
+            {
+                "one": "12th June – Group A match",
+                "two": "17th June – Group A match",
+                "three": "21st June – Group A match",
+                "four": "4th June – 1/4 Final"
+            }
+        ]
     },
     {
         "name": "St. Petersburg",
@@ -118,6 +296,22 @@
         "stadiumLng": 30.2214,
         "capacity": "68,134",
         "flag": "assets/flags/4x3/ru.svg",
-        "flagIcon": "ru"
+        "flagIcon": "ru",
+        "facts": [
+            {
+                "one": "Zenit moved there from Petrovsky Stadium in April 2017, beating Ural Sverdlovsk Oblast 2-0 in their first game.",
+                "two": "The arena hosted four matches at the 2017 FIFA Confederations Cup, including the final, and staged seven fixtures at the 2018 FIFA World Cup.",
+                "three": "The venue was designed by Japanese architect Kisho Kurokawa, whose vision was for a spaceship that had landed on the shores of the Gulf of Finland.",
+                "four": "The nearest metro station is Krestovsky Ostrov on the purple line, which runs through central Saint Petersburg."
+            }
+        ],
+        "games": [
+            {
+                "one": "13th June – Group B match",
+                "two": "17th June – Group B match",
+                "three": "22nd June – Group B match",
+                "four": "3rd July – 1/4 Final"
+            }
+        ]
     }
 ]

@@ -8,12 +8,25 @@ function initMap() {
 
         $.each(data, function (key, value) {
             console.log(value.name);
+            console.log(value.facts[0].one);
             cityName = value.name;
             stadiumName = value.stadium;
             stadiumCapacity = value.capacity
             cityLat = value.stadiumLat;
             cityLng = value.stadiumLng;
             countryFlag = value.flagIcon;
+            countryName = value.country;
+            factOne = value.facts[0].one;
+            factTwo = value.facts[0].two;
+            factThree = value.facts[0].three;
+            factFour = value.facts[0].four;
+            gameOne = value.games[0].one;
+            gameTwo = value.games[0].two;
+            gameThree = value.games[0].three;
+            gameFour = value.games[0].four;
+
+            
+            
 
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(cityLat, cityLng),
@@ -28,20 +41,51 @@ function initMap() {
             <p>Capacity: ${stadiumCapacity}</p>
         </div>`;
 
-            
 
-             var infoWindow = new google.maps.InfoWindow({
+
+            var infoWindow = new google.maps.InfoWindow({
                 position: new google.maps.LatLng(cityLat, cityLng),
                 content: infoWindowContent
             });
-            
-            google.maps.event.addListener(marker, 'click', function() {
-                activeInfoWindow&&activeInfoWindow.close();
+
+            google.maps.event.addListener(marker, 'click', function () {
+                activeInfoWindow && activeInfoWindow.close();
                 infoWindow.open(map, marker);
                 activeInfoWindow = infoWindow;
-              });
-            
-            
+            });
+
+
+              $("#cityInfo").append(`<div class="card text-white bg-primary city-info-${cityName}" style="display:none">
+              <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
+              <div class="card-body">
+                      <h4 class="card-title">${stadiumName}</h4>
+                      <ul>
+                              <li><span class="list-text">Capacity: ${stadiumCapacity}</span></li>
+                              <li><span class="list-text">${factOne}</span></li>
+                              <li><span class="list-text">${factTwo}</span></li>
+                              <li><span class="list-text">${factThree}</span></li>
+                              <li><span class="list-text">${factFour}</span></li>                     
+                      </ul>
+
+                      <h4 class="card-title">Euro 2020 Games</h4>
+                      <ul>
+                              <li><span class="list-text">${gameOne}</span></li>
+                              <li><span class="list-text">${gameTwo}</span></li>
+                              <li><span class="list-text">${gameThree}</span></li>
+                              <li><span class="list-text">${gameFour}</span></li>
+                                                
+                      </ul>
+
+                      
+                      
+              </div>
+      </div>`);
+
+
+            //  marker.addListener('click', function () {
+            //     infoWindow.open(map, marker);
+            //  })
+
 
             // marker.addListener('click', function () {
             //     if (!marker.open) {
@@ -54,7 +98,16 @@ function initMap() {
             //     }
             // });
 
+            function displayCity() {
+                $("#ams-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
 
+                    $("#cityInfo").html(``)
+                })
+            }
+
+            displayCity();
 
 
 
@@ -63,6 +116,8 @@ function initMap() {
 
     });
 }
+
+
 
 // function displayCityInfo() {
 //     $("#ams-btn").click(function (e) { 
