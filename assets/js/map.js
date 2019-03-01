@@ -106,6 +106,7 @@ function initMap() {
                 $("#city-info-ru").addClass("city-hide");
                 $("#map").removeClass("col-lg-8 col-xs-12");
                 $("#cityInfo").removeClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("Select a City");
             });
 
             $("#ams-btn").click(function (e) {
