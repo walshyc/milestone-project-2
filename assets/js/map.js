@@ -25,8 +25,8 @@ function initMap() {
             gameThree = value.games[0].three;
             gameFour = value.games[0].four;
 
-            
-            
+
+
 
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(cityLat, cityLng),
@@ -55,7 +55,7 @@ function initMap() {
             });
 
 
-              $("#cityInfo").append(`<div class="card text-white bg-primary city-info-${cityName}" style="display:none">
+            $("#cityInfo").append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
               <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
               <div class="card-body">
                       <h4 class="card-title">${stadiumName}</h4>
@@ -82,37 +82,142 @@ function initMap() {
       </div>`);
 
 
-            //  marker.addListener('click', function () {
-            //     infoWindow.open(map, marker);
-            //  })
-
-
-            // marker.addListener('click', function () {
-            //     if (!marker.open) {
-
-            //         infowindow.open(map, marker);
-            //         marker.open = true
-            //     } else {
-            //         infowindow.close();
-            //         marker.open = false;
-            //     }
-            // });
-
-            function displayCity() {
-                $("#ams-btn").click(function (e) {
-                    e.preventDefault();
-                    $("#buttons-container").hide();
-
-                    $("#cityInfo").html(``)
-                })
-            }
-
-            displayCity();
+            
 
 
 
         });
+        function displayCity() {
 
+            $("#resetBtn").click(function (e) { 
+                e.preventDefault();
+                $("#buttons-container").show();
+                $("#city-info-nl").addClass("city-hide");
+                $("#city-info-az").addClass("city-hide");
+                $("#city-info-es").addClass("city-hide");
+                $("#city-info-ro").addClass("city-hide");
+                $("#city-info-hu").addClass("city-hide");
+                $("#city-info-dk").addClass("city-hide");
+                $("#city-info-ie").addClass("city-hide");
+                $("#city-info-gb-sct").addClass("city-hide");
+                $("#city-info-gb-eng").addClass("city-hide");
+                $("#city-info-de").addClass("city-hide");
+                $("#city-info-it").addClass("city-hide");
+                $("#city-info-ru").addClass("city-hide");
+                $("#map").removeClass("col-lg-8 col-xs-12");
+                $("#cityInfo").removeClass("col-lg-4 col-xs-12");
+            });
+
+            $("#ams-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-nl").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#bku-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-az").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#bil-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-es").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#buc-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-ro").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#bud-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-hu").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#cop-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-dk").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#dub-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-ie").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#gla-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-gb-sct").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#ldn-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-gb-eng").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#mun-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-de").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#rom-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-it").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+
+            $("#stp-btn").click(function (e) {
+                e.preventDefault();
+                $("#buttons-container").hide();
+                $("#city-info-ru").removeClass("city-hide");
+                $("#map").addClass("col-lg-8 col-xs-12");
+                $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                $("#resetBtn").text("View All Cities");
+            })
+        }
+
+        displayCity();
 
     });
 }

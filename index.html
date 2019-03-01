@@ -24,7 +24,7 @@
         <div class="container-fluid">
                 <div class="row justify-content-center">
                         <div class="col col-sm-6">
-                                <button type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
+                                <button id="resetBtn" type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
                         </div>
                 </div>
 
@@ -36,10 +36,10 @@
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-nl"></span><br>Amsterdam
                                         </button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bku-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCity()" id="bku-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-az"></span><br>Baku</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCity()" id="bil-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
                                 <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn"
@@ -74,13 +74,10 @@
                                 <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
                                                 onclick="displayCityInfo()" id="stp-btn"
                                                 class="btn btn-primary btn-city"><span
-                                                        class="flag-icon flag-icon-ru"></span><br>Petersburg</button>
+                                                        class="flag-icon flag-icon-ru"></span><br>St. Petersburg</button>
                                 </div>
-                        </div>
-                </div>
-
-                <!-- Different Buttons -->
-                <!-- <div class="row mt-4 text-center justify-content-center">
+                                <!-- Different Buttons -->
+                                <!-- <div class="row mt-4 text-center justify-content-center">
 
                         <div class="col col-md-2 col-xs-4 col-sm-3"><img class="cities"src="assets/img/buttons/amsterdam.png"
                                         id="ams-btn"></div>
@@ -109,52 +106,28 @@
 
                 </div> -->
 
-
-
-                <div id="map-info-container">
-                        <div class="row">
-                                <!-- <div id="cityInfo" class="col-md-4 col-xs-12"> -->
-                                <!-- <div id="cityInfo" class=""> -->
-                                        <!-- <div class="card text-white bg-primary city-info-${cityName}">
-                                                <div class="card-header"><span class="flag-icon flag-icon-nl"></span>
-                                                        Amsterdam</div>
-                                                <div class="card-body">
-                                                        <h4 class="card-title">Johan Cruijff ArenA</h4>
-                                                        <ul>
-                                                                <li><span class="list-text">Capacity: 52,145</span></li>
-                                                                <li><span class="list-text">The first stadium in Europe with a sliding roof, originally called the Amsterdam ArenA</span></li>
-                                                                <li><span class="list-text">The venue was renamed Johan Cruijff ArenA in 2018 in honour of Ajax's former player and coach, who was born in Amsterdam</span></li>
-                                                                <li><span class="list-text">Staged the 1998 UEFA Champions League final and the 2013 Europa League decider</span></li>
-                                                                <li><span class="list-text">Hosted five matches during UEFA EURO 2000, including the Netherlands' semi-final shoot-out defeat by Italy.</span></li>                     
-                                                        </ul>
-
-                                                        <h4 class="card-title">Euro 2020 Games</h4>
-                                                        <ul>
-                                                                <li><span class="list-text">14 June – Group C match</span></li>
-                                                                <li><span class="list-text">18 June – Group C match</span></li>
-                                                                <li><span class="list-text">22 June – Group C match</span></li>
-                                                                <li><span class="list-text">27 June – Round of 16 (2A v 2B)</span></li>
-                                                                                  
-                                                        </ul>
-
-                                                        
-                                                        
-                                                </div>
-                                        </div> -->
-                                <!-- </div> -->
-
-
-                                <div id="map" class="col"></div>
-                                <!-- <div id="map" class="col-md-8 col-xs-12"></div> -->
                         </div>
                 </div>
 
-        
+
+
+
+                <div id="map-info-container">
+                        <div id="" class="row">
+                                <div id="cityInfo"></div>
+
+                                <div id="map" class="col "></div>
+                        </div>
+
+                </div>
         </div>
 
+
+
+        <script src="assets/js/map.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="assets/js/map.js"></script>
+       
 
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejsMu6razkEu1Coxd8sB5pHrrnWcxJD4&callback=initMap">

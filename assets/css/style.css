@@ -40,6 +40,13 @@ body {
   padding: 0!important;
 }
 
+.city-hide {
+  display: none;
+}
+
+#map-info-container {
+  margin: 10px;
+}
 
 /* Card */
 
