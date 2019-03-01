@@ -1,6 +1,7 @@
 function initMap() {
     var mapCenter = { lat: 50.7436337, lng: 18.4208038 };
     var activeInfoWindow;
+    
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
     $.getJSON('assets/data/cities.json', function (data) {
@@ -24,6 +25,8 @@ function initMap() {
             gameTwo = value.games[0].two;
             gameThree = value.games[0].three;
             gameFour = value.games[0].four;
+            
+            
 
 
 
@@ -34,6 +37,8 @@ function initMap() {
                 map: map,
                 title: `${cityName}`
             });
+
+
 
             var infoWindowContent = `<div class="col">
             <h3><span class="flag-icon flag-icon-${countryFlag}"></span> ${cityName}</h3>
@@ -82,14 +87,26 @@ function initMap() {
       </div>`);
 
 
-            
+
 
 
 
         });
+
+
+        function zoomTo(lat, lon, zoom) {
+            myLatLng = new google.maps.LatLng(lat, lon)
+            map.panTo(myLatLng);
+            map.setZoom(zoom);
+        }
+
+
         function displayCity() {
 
-            $("#resetBtn").click(function (e) { 
+
+
+
+            $("#resetBtn").click(function (e) {
                 e.preventDefault();
                 $("#buttons-container").show();
                 $("#city-info-nl").addClass("city-hide");
@@ -107,6 +124,7 @@ function initMap() {
                 $("#map").removeClass("col-lg-8 col-xs-12");
                 $("#cityInfo").removeClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("Select a City");
+                zoomTo(50.7436337, 18.4208038, 3);
             });
 
             $("#ams-btn").click(function (e) {
@@ -116,6 +134,9 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(52.3680, 4.9036, 12);
+
+
             })
 
             $("#bku-btn").click(function (e) {
@@ -125,6 +146,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(40.4093, 49.8671, 12);
             })
 
             $("#bil-btn").click(function (e) {
@@ -134,6 +156,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(43.2630, -2.9350, 14);
             })
 
             $("#buc-btn").click(function (e) {
@@ -143,6 +166,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(44.4268, 26.1025, 12);
             })
 
             $("#bud-btn").click(function (e) {
@@ -152,6 +176,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(47.4979, 19.0402, 12);
             })
 
             $("#cop-btn").click(function (e) {
@@ -161,6 +186,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(55.6761, 12.5683, 13);
             })
 
             $("#dub-btn").click(function (e) {
@@ -170,6 +196,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(53.3498, -6.2603, 13);
             })
 
             $("#gla-btn").click(function (e) {
@@ -179,6 +206,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(55.8595, -4.2518, 12);
             })
 
             $("#ldn-btn").click(function (e) {
@@ -188,6 +216,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(51.5080123,-0.129448, 10);
             })
 
             $("#mun-btn").click(function (e) {
@@ -197,6 +226,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(48.1461, 11.5820, 11);
             })
 
             $("#rom-btn").click(function (e) {
@@ -206,6 +236,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(41.9028, 12.4964, 12);
             })
 
             $("#stp-btn").click(function (e) {
@@ -215,6 +246,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                zoomTo(59.9343, 30.3351, 11);
             })
         }
 

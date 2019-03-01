@@ -26,6 +26,8 @@ body {
   padding: 0;
 }
 
+
+
 /* Main Section */
 
 #map {
@@ -93,4 +95,12 @@ li{
     height: 80px;
     font-size: 1.05em;
   }
+
+}
+
+@media only screen and (max-width: 1050px) {
+  #stpText{
+    font-size: 0.8em;
+  }
+
 }
