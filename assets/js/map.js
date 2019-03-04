@@ -65,9 +65,10 @@ function initMap() {
                 map.setZoom(12);
                 map.setCenter(marker.getPosition());
                 infoWindow.close();
+
             });
 
-
+            
             $("#cityInfo").append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
               <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
               <div class="card-body">
