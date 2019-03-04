@@ -1,10 +1,12 @@
 function initMap() {
     var mapCenter = { lat: 50.7436337, lng: 18.4208038 };
     var activeInfoWindow;
-    
+    var cities = [];
+
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
     $.getJSON('assets/data/cities.json', function (data) {
+
 
 
         $.each(data, function (key, value) {
@@ -25,9 +27,9 @@ function initMap() {
             gameTwo = value.games[0].two;
             gameThree = value.games[0].three;
             gameFour = value.games[0].four;
-            
-            
-
+            gameFive = value.games[0].five;
+            gameSix = value.games[0].six;
+            gameSeven = value.games[0].seven;
 
 
 
@@ -59,6 +61,12 @@ function initMap() {
                 activeInfoWindow = infoWindow;
             });
 
+            marker.addListener('click', function () {
+                map.setZoom(12);
+                map.setCenter(marker.getPosition());
+                infoWindow.close();
+            });
+
 
             $("#cityInfo").append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
               <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
@@ -72,13 +80,15 @@ function initMap() {
                               <li><span class="list-text">${factFour}</span></li>                     
                       </ul>
 
-                      <h4 class="card-title">Euro 2020 Games</h4>
+                      <h4 class="card-title">Euro 2020 Games at <br> ${stadiumName}, ${cityName}</h4>
                       <ul>
                               <li><span class="list-text">${gameOne}</span></li>
                               <li><span class="list-text">${gameTwo}</span></li>
                               <li><span class="list-text">${gameThree}</span></li>
                               <li><span class="list-text">${gameFour}</span></li>
-                                                
+                              ${(gameFive != undefined) ? "<li><span class='list-text'>" + gameFive + "</span></li>" : ""}
+                              ${(gameSix != undefined) ? "<li><span class='list-text'>" + gameSix + "</span></li>" : ""}  
+                              ${(gameSeven != undefined) ? "<li><span class='list-text'>" + gameSeven + "</span></li>" : ""}            
                       </ul>
 
                       
@@ -216,7 +226,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
-                zoomTo(51.5080123,-0.129448, 10);
+                zoomTo(51.5080123, -0.129448, 10);
             })
 
             $("#mun-btn").click(function (e) {
@@ -252,43 +262,11 @@ function initMap() {
 
         displayCity();
 
+
+        
+
     });
 }
 
 
-
-// function displayCityInfo() {
-//     $("#ams-btn").click(function (e) { 
-//         e.preventDefault();
-//         $("#bku-btn").hide();
-//         $("#bil-btn").hide();
-//         $("#buc-btn").hide();
-//         $("#bud-btn").hide();
-//         $("#cop-btn").hide();
-//         $("#dub-btn").hide();
-//         $("#gla-btn").hide();
-//         $("#ldn-btn").hide();
-//         $("#mun-btn").hide();
-//         $("#rom-btn").hide();
-//         $("#stp-btn").hide();
-
-//     });
-
-//     $("#stp-btn").click(function (e) { 
-//         e.preventDefault();
-//         $("#bku-btn").hide();
-//         $("#bil-btn").hide();
-//         $("#buc-btn").hide();
-//         $("#bud-btn").hide();
-//         $("#cop-btn").hide();
-//         $("#dub-btn").hide();
-//         $("#gla-btn").hide();
-//         $("#ldn-btn").hide();
-//         $("#mun-btn").hide();
-//         $("#rom-btn").hide();
-//         $("#ams-btn").hide();
-//         $("#stp-btn").siblings
-
-//     });
-// }
 

@@ -17,29 +17,30 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-                <a class="navbar-brand mx-auto" href="index.html"> <img src="assets/img/logo.png" alt="Euro 2020 Logo"></a>
+                <a class="navbar-brand mx-auto" href="index.html"> <img src="assets/img/logo.png"
+                                alt="Euro 2020 Logo"></a>
 
         </nav>
         <!-- Buttons -->
         <div class="container-fluid">
                 <div class="row justify-content-center">
                         <div class="col col-sm-6">
-                                <button id="resetBtn" type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a city</button>
+                                <button id="resetBtn" type="button" class="btn btn-lg btn-block mt-4 btn-grey">Select a
+                                        city</button>
                         </div>
                 </div>
 
                 <div id="buttons-container">
                         <div class="row mt-4 text-center justify-content-center">
 
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                                                onclick="displayCity()" id="ams-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ams-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-nl"></span><br>Amsterdam
                                         </button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCity()" id="bku-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bku-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-az"></span><br>Baku</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" onclick="displayCity()" id="bil-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
                                 <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn"
@@ -71,10 +72,10 @@
                                 <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="rom-btn"
                                                 class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-it"></span><br>Rome</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
-                                                onclick="displayCityInfo()" id="stp-btn"
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="stp-btn"
                                                 class="btn btn-primary btn-city"><span
-                                                        class="flag-icon flag-icon-ru"></span><br><span id="stpText">St. Petersburg</span></button>
+                                                        class="flag-icon flag-icon-ru"></span><br><span id="stpText">St.
+                                                        Petersburg</span></button>
                                 </div>
                                 <!-- Different Buttons -->
                                 <!-- <div class="row mt-4 text-center justify-content-center">
@@ -119,6 +120,12 @@
                                 <div id="map" class="col "></div>
                         </div>
 
+                        <div class="row">
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button"
+                                                onclick="createRestaurant()" id="restaurant"
+                                                class="btn btn-primary btn-city">Restaurant</button></div>
+                        </div>
+
                 </div>
         </div>
 
@@ -127,7 +134,7 @@
         <script src="assets/js/map.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-       
+
 
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejsMu6razkEu1Coxd8sB5pHrrnWcxJD4&callback=initMap">
