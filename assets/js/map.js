@@ -22,22 +22,10 @@ function initMap() {
                 createMarker(results[i]);
             }
 
-            map.setCenter(results[0].geometry.location);
+           
         }
     }
-    function createMarker(place) {
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent(place.name);
-            infowindow.open(map, this);
-          });
-    }
-
-    
+        
 
     
     $.getJSON('assets/data/cities.json', function (data) {
