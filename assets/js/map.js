@@ -1,13 +1,54 @@
 function initMap() {
     var mapCenter = { lat: 50.7436337, lng: 18.4208038 };
+    var amsterdam = new google.maps.LatLng(52.3143691,4.9417);
     var activeInfoWindow;
-    var cities = [];
-
+    var facts = [];
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
+   
+    var request = {
+        location: amsterdam,
+        radius: 10000,
+        types: ['hotel']
+    };
+
+    var service = new google.maps.places.PlacesService(map);
+
+    service.nearbySearch(request, callback)
+
+    function callback(results, status){
+        if(status == google.maps.places.PlacesServiceStatus.OK){
+            for (var i = 0; i<results.length; i++) {
+                createMarker(results[i]);
+            }
+
+            map.setCenter(results[0].geometry.location);
+        }
+    }
+    function createMarker(place) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent(place.name);
+            infowindow.open(map, this);
+          });
+    }
+
+    
+
+    
     $.getJSON('assets/data/cities.json', function (data) {
 
 
+
+        for (i = 0; i < data.length; i++) {
+            facts.push(data[i].facts);
+        }
+
+        console.log(facts);
 
         $.each(data, function (key, value) {
             console.log(value.name);
@@ -46,7 +87,7 @@ function initMap() {
             <h3><span class="flag-icon flag-icon-${countryFlag}"></span> ${cityName}</h3>
             <h5>${stadiumName}</h5>
             <p>Capacity: ${stadiumCapacity}</p>
-        </div>`;
+            </div>`;
 
 
 
@@ -68,40 +109,36 @@ function initMap() {
 
             });
 
-            
-            $("#cityInfo").append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
-              <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
-              <div class="card-body">
-                      <h4 class="card-title">${stadiumName}</h4>
-                      <ul>
-                              <li><span class="list-text">Capacity: ${stadiumCapacity}</span></li>
-                              <li><span class="list-text">${factOne}</span></li>
-                              <li><span class="list-text">${factTwo}</span></li>
-                              <li><span class="list-text">${factThree}</span></li>
-                              <li><span class="list-text">${factFour}</span></li>                     
-                      </ul>
 
-                      <h4 class="card-title">Euro 2020 Games at <br> ${stadiumName}, ${cityName}</h4>
-                      <ul>
-                              <li><span class="list-text">${gameOne}</span></li>
-                              <li><span class="list-text">${gameTwo}</span></li>
-                              <li><span class="list-text">${gameThree}</span></li>
-                              <li><span class="list-text">${gameFour}</span></li>
-                              ${(gameFive != undefined) ? "<li><span class='list-text'>" + gameFive + "</span></li>" : ""}
-                              ${(gameSix != undefined) ? "<li><span class='list-text'>" + gameSix + "</span></li>" : ""}  
-                              ${(gameSeven != undefined) ? "<li><span class='list-text'>" + gameSeven + "</span></li>" : ""}            
-                      </ul>
+            $("#cityInfo")
+                    
+                            .append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
+                                    <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
+                                    <div class="card-body">
+                                    <h4 class="card-title">${stadiumName}</h4>
+                                    <ul>
+                                            <li><span class="list-text">Capacity: ${stadiumCapacity}</span></li>
+                                            <li><span class="list-text">${factOne}</span></li>
+                                            <li><span class="list-text">${factTwo}</span></li>
+                                            <li><span class="list-text">${factThree}</span></li>
+                                            <li><span class="list-text">${factFour}</span></li>                     
+                                    </ul>
 
-                      
-                      
-              </div>
-      </div>`);
+                                    <h4 class="card-title">Euro 2020 Games at <br> ${stadiumName}, ${cityName}</h4>
+                                    <ul>
+                                            <li><span class="list-text">${gameOne}</span></li>
+                                            <li><span class="list-text">${gameTwo}</span></li>
+                                            <li><span class="list-text">${gameThree}</span></li>
+                                            <li><span class="list-text">${gameFour}</span></li>
+                                            ${(gameFive != undefined) ? "<li><span class='list-text'>" + gameFive + "</span></li>" : ""}
+                                            ${(gameSix != undefined) ? "<li><span class='list-text'>" + gameSix + "</span></li>" : ""}  
+                                            ${(gameSeven != undefined) ? "<li><span class='list-text'>" + gameSeven + "</span></li>" : ""}            
+                                    </ul>
 
-
-
-
-
-
+                            
+                            
+                                    </div>
+                                    </div>`);
         });
 
 
@@ -145,9 +182,10 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
+                $("#serviceBtns").removeClass("city-hide");
                 zoomTo(52.3680, 4.9036, 12);
 
-
+                
             })
 
             $("#bku-btn").click(function (e) {
@@ -263,11 +301,13 @@ function initMap() {
 
         displayCity();
 
-
+        
+        }
+        
         
 
-    });
-}
 
+    );
+}
 
 
