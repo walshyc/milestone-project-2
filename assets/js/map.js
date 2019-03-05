@@ -1,5 +1,5 @@
 function initMap() {
-    var mapCenter = { lat: 50.7436337, lng: 18.4208038 };
+    var mapCenter = { lat: 50.7436337, lng: 18.4208039 };
     var amsterdam = new google.maps.LatLng(52.3143691,4.9417);
     var activeInfoWindow;
     var facts = [];
