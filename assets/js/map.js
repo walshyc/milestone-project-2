@@ -12,7 +12,7 @@ function initMap() {
         types: ['hotel']
     };
 
-    var service = new google.maps.places.PlacesService(map);
+    var service = new google.maps.places.PlacesServices(map);
 
     service.nearbySearch(request, callback)
 
