@@ -3,28 +3,11 @@ function initMap() {
     var amsterdam = new google.maps.LatLng(52.3143691,4.9417);
     var activeInfoWindow;
     var facts = [];
+ 
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
    
-    var request = {
-        location: amsterdam,
-        radius: 10000,
-        types: ['hotel']
-    };
-
-    var service = new google.maps.places.PlacesService(map);
-
-    service.nearbySearch(request, callback)
-
-    function callback(results, status){
-        if(status == google.maps.places.PlacesServiceStatus.OK){
-            for (var i = 0; i<results.length; i++) {
-                createMarker(results[i]);
-            }
-
-           
-        }
-    }
+    
         
 
     
@@ -100,7 +83,9 @@ function initMap() {
 
             $("#cityInfo")
                     
-                            .append(`<div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
+                            .append(`<div id="serviceBtns-${countryFlag}" class= "city-hide" ><button id="restaurantBtn-${countryFlag}" class = "btn btn-primary btn-city" >Restaurant</button>
+                            <button id="barBtn-${countryFlag}" class = "btn btn-primary btn-city" >Bars</button></div>
+                            <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                     <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
                                     <div class="card-body">
                                     <h4 class="card-title">${stadiumName}</h4>
@@ -170,7 +155,7 @@ function initMap() {
                 $("#map").addClass("col-lg-8 col-xs-12");
                 $("#cityInfo").addClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("View All Cities");
-                $("#serviceBtns").removeClass("city-hide");
+                $("#serviceBtns-nl").removeClass("city-hide");
                 zoomTo(52.3680, 4.9036, 12);
 
                 
@@ -289,6 +274,54 @@ function initMap() {
 
         displayCity();
 
+        function createService(location,service){
+            var request = {
+                location: location,
+                radius: 10000,
+                types: [service]
+            };
+        
+            var service = new google.maps.places.PlacesService(map);
+        
+            service.nearbySearch(request, callback)
+        
+            function createMarker(place) {
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: place.geometry.location
+                });
+        
+                var infoWindow = new google.maps.InfoWindow({ 
+                    content: 'Hello' 
+                    }); 
+        
+                google.maps.event.addListener(marker, 'click', function() {
+                  infoWindow.setContent(place.name);
+                  activeInfoWindow && activeInfoWindow.close();
+                  infoWindow.open(map, marker);
+                  activeInfoWindow = infoWindow;
+        
+        
+                  
+                });
+              }
+        
+            function callback(results, status){
+                if(status == google.maps.places.PlacesServiceStatus.OK){
+                    for (var i = 0; i<results.length; i++) {
+                        createMarker(results[i]);
+                    }
+        
+                   
+                }
+            }
+        }
+        
+        $("#restaurantBtn-nl").click(function (e) { 
+            e.preventDefault();
+            createService(amsterdam,"shop");
+        });
+        
         
         }
         
@@ -296,6 +329,10 @@ function initMap() {
 
 
     );
+
+
+    
 }
+
 
 

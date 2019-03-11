@@ -30,6 +30,11 @@ body {
 
 /* Main Section */
 
+#map-test{
+  width: 100%;
+  height: 600px;
+}
+
 #map {
     margin-top: 10px;
     height: 80vh;
