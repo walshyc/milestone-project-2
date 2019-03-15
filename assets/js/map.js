@@ -6,7 +6,11 @@ function initMap() {
     var foodMarkers = [];
     var atmMarkers = [];
     var barMarkers = [];
-    var taxiMarkers = [];
+    var transportMarkers = [];
+    var airports = [];
+    var trainStation = [];
+    var busStation = [];
+
 
 
     var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
@@ -16,9 +20,6 @@ function initMap() {
 
 
     $.getJSON('assets/data/cities.json', function (data) {
-
-        var cityNameTwo = data.name;
-
 
 
         for (i = 0; i < data.length; i++) {
@@ -96,10 +97,10 @@ function initMap() {
                                         local_drink</i><br>Bars</button>
                                         <button id="atmBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
                                         atm</i><br>Cash</button>
-                                        <button id="taxiBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        local_taxi</i><br>Taxi</button>
+                                        <button id="transportBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
+                                        directions_bus</i><br>Travel</button>
                                         </div>
-                                
+
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                                 <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
                                                 <div class="card-body">
@@ -109,7 +110,7 @@ function initMap() {
                                                         <li><span class="list-text">${factOne}</span></li>
                                                         <li><span class="list-text">${factTwo}</span></li>
                                                         <li><span class="list-text">${factThree}</span></li>
-                                                        <li><span class="list-text">${factFour}</span></li>                     
+                                                        <li><span class="list-text">${factFour}</span></li>
                                                 </ul>
 
                                                 <h4 class="card-title">Euro 2020 Games at <br> ${stadiumName}, ${cityName}</h4>
@@ -119,12 +120,12 @@ function initMap() {
                                                         <li><span class="list-text">${gameThree}</span></li>
                                                         <li><span class="list-text">${gameFour}</span></li>
                                                         ${(gameFive != undefined) ? "<li><span class='list-text'>" + gameFive + "</span></li>" : ""}
-                                                        ${(gameSix != undefined) ? "<li><span class='list-text'>" + gameSix + "</span></li>" : ""}  
-                                                        ${(gameSeven != undefined) ? "<li><span class='list-text'>" + gameSeven + "</span></li>" : ""}            
+                                                        ${(gameSix != undefined) ? "<li><span class='list-text'>" + gameSix + "</span></li>" : ""}
+                                                        ${(gameSeven != undefined) ? "<li><span class='list-text'>" + gameSeven + "</span></li>" : ""}
                                                 </ul>
 
-                            
-                            
+
+
                                     </div>
                                     </div>`);
         });
@@ -311,21 +312,21 @@ function initMap() {
 
         displayCity();
 
-        function deleteMarkers(){
-            
+        function deleteMarkers() {
+
             for (var i = 0; i < foodMarkers.length; i++) {
                 foodMarkers[i].setMap(null);
             }
             for (var i = 0; i < atmMarkers.length; i++) {
                 atmMarkers[i].setMap(null);
             }
-            for (var i = 0; i < taxiMarkers.length; i++) {
-                taxiMarkers[i].setMap(null);
+            for (var i = 0; i < transportMarkers.length; i++) {
+                transportMarkers[i].setMap(null);
             }
             for (var i = 0; i < barMarkers.length; i++) {
                 barMarkers[i].setMap(null);
             }
-                   
+
         }
 
         function foodMarker(location) {
@@ -340,24 +341,24 @@ function initMap() {
 
             function createMarker(place) {
 
-                // var foodIcon = {
-                //     url: "assets/img/markers/fastfood.png",
-                //     scaledSize: new google.maps.Size(50, 50),
-                // };
-                 marker = new google.maps.Marker({
+                var foodIcon = {
+                    url: "assets/img/markers/food.png",
+                    scaledSize: new google.maps.Size(20, 20),
+                };
+                marker = new google.maps.Marker({
                     map: map,
                     position: place.geometry.location,
-                    // icon: foodIcon
+                    icon: foodIcon
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
-                    content: ''
+                    content: ""
                 });
 
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent(place.name);
                     activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, marker);
+                    infoWindow.open(map, this);
                     activeInfoWindow = infoWindow;
                 });
                 foodMarkers.push(marker);
@@ -385,15 +386,15 @@ function initMap() {
             service.nearbySearch(request, callback)
 
             function createMarker(place) {
-                // var atmIcon = {
-                //     url: "assets/img/markers/atm.svg",
-                //     scaledSize: new google.maps.Size(50, 50),
-                // };
+                var atmIcon = {
+                    url: "assets/img/markers/atm.png",
+                    scaledSize: new google.maps.Size(20, 20),
+                };
 
-                 marker = new google.maps.Marker({
+                marker = new google.maps.Marker({
                     map: map,
                     position: place.geometry.location,
-                    // icon: atmIcon
+                    icon: atmIcon
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
@@ -403,7 +404,7 @@ function initMap() {
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent(place.name);
                     activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, marker);
+                    infoWindow.open(map, this);
                     activeInfoWindow = infoWindow;
                 });
                 atmMarkers.push(marker);
@@ -420,20 +421,75 @@ function initMap() {
             }
         }
 
-        function taxiMarker(location) {
-            var center = new google.maps.LatLng(location[0], location[1]);
-            var request = {
-                location: center,
-                radius: 5000,
-                types: ["taxi_stand"]
+        function transportMarker(airport, train, bus) {
+
+            var airportRequest = {
+                query: airport,
+                fields: ['name', 'geometry'],
             };
             var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch(request, callback)
 
-            function createMarker(place) {
-                 marker = new google.maps.Marker({
+
+            service.findPlaceFromQuery(airportRequest, function (results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var airIcon = {
+                        url: "assets/img/markers/airport.png",
+                        scaledSize: new google.maps.Size(30, 30)
+                    };
+                    for (var i = 0; i < results.length; i++) {
+                        createMarker(results[i],airIcon);
+                    }
+                    map.setZoom(12);
+                }
+            });
+
+            var trainRequest = {
+                query: train,
+                fields: ['name', 'geometry'],
+            };
+            var service = new google.maps.places.PlacesService(map);
+
+
+            service.findPlaceFromQuery(trainRequest, function (results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        var trainIcon = {
+                            url: "assets/img/markers/train.png",
+                            scaledSize: new google.maps.Size(30, 30)
+                        };
+                        createMarker(results[i],trainIcon);
+                    }
+                    map.setZoom(12);
+                }
+            });
+
+            var busRequest = {
+                query: bus,
+                fields: ['name', 'geometry'],
+            };
+            var service = new google.maps.places.PlacesService(map);
+
+
+            service.findPlaceFromQuery(busRequest, function (results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        var busIcon = {
+                            url: "assets/img/markers/bus.png",
+                            scaledSize: new google.maps.Size(30, 30)
+                        };
+                        createMarker(results[i],busIcon);
+                    }
+                    map.setZoom(12);
+                }
+            });
+
+
+
+            function createMarker(place,icon) {
+                marker = new google.maps.Marker({
                     map: map,
-                    position: place.geometry.location
+                    position: place.geometry.location,
+                    icon: icon
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
@@ -443,22 +499,15 @@ function initMap() {
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent(place.name);
                     activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, marker);
+                    infoWindow.open(map, this);
                     activeInfoWindow = infoWindow;
                 });
-                taxiMarkers.push(marker);
+                transportMarkers.push(marker);
+
             }
 
-            function callback(results, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        createMarker(results[i]);
-                    }
-
-
-                }
-            }
         }
+
 
         function barMarker(location) {
             var center = new google.maps.LatLng(location[0], location[1]);
@@ -471,9 +520,14 @@ function initMap() {
             service.nearbySearch(request, callback)
 
             function createMarker(place) {
-                 marker = new google.maps.Marker({
+                var barIcon = {
+                    url: "assets/img/markers/bar.png",
+                    scaledSize: new google.maps.Size(20, 20),
+                };
+                marker = new google.maps.Marker({
                     map: map,
-                    position: place.geometry.location
+                    position: place.geometry.location,
+                    icon: barIcon
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
@@ -483,7 +537,7 @@ function initMap() {
                 google.maps.event.addListener(marker, 'click', function () {
                     infoWindow.setContent(place.name);
                     activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, marker);
+                    infoWindow.open(map, this);
                     activeInfoWindow = infoWindow;
                 });
                 barMarkers.push(marker);
@@ -499,7 +553,7 @@ function initMap() {
                 }
             }
         }
-        
+
 
 
         $("#foodBtn-nl").click(function (e) {
@@ -520,10 +574,10 @@ function initMap() {
             atmMarker(stadiumCoords[0]);
         });
 
-        $("#taxiBtn-nl").click(function (e) {
+        $("#transportBtn-nl").click(function (e) {
             e.preventDefault();
             deleteMarkers();
-            taxiMarker(stadiumCoords[0]);
+            transportMarker("Amsterdam Airport", "Amsterdam Train Station", "Amsertdam Bus Station");
         });
 
 
