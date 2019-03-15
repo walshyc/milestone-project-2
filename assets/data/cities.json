@@ -6,6 +6,7 @@
         "stadiumLat": 52.3143691,
         "stadiumLng": 4.9417827,
         "capacity": "54,990",
+        "airport" : "Amsterdam Airport",
         "flag": "assets/flags/4x3/nl.svg",
         "flagIcon": "nl",
         "facts": [
@@ -32,6 +33,7 @@
         "stadiumLat": 40.4300,
         "stadiumLng": 49.9196,
         "capacity": "68,700",
+        "airport" : "Heydar Aliyev International Airport",
         "flag": "assets/flags/4x3/az.svg",
         "flagIcon": "az",
         "facts": [
@@ -58,6 +60,7 @@
         "stadiumLat": 43.2641,
         "stadiumLng": -2.9494,
         "capacity": "53,332",
+        "airport" : "Bilbao Airport",
         "flag": "assets/flags/4x3/es.svg",
         "flagIcon": "es",
         "facts": [
@@ -84,6 +87,7 @@
         "stadiumLat": 44.4371,
         "stadiumLng": 26.1526,
         "capacity": "55,600",
+        "airport" : "Henri Coandă International Airport",
         "flag": "assets/flags/4x3/ro.svg",
         "flagIcon": "ro",
         "facts": [
@@ -110,6 +114,7 @@
         "stadiumLat": 47.5032,
         "stadiumLng": 19.0970,
         "capacity": "67,889",
+        "airport" : "Budapest Airport",
         "flag": "assets/flags/4x3/hu.svg",
         "flagIcon": "hu",
         "facts": [
@@ -136,6 +141,7 @@
         "stadiumLat": 55.7023,
         "stadiumLng": 12.5716,
         "capacity": "38,065",
+        "airport" : "Copenhagen Airport",
         "flag": "assets/flags/4x3/dk.svg",
         "flagIcon": "dk",
         "facts": [
@@ -162,6 +168,7 @@
         "stadiumLat": 53.3352,
         "stadiumLng": -6.2285,
         "capacity": "54,990",
+        "airport" : "Dublin Airport",
         "flag": "assets/flags/4x3/ie.svg",
         "flagIcon": "ie",
         "facts": [
@@ -188,6 +195,7 @@
         "stadiumLat": 55.8258277,
         "stadiumLng": -4.252143,
         "capacity": "52,063",
+        "airport" : "glasgow airport",
         "flag": "assets/flags/4x3/gb-sco.svg",
         "flagIcon": "gb-sct",
         "facts": [
@@ -214,6 +222,7 @@
         "stadiumLat": 51.5559933,
         "stadiumLng": -0.2797552,
         "capacity": "90,000",
+        "airport" : "Heathrow Airport",
         "flag": "assets/flags/4x3/gb-eng.svg",
         "flagIcon": "gb-eng",
         "facts": [
@@ -239,10 +248,11 @@
     {
         "name": "Munich",
         "country": "Germany",
-        "stadium": "Allianz Arena",
+        "stadium": "Munich International Airport",
         "stadiumLat": 48.218828,
         "stadiumLng": 11.6245606,
         "capacity": "70,000",
+        "airport" : "Heydar Aliyev International Airport",
         "flag": "assets/flags/4x3/de.svg",
         "flagIcon": "de",
         "facts": [
@@ -269,6 +279,7 @@
         "stadiumLat": 41.9340938,
         "stadiumLng": 12.4546554,
         "capacity": "72,698",
+        "airport" : "Leonardo da Vinci International Airport",
         "flag": "assets/flags/4x3/it.svg",
         "flagIcon": "it",
         "facts": [
@@ -295,6 +306,7 @@
         "stadiumLat": 59.9727,
         "stadiumLng": 30.2214,
         "capacity": "68,134",
+        "airport" : "Pulkovo Airport",
         "flag": "assets/flags/4x3/ru.svg",
         "flagIcon": "ru",
         "facts": [

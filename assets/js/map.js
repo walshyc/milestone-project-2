@@ -10,6 +10,8 @@ function initMap() {
     var airports = [];
     var trainStation = [];
     var busStation = [];
+    
+    
 
 
 
@@ -24,6 +26,11 @@ function initMap() {
 
         for (i = 0; i < data.length; i++) {
             stadiumCoords.push([data[i].stadiumLat, data[i].stadiumLng]);
+            airports.push(data[i].airport);
+            trainStation.push(data[i].train);
+            busStation.push(data[i].bus);
+
+            console.log(airports[0]);
         }
 
         console.log(stadiumCoords);
@@ -52,7 +59,7 @@ function initMap() {
 
 
 
-            var marker = new google.maps.Marker({
+            var stadiumMarker = new google.maps.Marker({
                 position: new google.maps.LatLng(cityLat, cityLng),
                 icon: "assets/img/marker-logo.png",
                 map: map,
@@ -74,32 +81,23 @@ function initMap() {
                 content: infoWindowContent
             });
 
-            google.maps.event.addListener(marker, 'click', function () {
+            google.maps.event.addListener(stadiumMarker, 'click', function () {
                 activeInfoWindow && activeInfoWindow.close();
-                infoWindow.open(map, marker);
+                infoWindow.open(map, stadiumMarker);
                 activeInfoWindow = infoWindow;
             });
 
-            marker.addListener('click', function () {
-                map.setZoom(12);
-                map.setCenter(marker.getPosition());
-                infoWindow.close();
+            // stadiumMarker.addListener('click', function () {
+            //     map.setZoom(12);
+            //     map.setCenter(stadiumMarker.getPosition());
+            //     infoWindow.close();
 
-            });
+            // });
 
 
             $("#cityInfo")
 
-                .append(`<div id="serviceBtns-${countryFlag}" class= "city-hide" >
-                                        <button id="foodBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        fastfood</i><br>Food</button>
-                                        <button id="barBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        local_drink</i><br>Bars</button>
-                                        <button id="atmBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        atm</i><br>Cash</button>
-                                        <button id="transportBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        directions_bus</i><br>Travel</button>
-                                        </div>
+                .append(`
 
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                                 <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
@@ -127,7 +125,20 @@ function initMap() {
 
 
                                     </div>
-                                    </div>`);
+                                    </div>
+
+                                    <div id="serviceBtns-${countryFlag}" class= "city-hide service-btns" >
+                                        <button id="foodBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
+                                        fastfood</i><br>Food</button>
+                                        <button id="barBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
+                                        local_drink</i><br>Bars</button>
+                                        <button id="atmBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
+                                        euro_symbol</i><br>Cash</button>
+                                        <button id="transportBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
+                                        directions_bus</i><br>Travel</button>
+                                        </div>
+                                    
+                                    `);
         });
 
 
@@ -173,6 +184,7 @@ function initMap() {
                 $("#cityInfo").removeClass("col-lg-4 col-xs-12");
                 $("#resetBtn").text("Select a City");
                 zoomTo(50.7436337, 18.4208038, 3);
+                deleteMarkers();
             });
 
             $("#ams-btn").click(function (e) {
@@ -327,6 +339,7 @@ function initMap() {
                 barMarkers[i].setMap(null);
             }
 
+
         }
 
         function foodMarker(location) {
@@ -352,7 +365,7 @@ function initMap() {
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
-                    content: ""
+                    content: ``
                 });
 
                 google.maps.event.addListener(marker, 'click', function () {
@@ -577,7 +590,7 @@ function initMap() {
         $("#transportBtn-nl").click(function (e) {
             e.preventDefault();
             deleteMarkers();
-            transportMarker("Amsterdam Airport", "Amsterdam Train Station", "Amsertdam Bus Station");
+            transportMarker(airports[0], "Amsterdam Train Station", "Amsertdam Bus Station");
         });
 
 
