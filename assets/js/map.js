@@ -397,8 +397,14 @@ function initMap() {
                         content: ``
                     });
 
+                    console.log(place.photos[0].html_attributions[0])
+
                     google.maps.event.addListener(marker, 'click', function () {
-                        infoWindow.setContent(place.name);
+                        infoWindow.setContent(`${place.name} <br>${(place.opening_hours = true) ? "Open Now!" : "Closed"}
+                        <br>
+                        Rating: ${place.rating} / 5
+                        <br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank">View more info</a> ` );
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
