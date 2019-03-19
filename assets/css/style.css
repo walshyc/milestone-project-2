@@ -4,6 +4,10 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+.material-icons{
+  color: #d1dbdc;
+}
+
 /* Nav Bar */
 
 .bg-primary {

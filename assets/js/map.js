@@ -134,34 +134,45 @@ function initMap() {
                                     </div>
 
                                     <div id="serviceToggles-${countryFlag}" class= "city-hide service-toggles" >
-                                        <div class="row">
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="food-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>fastfood</i><br>Food" data-off="<i class='material-icons'>fastfood</i><br>Food">
-                                                <label for="food-${countryFlag}" class="form-check-label"></label>
+                                    <div class="card text-white bg-primary pt-2">
+                                        <div class="row justify-content-center">
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="foodRadio-${countryFlag}" value="food">
+                                                <label class="form-check-label" for="foodRadio-${countryFlag}"><i class='material-icons'>local_dining</i> Food</label>
                                             </div>
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="bars-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>local_drink</i><br>Bars" data-off="<i class='material-icons'>local_drink</i><br>Bars">
-                                                <label for="bars-${countryFlag}" class="form-check-label"></label>
+
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="barRadio-${countryFlag}" value="bar">
+                                                <label class="form-check-label" for="barRadio-${countryFlag}"><i class='material-icons'>local_drink</i> Bars</label>
                                             </div>
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="hotel-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>hotel</i><br>Hotels" data-off="<i class='material-icons'>hotel</i><br>Hotels">
-                                                <label for="hotel-${countryFlag}" class="form-check-label"></label>
+
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hotelRadio-${countryFlag}" value="hotel">
+                                                <label class="form-check-label" for="hotelRadio-${countryFlag}"><i class='material-icons'>hotel</i> Hotel</label>
                                             </div>
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="atm-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>euro_symbol</i><br>Cash" data-off="<i class='material-icons'>euro_symbol</i><br>Cash">
-                                                <label for="atm-${countryFlag}" class="form-check-label"></label>
-                                            </div>
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="travel-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>directions_bus</i><br>Travel" data-off="<i class='material-icons'>directions_bus</i><br>Travel">
-                                                <label for="travel-${countryFlag}" class="form-check-label"></label>
-                                            </div>
-                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
-                                                <input id="museum-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>place</i><br>Museums" data-off="<i class='material-icons'>place</i><br>Museums">
-                                                <label for="museum-${countryFlag}" class="form-check-label"></label>
-                                            </div> 
                                         </div>
+                                        <div class="row justify-content-center">
+
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="atmRadio-${countryFlag}" value="cash">
+                                                <label class="form-check-label" for="atmRadio-${countryFlag}"><i class='material-icons'>euro_symbol</i> ATM's</label>
+                                            </div>
+
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="travelRadio-${countryFlag}" value="travel">
+                                                <label class="form-check-label" for="travelRadio-${countryFlag}"><i class='material-icons'>flight</i> Travel</label>
+                                            </div>
+
+                                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="museumRadio-${countryFlag}" value="museum">
+                                                <label class="form-check-label" for="museumRadio-${countryFlag}"><i class='material-icons'>place</i> Museum</label>
+                                            </div>
+                                      </div>
+                                    </div>
+                                    </div>  
                                     
-                                    </div>                                  
+                                    
+                                    
                                     `);
             });
 
@@ -584,7 +595,7 @@ function initMap() {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i], airIcon);
                         }
-                        map.setZoom(11);
+                        map.setZoom(10);
                     }
                 });
 
@@ -604,7 +615,7 @@ function initMap() {
                             };
                             createMarker(results[i], trainIcon);
                         }
-                        map.setZoom(11);
+                        map.setZoom(10);
                     }
                 });
 
@@ -624,7 +635,7 @@ function initMap() {
                             };
                             createMarker(results[i], busIcon);
                         }
-                        map.setZoom(11);
+                        map.setZoom(10);
                     }
                 });
 
@@ -702,44 +713,52 @@ function initMap() {
             }
 
 
+            // $("#food-nl").on('change', function() {
+            //     $('#bars-nl').bootstrapToggle('off');
+            //     $('#hotel-nl').bootstrapToggle('off');
+            //     deleteMarkers();
+            //     map.setZoom(13);
+            //     foodMarker(stadiumCoords[0]);
+            // });
 
-            $("#food-nl").change(function (e) {
+            
+
+
+             $("#foodRadio-nl").change(function (e) {
+                 e.preventDefault();
+                 deleteMarkers();
+                 map.setZoom(14);
+                 foodMarker(stadiumCoords[0]);
+             });
+
+             $("#barRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                $('#bars-nl').prop('checked', false);
-                $('#hotel-nl').prop('checked', false); 
-                map.setZoom(13);
-                foodMarker(stadiumCoords[0]);
-            });
-
-            $("#bars-nl").change(function (e) {
-                e.preventDefault();
-                deleteMarkers();
-                map.setZoom(13);
+                map.setZoom(14);
                 barMarker(stadiumCoords[0]);
             });
 
-            $("#hotel-nl").change(function (e) {
+            $("#hotelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                map.setZoom(14);
                 hotelMarker(stadiumCoords[0]);
             });
 
-            $("#atm-nl").change(function (e) {
+            $("#atmRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                map.setZoom(14);
                 atmMarker(stadiumCoords[0]);
             });
 
-            $("#travel-nl").change(function (e) {
+            $("#travelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 transportMarker(airports[0], "Amsterdam Train Station", "Amsertdam Bus Station");
             });
 
-            $("#museum-nl").change(function (e) {
+            $("#museumRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 map.setZoom(12);
