@@ -706,6 +706,8 @@ function initMap() {
             $("#food-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
+                $('bars-nl').prop('checked', false);
+                $('hotel-nl').prop('checked', false); 
                 map.setZoom(13);
                 foodMarker(stadiumCoords[0]);
             });
