@@ -6,11 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Euro 2020 City Guide</title>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/flag-icon.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
         <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
 
 <body>
@@ -18,8 +25,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-                <a class="navbar-brand mx-auto" href="index.html"> <img src="assets/img/logo.png"
-                                alt="Euro 2020 Logo"></a>
+                <a class="navbar-brand mx-auto" href="index.html"> <img src="assets/img/logo.png" alt="Euro 2020 Logo"></a>
 
         </nav>
         <!-- Buttons -->
@@ -34,47 +40,35 @@
                 <div id="buttons-container">
                         <div class="row mt-4 text-center justify-content-center">
 
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ams-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ams-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-nl"></span><br>Amsterdam
                                         </button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bku-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bku-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-az"></span><br>Baku</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bil-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-es"></span><br>Bilbao</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="buc-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-ro"></span><br>Bucharest</button>
                                 </div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bud-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="bud-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-hu"></span><br>Budapest</button>
                                 </div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="cop-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="cop-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-dk"></span><br>Copenhagen</button>
                                 </div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="dub-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="dub-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-ie"></span><br>Dublin</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="gla-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="gla-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-gb-sct"></span><br>Glasgow</button>
                                 </div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ldn-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="ldn-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-gb-eng"></span><br>London</button>
                                 </div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="mun-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="mun-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-de"></span><br>Munich</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="rom-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="rom-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-it"></span><br>Rome</button></div>
-                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="stp-btn"
-                                                class="btn btn-primary btn-city"><span
+                                <div class="col col-md-2 col-xs-4 col-sm-3"><button type="button" id="stp-btn" class="btn btn-primary btn-city"><span
                                                         class="flag-icon flag-icon-ru"></span><br><span id="stpText">St.
                                                         Petersburg</span></button>
                                 </div>
@@ -116,7 +110,9 @@
 
                 <div id="map-info-container">
                         <div id="" class="row">
-                                <div id="cityInfo" class=""></div>
+                                <div id="cityInfo" class="">
+                                        
+                                </div>
 
                                 <div id="map" class="col "></div>
                         </div>
@@ -126,8 +122,7 @@
                 </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 
         <script src="assets/js/map.js"></script>
 
@@ -136,8 +131,7 @@
         <!-- <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAejsMu6razkEu1Coxd8sB5pHrrnWcxJD4&callback=initMap">
                 </script> -->
-        <script async defer type="text/javascript"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTxpFQwAOWxjws8DVingp4tm5je08vzqE&callback=initMap&libraries=places"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTxpFQwAOWxjws8DVingp4tm5je08vzqE&callback=initMap&libraries=places"></script>
 </body>
 
 </html>

@@ -1,5 +1,8 @@
 function initMap() {
-    var mapCenter = { lat: 50.7436337, lng: 18.4208039 };
+    var mapCenter = {
+        lat: 50.7436337,
+        lng: 18.4208039
+    };
     var amsterdam = new google.maps.LatLng(52.3143691, 4.9417);
     var activeInfoWindow;
     var stadiumCoords = [];
@@ -10,12 +13,15 @@ function initMap() {
     var airports = [];
     var trainStation = [];
     var busStation = [];
-    
-    
 
 
 
-    var map = new google.maps.Map(document.getElementById('map'), { zoom: 3, center: mapCenter });
+
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: mapCenter
+    });
 
 
 
@@ -24,51 +30,51 @@ function initMap() {
     $.getJSON('assets/data/cities.json', function (data) {
 
 
-        for (i = 0; i < data.length; i++) {
-            stadiumCoords.push([data[i].stadiumLat, data[i].stadiumLng]);
-            airports.push(data[i].airport);
-            trainStation.push(data[i].train);
-            busStation.push(data[i].bus);
+            for (i = 0; i < data.length; i++) {
+                stadiumCoords.push([data[i].stadiumLat, data[i].stadiumLng]);
+                airports.push(data[i].airport);
+                trainStation.push(data[i].train);
+                busStation.push(data[i].bus);
 
-            console.log(airports[0]);
-        }
+                console.log(airports[0]);
+            }
 
-        console.log(stadiumCoords);
+            console.log(stadiumCoords);
 
-        $.each(data, function (key, value) {
-            console.log(value.name);
-            console.log(value.facts[0].one);
-            cityName = value.name;
-            stadiumName = value.stadium;
-            stadiumCapacity = value.capacity
-            cityLat = value.stadiumLat;
-            cityLng = value.stadiumLng;
-            countryFlag = value.flagIcon;
-            countryName = value.country;
-            factOne = value.facts[0].one;
-            factTwo = value.facts[0].two;
-            factThree = value.facts[0].three;
-            factFour = value.facts[0].four;
-            gameOne = value.games[0].one;
-            gameTwo = value.games[0].two;
-            gameThree = value.games[0].three;
-            gameFour = value.games[0].four;
-            gameFive = value.games[0].five;
-            gameSix = value.games[0].six;
-            gameSeven = value.games[0].seven;
-
-
-
-            var stadiumMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(cityLat, cityLng),
-                icon: "assets/img/marker-logo.png",
-                map: map,
-                title: `${cityName}`
-            });
+            $.each(data, function (key, value) {
+                console.log(value.name);
+                console.log(value.facts[0].one);
+                cityName = value.name;
+                stadiumName = value.stadium;
+                stadiumCapacity = value.capacity
+                cityLat = value.stadiumLat;
+                cityLng = value.stadiumLng;
+                countryFlag = value.flagIcon;
+                countryName = value.country;
+                factOne = value.facts[0].one;
+                factTwo = value.facts[0].two;
+                factThree = value.facts[0].three;
+                factFour = value.facts[0].four;
+                gameOne = value.games[0].one;
+                gameTwo = value.games[0].two;
+                gameThree = value.games[0].three;
+                gameFour = value.games[0].four;
+                gameFive = value.games[0].five;
+                gameSix = value.games[0].six;
+                gameSeven = value.games[0].seven;
 
 
 
-            var infoWindowContent = `<div class="col">
+                var stadiumMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng(cityLat, cityLng),
+                    icon: "assets/img/marker-logo.png",
+                    map: map,
+                    title: `${cityName}`
+                });
+
+
+
+                var infoWindowContent = `<div class="col">
             <h3><span class="flag-icon flag-icon-${countryFlag}"></span> ${cityName}</h3>
             <h5>${stadiumName}</h5>
             <p>Capacity: ${stadiumCapacity}</p>
@@ -76,28 +82,28 @@ function initMap() {
 
 
 
-            var infoWindow = new google.maps.InfoWindow({
-                position: new google.maps.LatLng(cityLat, cityLng),
-                content: infoWindowContent
-            });
+                var infoWindow = new google.maps.InfoWindow({
+                    position: new google.maps.LatLng(cityLat, cityLng),
+                    content: infoWindowContent
+                });
 
-            google.maps.event.addListener(stadiumMarker, 'click', function () {
-                activeInfoWindow && activeInfoWindow.close();
-                infoWindow.open(map, stadiumMarker);
-                activeInfoWindow = infoWindow;
-            });
+                google.maps.event.addListener(stadiumMarker, 'click', function () {
+                    activeInfoWindow && activeInfoWindow.close();
+                    infoWindow.open(map, stadiumMarker);
+                    activeInfoWindow = infoWindow;
+                });
 
-            // stadiumMarker.addListener('click', function () {
-            //     map.setZoom(12);
-            //     map.setCenter(stadiumMarker.getPosition());
-            //     infoWindow.close();
+                // stadiumMarker.addListener('click', function () {
+                //     map.setZoom(12);
+                //     map.setCenter(stadiumMarker.getPosition());
+                //     infoWindow.close();
 
-            // });
+                // });
 
 
-            $("#cityInfo")
+                $("#cityInfo")
 
-                .append(`
+                    .append(`
 
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                                 <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
@@ -127,474 +133,613 @@ function initMap() {
                                     </div>
                                     </div>
 
-                                    <div id="serviceBtns-${countryFlag}" class= "city-hide service-btns" >
-                                        <button id="foodBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        fastfood</i><br>Food</button>
-                                        <button id="barBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        local_drink</i><br>Bars</button>
-                                        <button id="atmBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        euro_symbol</i><br>Cash</button>
-                                        <button id="transportBtn-${countryFlag}" class = "btn btn-primary btn-service" ><i class="material-icons">
-                                        directions_bus</i><br>Travel</button>
+                                    <div id="serviceToggles-${countryFlag}" class= "city-hide service-toggles" >
+                                        <div class="row">
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="food-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>fastfood</i><br>Food" data-off="<i class='material-icons'>fastfood</i><br>Food">
+                                                <label for="food-${countryFlag}" class="form-check-label"></label>
+                                            </div>
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="bars-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>local_drink</i><br>Bars" data-off="<i class='material-icons'>local_drink</i><br>Bars">
+                                                <label for="bars-${countryFlag}" class="form-check-label"></label>
+                                            </div>
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="hotel-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>hotel</i><br>Hotels" data-off="<i class='material-icons'>hotel</i><br>Hotels">
+                                                <label for="hotel-${countryFlag}" class="form-check-label"></label>
+                                            </div>
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="atm-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>euro_symbol</i><br>Cash" data-off="<i class='material-icons'>euro_symbol</i><br>Cash">
+                                                <label for="atm-${countryFlag}" class="form-check-label"></label>
+                                            </div>
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="travel-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>directions_bus</i><br>Travel" data-off="<i class='material-icons'>directions_bus</i><br>Travel">
+                                                <label for="travel-${countryFlag}" class="form-check-label"></label>
+                                            </div>
+                                            <div class="col form-check form-check-inline text-center m-0 mb-2">
+                                                <input id="museum-${countryFlag}" class="form-check-input" type="checkbox" data-width="90px" data-height="60px"  data-toggle="toggle" data-style="mx-auto p-0" data-onstyle=" onColor" data-offstyle=" offColor"  data-on="<i class='material-icons'>place</i><br>Museums" data-off="<i class='material-icons'>place</i><br>Museums">
+                                                <label for="museum-${countryFlag}" class="form-check-label"></label>
+                                            </div> 
                                         </div>
                                     
+                                    </div>                                  
                                     `);
-        });
-
-
-        function zoomTo(lat, lon, zoom) {
-            myLatLng = new google.maps.LatLng(lat, lon)
-            map.panTo(myLatLng);
-            map.setZoom(zoom);
-        }
-
-
-        function displayCity() {
-
-
-
-            $("#resetBtn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").show();
-                $("#city-info-nl").addClass("city-hide");
-                $("#serviceBtns-nl").addClass("city-hide");
-                $("#city-info-az").addClass("city-hide");
-                $("#serviceBtns-az").addClass("city-hide");
-                $("#city-info-es").addClass("city-hide");
-                $("#serviceBtns-es").addClass("city-hide");
-                $("#city-info-ro").addClass("city-hide");
-                $("#serviceBtns-ro").addClass("city-hide");
-                $("#city-info-hu").addClass("city-hide");
-                $("#serviceBtns-hu").addClass("city-hide");
-                $("#city-info-dk").addClass("city-hide");
-                $("#serviceBtns-dk").addClass("city-hide");
-                $("#city-info-ie").addClass("city-hide");
-                $("#serviceBtns-ie").addClass("city-hide");
-                $("#city-info-gb-sct").addClass("city-hide");
-                $("#serviceBtns-gb-sct").addClass("city-hide");
-                $("#city-info-gb-eng").addClass("city-hide");
-                $("#serviceBtns-gb-eng").addClass("city-hide");
-                $("#city-info-de").addClass("city-hide");
-                $("#serviceBtns-de").addClass("city-hide");
-                $("#city-info-it").addClass("city-hide");
-                $("#serviceBtns-it").addClass("city-hide");
-                $("#city-info-ru").addClass("city-hide");
-                $("#serviceBtns-ru").addClass("city-hide");
-                $("#map").removeClass("col-lg-8 col-xs-12");
-                $("#cityInfo").removeClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("Select a City");
-                zoomTo(50.7436337, 18.4208038, 3);
-                deleteMarkers();
             });
 
-            $("#ams-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-nl").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-nl").removeClass("city-hide");
-                zoomTo(52.3680, 4.9036, 12);
 
-
-            })
-
-            $("#bku-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-az").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-az").removeClass("city-hide");
-                zoomTo(40.4093, 49.8671, 12);
-            })
-
-            $("#bil-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-es").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-es").removeClass("city-hide");
-                zoomTo(43.2630, -2.9350, 14);
-            })
-
-            $("#buc-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-ro").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-ro").removeClass("city-hide");
-                zoomTo(44.4268, 26.1025, 12);
-            })
-
-            $("#bud-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-hu").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-hu").removeClass("city-hide");
-                zoomTo(47.4979, 19.0402, 12);
-            })
-
-            $("#cop-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-dk").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-dk").removeClass("city-hide");
-                zoomTo(55.6761, 12.5683, 13);
-            })
-
-            $("#dub-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-ie").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-ie").removeClass("city-hide");
-                zoomTo(53.3498, -6.2603, 13);
-            })
-
-            $("#gla-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-gb-sct").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-gb-sct").removeClass("city-hide");
-                zoomTo(55.8595, -4.2518, 12);
-            })
-
-            $("#ldn-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-gb-eng").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-gb-eng").removeClass("city-hide");
-                zoomTo(51.5080123, -0.129448, 10);
-            })
-
-            $("#mun-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-de").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-de").removeClass("city-hide");
-                zoomTo(48.1461, 11.5820, 11);
-            })
-
-            $("#rom-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-it").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-it").removeClass("city-hide");
-                zoomTo(41.9028, 12.4964, 12);
-            })
-
-            $("#stp-btn").click(function (e) {
-                e.preventDefault();
-                $("#buttons-container").hide();
-                $("#city-info-ru").removeClass("city-hide");
-                $("#map").addClass("col-lg-8 col-xs-12");
-                $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                $("#resetBtn").text("View All Cities");
-                $("#serviceBtns-ru").removeClass("city-hide");
-                zoomTo(59.9343, 30.3351, 11);
-            })
-        }
-
-        displayCity();
-
-        function deleteMarkers() {
-
-            for (var i = 0; i < foodMarkers.length; i++) {
-                foodMarkers[i].setMap(null);
-            }
-            for (var i = 0; i < atmMarkers.length; i++) {
-                atmMarkers[i].setMap(null);
-            }
-            for (var i = 0; i < transportMarkers.length; i++) {
-                transportMarkers[i].setMap(null);
-            }
-            for (var i = 0; i < barMarkers.length; i++) {
-                barMarkers[i].setMap(null);
+            function zoomTo(lat, lon, zoom) {
+                myLatLng = new google.maps.LatLng(lat, lon)
+                map.panTo(myLatLng);
+                map.setZoom(zoom);
             }
 
 
-        }
+            function displayCity() {
 
-        function foodMarker(location) {
-            var center = new google.maps.LatLng(location[0], location[1]);
-            var request = {
-                location: center,
-                radius: 5000,
-                types: ["meal_takeaway"]
-            };
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch(request, callback)
 
-            function createMarker(place) {
 
-                var foodIcon = {
-                    url: "assets/img/markers/food.png",
-                    scaledSize: new google.maps.Size(20, 20),
-                };
-                marker = new google.maps.Marker({
-                    map: map,
-                    position: place.geometry.location,
-                    icon: foodIcon
+                $("#resetBtn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").show();
+                    $("#city-info-nl").addClass("city-hide");
+                    $("#serviceBtns-nl").addClass("city-hide");
+                    $("#city-info-az").addClass("city-hide");
+                    $("#serviceBtns-az").addClass("city-hide");
+                    $("#city-info-es").addClass("city-hide");
+                    $("#serviceBtns-es").addClass("city-hide");
+                    $("#city-info-ro").addClass("city-hide");
+                    $("#serviceBtns-ro").addClass("city-hide");
+                    $("#city-info-hu").addClass("city-hide");
+                    $("#serviceBtns-hu").addClass("city-hide");
+                    $("#city-info-dk").addClass("city-hide");
+                    $("#serviceBtns-dk").addClass("city-hide");
+                    $("#city-info-ie").addClass("city-hide");
+                    $("#serviceBtns-ie").addClass("city-hide");
+                    $("#city-info-gb-sct").addClass("city-hide");
+                    $("#serviceBtns-gb-sct").addClass("city-hide");
+                    $("#city-info-gb-eng").addClass("city-hide");
+                    $("#serviceBtns-gb-eng").addClass("city-hide");
+                    $("#city-info-de").addClass("city-hide");
+                    $("#serviceBtns-de").addClass("city-hide");
+                    $("#city-info-it").addClass("city-hide");
+                    $("#serviceBtns-it").addClass("city-hide");
+                    $("#city-info-ru").addClass("city-hide");
+                    $("#serviceBtns-ru").addClass("city-hide");
+                    $("#map").removeClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").removeClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("Select a City");
+                    zoomTo(50.7436337, 18.4208038, 3);
+                    deleteMarkers();
                 });
 
-                var infoWindow = new google.maps.InfoWindow({
-                    content: ``
-                });
+                $("#ams-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-nl").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-nl").removeClass("city-hide");
+                    $("#serviceToggles-nl").removeClass("city-hide");
+                    zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 13);
 
-                google.maps.event.addListener(marker, 'click', function () {
-                    infoWindow.setContent(place.name);
-                    activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, this);
-                    activeInfoWindow = infoWindow;
-                });
-                foodMarkers.push(marker);
+
+                })
+
+                $("#bku-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-az").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-az").removeClass("city-hide");
+                    zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
+                })
+
+                $("#bil-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-es").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-es").removeClass("city-hide");
+                    zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 13);
+                })
+
+                $("#buc-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-ro").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-ro").removeClass("city-hide");
+                    zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
+                })
+
+                $("#bud-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-hu").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-hu").removeClass("city-hide");
+                    zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
+                })
+
+                $("#cop-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-dk").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-dk").removeClass("city-hide");
+                    zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
+                })
+
+                $("#dub-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-ie").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-ie").removeClass("city-hide");
+                    zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
+                })
+
+                $("#gla-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-gb-sct").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-gb-sct").removeClass("city-hide");
+                    zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
+                })
+
+                $("#ldn-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-gb-eng").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-gb-eng").removeClass("city-hide");
+                    zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
+                })
+
+                $("#mun-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-de").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-de").removeClass("city-hide");
+                    zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
+                })
+
+                $("#rom-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-it").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-it").removeClass("city-hide");
+                    zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
+                })
+
+                $("#stp-btn").click(function (e) {
+                    e.preventDefault();
+                    $("#buttons-container").hide();
+                    $("#city-info-ru").removeClass("city-hide");
+                    $("#map").addClass("col-lg-8 col-xs-12");
+                    $("#cityInfo").addClass("col-lg-4 col-xs-12");
+                    $("#resetBtn").text("View All Cities");
+                    $("#serviceBtns-ru").removeClass("city-hide");
+                    zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
+                })
             }
 
-            function callback(results, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        createMarker(results[i]);
-                    }
+            displayCity();
 
+            function deleteMarkers() {
+
+
+
+                for (var i = 0; i < foodMarkers.length; i++) {
+                    foodMarkers[i].setMap(null);
 
                 }
-            }
-        }
-
-        function atmMarker(location) {
-            var center = new google.maps.LatLng(location[0], location[1]);
-            var request = {
-                location: center,
-                radius: 5000,
-                types: ["atm"]
-            };
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch(request, callback)
-
-            function createMarker(place) {
-                var atmIcon = {
-                    url: "assets/img/markers/atm.png",
-                    scaledSize: new google.maps.Size(20, 20),
-                };
-
-                marker = new google.maps.Marker({
-                    map: map,
-                    position: place.geometry.location,
-                    icon: atmIcon
-                });
-
-                var infoWindow = new google.maps.InfoWindow({
-                    content: ''
-                });
-
-                google.maps.event.addListener(marker, 'click', function () {
-                    infoWindow.setContent(place.name);
-                    activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, this);
-                    activeInfoWindow = infoWindow;
-                });
-                atmMarkers.push(marker);
-            }
-
-            function callback(results, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        createMarker(results[i]);
-                    }
-
-
+                for (var i = 0; i < atmMarkers.length; i++) {
+                    atmMarkers[i].setMap(null);
                 }
+                for (var i = 0; i < transportMarkers.length; i++) {
+                    transportMarkers[i].setMap(null);
+                }
+                for (var i = 0; i < barMarkers.length; i++) {
+                    barMarkers[i].setMap(null);
+                }
+
+
             }
-        }
 
-        function transportMarker(airport, train, bus) {
+            function foodMarker(location) {
+                var center = new google.maps.LatLng(location[0], location[1]);
+                var request = {
+                    location: center,
+                    radius: 1500,
+                    types: ["meal_takeaway"]
+                };
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback)
 
-            var airportRequest = {
-                query: airport,
-                fields: ['name', 'geometry'],
-            };
-            var service = new google.maps.places.PlacesService(map);
+                function createMarker(place) {
 
-
-            service.findPlaceFromQuery(airportRequest, function (results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    var airIcon = {
-                        url: "assets/img/markers/airport.png",
-                        scaledSize: new google.maps.Size(30, 30)
+                    var foodIcon = {
+                        url: "assets/img/markers/food.png",
+                        scaledSize: new google.maps.Size(20, 20),
                     };
-                    for (var i = 0; i < results.length; i++) {
-                        createMarker(results[i],airIcon);
-                    }
-                    map.setZoom(12);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: foodIcon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ``
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    foodMarkers.push(marker);
                 }
-            });
 
-            var trainRequest = {
-                query: train,
-                fields: ['name', 'geometry'],
-            };
-            var service = new google.maps.places.PlacesService(map);
+                function callback(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
 
 
-            service.findPlaceFromQuery(trainRequest, function (results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        var trainIcon = {
-                            url: "assets/img/markers/train.png",
-                            scaledSize: new google.maps.Size(30, 30)
-                        };
-                        createMarker(results[i],trainIcon);
                     }
-                    map.setZoom(12);
                 }
-            });
-
-            var busRequest = {
-                query: bus,
-                fields: ['name', 'geometry'],
-            };
-            var service = new google.maps.places.PlacesService(map);
-
-
-            service.findPlaceFromQuery(busRequest, function (results, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        var busIcon = {
-                            url: "assets/img/markers/bus.png",
-                            scaledSize: new google.maps.Size(30, 30)
-                        };
-                        createMarker(results[i],busIcon);
-                    }
-                    map.setZoom(12);
-                }
-            });
-
-
-
-            function createMarker(place,icon) {
-                marker = new google.maps.Marker({
-                    map: map,
-                    position: place.geometry.location,
-                    icon: icon
-                });
-
-                var infoWindow = new google.maps.InfoWindow({
-                    content: ''
-                });
-
-                google.maps.event.addListener(marker, 'click', function () {
-                    infoWindow.setContent(place.name);
-                    activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, this);
-                    activeInfoWindow = infoWindow;
-                });
-                transportMarkers.push(marker);
-
             }
 
-        }
-
-
-        function barMarker(location) {
-            var center = new google.maps.LatLng(location[0], location[1]);
-            var request = {
-                location: center,
-                radius: 5000,
-                types: ["bar"]
-            };
-            var service = new google.maps.places.PlacesService(map);
-            service.nearbySearch(request, callback)
-
-            function createMarker(place) {
-                var barIcon = {
-                    url: "assets/img/markers/bar.png",
-                    scaledSize: new google.maps.Size(20, 20),
+            function museumMarker(location) {
+                var center = new google.maps.LatLng(location[0], location[1]);
+                var request = {
+                    location: center,
+                    radius: 5000,
+                    types: ["museum"]
                 };
-                marker = new google.maps.Marker({
-                    map: map,
-                    position: place.geometry.location,
-                    icon: barIcon
-                });
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback)
 
-                var infoWindow = new google.maps.InfoWindow({
-                    content: ''
-                });
+                function createMarker(place) {
+                    var museumIcon = {
+                        url: "assets/img/markers/museum.png",
+                        scaledSize: new google.maps.Size(20, 20),
+                    };
 
-                google.maps.event.addListener(marker, 'click', function () {
-                    infoWindow.setContent(place.name);
-                    activeInfoWindow && activeInfoWindow.close();
-                    infoWindow.open(map, this);
-                    activeInfoWindow = infoWindow;
-                });
-                barMarkers.push(marker);
-            }
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: museumIcon,
+                        animation: google.maps.Animation.DROP
+                    });
 
-            function callback(results, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++) {
-                        createMarker(results[i]);
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    atmMarkers.push(marker);
+                }
+
+                function callback(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
+
+
                     }
-
-
                 }
             }
+
+            function hotelMarker(location) {
+                var center = new google.maps.LatLng(location[0], location[1]);
+                var request = {
+                    location: center,
+                    radius: 1500,
+
+                    types: ["lodging"]
+                };
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback)
+
+                function createMarker(place) {
+                    var hotelIcon = {
+                        url: "assets/img/markers/hotel.png",
+                        scaledSize: new google.maps.Size(20, 20),
+                    };
+
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: hotelIcon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    atmMarkers.push(marker);
+                }
+
+                function callback(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
+
+
+                    }
+                }
+            }
+
+
+            function atmMarker(location) {
+                var center = new google.maps.LatLng(location[0], location[1]);
+                var request = {
+                    location: center,
+                    radius: 1500,
+                    types: ["atm"]
+                };
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback)
+
+                function createMarker(place) {
+                    var atmIcon = {
+                        url: "assets/img/markers/atm.png",
+                        scaledSize: new google.maps.Size(20, 20),
+                    };
+
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: atmIcon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    atmMarkers.push(marker);
+                }
+
+                function callback(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
+
+
+                    }
+                }
+            }
+
+            function transportMarker(airport, train, bus) {
+
+                var airportRequest = {
+                    query: airport,
+                    fields: ['name', 'geometry'],
+                };
+                var service = new google.maps.places.PlacesService(map);
+
+
+                service.findPlaceFromQuery(airportRequest, function (results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        var airIcon = {
+                            url: "assets/img/markers/airport.png",
+                            scaledSize: new google.maps.Size(30, 30)
+                        };
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i], airIcon);
+                        }
+                        map.setZoom(11);
+                    }
+                });
+
+                var trainRequest = {
+                    query: train,
+                    fields: ['name', 'geometry'],
+                };
+                var service = new google.maps.places.PlacesService(map);
+
+
+                service.findPlaceFromQuery(trainRequest, function (results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            var trainIcon = {
+                                url: "assets/img/markers/train.png",
+                                scaledSize: new google.maps.Size(30, 30)
+                            };
+                            createMarker(results[i], trainIcon);
+                        }
+                        map.setZoom(11);
+                    }
+                });
+
+                var busRequest = {
+                    query: bus,
+                    fields: ['name', 'geometry'],
+                };
+                var service = new google.maps.places.PlacesService(map);
+
+
+                service.findPlaceFromQuery(busRequest, function (results, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            var busIcon = {
+                                url: "assets/img/markers/bus.png",
+                                scaledSize: new google.maps.Size(30, 30)
+                            };
+                            createMarker(results[i], busIcon);
+                        }
+                        map.setZoom(11);
+                    }
+                });
+
+
+
+                function createMarker(place, icon) {
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: icon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    transportMarkers.push(marker);
+
+                }
+
+            }
+
+
+            function barMarker(location) {
+                var center = new google.maps.LatLng(location[0], location[1]);
+                var request = {
+                    location: center,
+                    radius: 1500,
+                    types: ["bar"]
+                };
+                var service = new google.maps.places.PlacesService(map);
+                service.nearbySearch(request, callback)
+
+                function createMarker(place) {
+                    var barIcon = {
+                        url: "assets/img/markers/bar.png",
+                        scaledSize: new google.maps.Size(20, 20),
+                    };
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: place.geometry.location,
+                        icon: barIcon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: ''
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(place.name);
+                        activeInfoWindow && activeInfoWindow.close();
+                        infoWindow.open(map, this);
+                        activeInfoWindow = infoWindow;
+                    });
+                    barMarkers.push(marker);
+                }
+
+                function callback(results, status) {
+                    if (status == google.maps.places.PlacesServiceStatus.OK) {
+                        for (var i = 0; i < results.length; i++) {
+                            createMarker(results[i]);
+                        }
+
+
+                    }
+                }
+            }
+
+
+
+            $("#food-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                foodMarker(stadiumCoords[0]);
+            });
+
+            $("#bars-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                barMarker(stadiumCoords[0]);
+            });
+
+            $("#hotel-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                hotelMarker(stadiumCoords[0]);
+            });
+
+            $("#atm-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                atmMarker(stadiumCoords[0]);
+            });
+
+            $("#travel-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[0], "Amsterdam Train Station", "Amsertdam Bus Station");
+            });
+
+            $("#museum-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                museumMarker(stadiumCoords[0]);
+            });
+
+
         }
-
-
-
-        $("#foodBtn-nl").click(function (e) {
-            e.preventDefault();
-            deleteMarkers();
-            foodMarker(stadiumCoords[0]);
-        });
-
-        $("#barBtn-nl").click(function (e) {
-            e.preventDefault();
-            deleteMarkers();
-            barMarker(stadiumCoords[0]);
-        });
-
-        $("#atmBtn-nl").click(function (e) {
-            e.preventDefault();
-            deleteMarkers();
-            atmMarker(stadiumCoords[0]);
-        });
-
-        $("#transportBtn-nl").click(function (e) {
-            e.preventDefault();
-            deleteMarkers();
-            transportMarker(airports[0], "Amsterdam Train Station", "Amsertdam Bus Station");
-        });
-
-
-    }
 
 
 
@@ -604,6 +749,3 @@ function initMap() {
 
 
 }
-
-
-

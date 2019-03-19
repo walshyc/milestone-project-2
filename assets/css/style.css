@@ -33,6 +33,20 @@ body {
   width: 24.2%;
 }
 
+.onColor{
+  background-color: #188c99;
+  color: #d1dbdc;
+  font-weight: bold;
+}
+
+.offColor{
+  background-color: #d1dbdc;
+  color: #188c99;
+}
+
+.onColor:hover {
+  color: #d1dbdc;
+}
 /* Main Section */
 
 #map-test {
@@ -129,3 +143,15 @@ li {
   }
 }
 
+/* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/
+.toggle-off {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.toggle.off {
+  border-color: rgba(0, 0, 0, .25);
+}
+
+.toggle-handle {
+  background-color: white;
+  border: thin rgba(0, 0, 0, .25) solid;
+}
