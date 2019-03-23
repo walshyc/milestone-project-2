@@ -107,6 +107,10 @@ li {
   font-size: 15px;
 }
 
+input {
+  visibility:hidden;
+}
+
 /* Media Queries */
 @media only screen and (min-width: 900px) {
   .btn-city {
@@ -135,23 +139,17 @@ li {
 }
 
 @media only screen and (max-width: 1050px) {
-  .service-mobile {
-    display: inline-block;
-  }
-
-  .service-desktop {
+  .service-toggles-desktop {
     display: none;
   }
 }
 
 @media only screen and (min-width: 1051px) {
-  .service-mobile {
+  .service-toggles-mobile {
     display: none;
   }
 
-  .service-desktop {
-    display: inline-block;
-  }
+ 
 }
 
 /* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/

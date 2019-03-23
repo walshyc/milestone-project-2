@@ -7,6 +7,8 @@
         "stadiumLng": 4.9417827,
         "capacity": "54,990",
         "airport" : "Amsterdam Airport",
+        "train" :"Amsterdam Centraal",
+        "bus" :"Amsterdam Sloterdijk",
         "flag": "assets/flags/4x3/nl.svg",
         "flagIcon": "nl",
         "facts": [
@@ -34,6 +36,8 @@
         "stadiumLng": 49.9196,
         "capacity": "68,700",
         "airport" : "Heydar Aliyev International Airport",
+        "train" :"Baku Railway Station",
+        "bus" :"Baku International Bus Terminal",
         "flag": "assets/flags/4x3/az.svg",
         "flagIcon": "az",
         "facts": [

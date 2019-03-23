@@ -13,7 +13,7 @@ function initMap() {
     var airports = [];
     var trainStation = [];
     var busStation = [];
-
+    var defaultRadius = 1500;
 
 
 
@@ -37,6 +37,8 @@ function initMap() {
                 busStation.push(data[i].bus);
 
                 console.log(airports[0]);
+                console.log(busStation[0]);
+                console.log(trainStation[0]);
             }
 
             console.log(stadiumCoords);
@@ -104,7 +106,43 @@ function initMap() {
                 $("#cityInfo")
 
                     .append(`
+                    <div id="serviceToggles-${countryFlag}-desktop" class= "city-hide service-toggles service-toggles-desktop" >
+                    <div class="card text-white bg-primary pt-2">
+                        <div class="row justify-content-center">
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="foodRadio-${countryFlag}" value="food">
+                                <label class="form-check-label" for="foodRadio-${countryFlag}"><i class='material-icons'>local_dining</i> Food</label>
+                            </div>
 
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="barRadio-${countryFlag}" value="bar">
+                                <label class="form-check-label" for="barRadio-${countryFlag}"><i class='material-icons'>local_drink</i> Bars</label>
+                            </div>
+
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hotelRadio-${countryFlag}" value="hotel">
+                                <label class="form-check-label" for="hotelRadio-${countryFlag}"><i class='material-icons'>hotel</i> Hotel</label>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="atmRadio-${countryFlag}" value="cash">
+                                <label class="form-check-label" for="atmRadio-${countryFlag}"><i class='material-icons'>euro_symbol</i> ATM's</label>
+                            </div>
+
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="travelRadio-${countryFlag}" value="travel">
+                                <label class="form-check-label" for="travelRadio-${countryFlag}"><i class='material-icons'>flight</i> Travel</label>
+                            </div>
+
+                            <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="museumRadio-${countryFlag}" value="museum">
+                                <label class="form-check-label" for="museumRadio-${countryFlag}"><i class='material-icons'>place</i> Museum</label>
+                            </div>
+                      </div>
+                    </div>
+                    </div>  
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                                 <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
                                                 <div class="card-body">
@@ -133,7 +171,7 @@ function initMap() {
                                     </div>
                                     </div>
 
-                                    <div id="serviceToggles-${countryFlag}" class= "city-hide service-toggles" >
+                                    <div id="serviceToggles-${countryFlag}-mobile" class= "city-hide service-toggles service-toggles-mobile" >
                                     <div class="card text-white bg-primary pt-2">
                                         <div class="row justify-content-center">
                                             <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
@@ -192,32 +230,21 @@ function initMap() {
                     e.preventDefault();
                     $("#buttons-container").show();
                     $("#city-info-nl").addClass("city-hide");
-                    $("#serviceBtns-nl").addClass("city-hide");
                     $("#city-info-az").addClass("city-hide");
-                    $("#serviceBtns-az").addClass("city-hide");
                     $("#city-info-es").addClass("city-hide");
-                    $("#serviceBtns-es").addClass("city-hide");
                     $("#city-info-ro").addClass("city-hide");
-                    $("#serviceBtns-ro").addClass("city-hide");
                     $("#city-info-hu").addClass("city-hide");
-                    $("#serviceBtns-hu").addClass("city-hide");
                     $("#city-info-dk").addClass("city-hide");
-                    $("#serviceBtns-dk").addClass("city-hide");
                     $("#city-info-ie").addClass("city-hide");
-                    $("#serviceBtns-ie").addClass("city-hide");
                     $("#city-info-gb-sct").addClass("city-hide");
-                    $("#serviceBtns-gb-sct").addClass("city-hide");
                     $("#city-info-gb-eng").addClass("city-hide");
-                    $("#serviceBtns-gb-eng").addClass("city-hide");
                     $("#city-info-de").addClass("city-hide");
-                    $("#serviceBtns-de").addClass("city-hide");
                     $("#city-info-it").addClass("city-hide");
-                    $("#serviceBtns-it").addClass("city-hide");
                     $("#city-info-ru").addClass("city-hide");
-                    $("#serviceBtns-ru").addClass("city-hide");
                     $("#map").removeClass("col-lg-8 col-xs-12");
                     $("#cityInfo").removeClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("Select a City");
+                    $(".service-toggles").addClass("city-hide");
                     zoomTo(50.7436337, 18.4208038, 3);
                     deleteMarkers();
                 });
@@ -229,11 +256,9 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-nl").removeClass("city-hide");
-                    $("#serviceToggles-nl").removeClass("city-hide");
+                    $("#serviceToggles-nl-mobile").removeClass("city-hide");
+                    $("#serviceToggles-nl-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 13);
-
-
                 })
 
                 $("#bku-btn").click(function (e) {
@@ -243,7 +268,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-az").removeClass("city-hide");
+                    $("#serviceToggles-az-mobile").removeClass("city-hide");
+                    $("#serviceToggles-az-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
                 })
 
@@ -254,7 +280,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-es").removeClass("city-hide");
+                    $("#serviceToggles-es-mobile").removeClass("city-hide");
+                    $("#serviceToggles-es-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 13);
                 })
 
@@ -265,7 +292,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-ro").removeClass("city-hide");
+                    $("#serviceToggles-ro-mobile").removeClass("city-hide");
+                    $("#serviceToggles-ro-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
                 })
 
@@ -276,7 +304,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-hu").removeClass("city-hide");
+                    $("#serviceToggles-hu-mobile").removeClass("city-hide");
+                    $("#serviceToggles-hu-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
                 })
 
@@ -287,7 +316,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-dk").removeClass("city-hide");
+                    $("#serviceToggles-dk-mobile").removeClass("city-hide");
+                    $("#serviceToggles-dk-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
                 })
 
@@ -298,7 +328,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-ie").removeClass("city-hide");
+                    $("#serviceToggles-ie-mobile").removeClass("city-hide");
+                    $("#serviceToggles-ie-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
                 })
 
@@ -309,7 +340,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-gb-sct").removeClass("city-hide");
+                    $("#serviceToggles-gb-sct-mobile").removeClass("city-hide");
+                    $("#serviceToggles-gb-sct-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
                 })
 
@@ -320,7 +352,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-gb-eng").removeClass("city-hide");
+                    $("#serviceToggles-gb-eng-mobile").removeClass("city-hide");
+                    $("#serviceToggles-gb-eng-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
                 })
 
@@ -331,7 +364,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-de").removeClass("city-hide");
+                    $("#serviceToggles-de-mobile").removeClass("city-hide");
+                    $("#serviceToggles-de-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 })
 
@@ -342,7 +376,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-it").removeClass("city-hide");
+                    $("#serviceToggles-it-mobile").removeClass("city-hide");
+                    $("#serviceToggles-it-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
                 })
 
@@ -353,7 +388,8 @@ function initMap() {
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
                     $("#resetBtn").text("View All Cities");
-                    $("#serviceBtns-ru").removeClass("city-hide");
+                    $("#serviceToggles-ru-mobile").removeClass("city-hide");
+                    $("#serviceToggles-ru-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
                 })
             }
@@ -381,11 +417,11 @@ function initMap() {
 
             }
 
-            function foodMarker(location) {
+            function foodMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
                     location: center,
-                    radius: 1500,
+                    radius: radius,
                     types: ["meal_takeaway"]
                 };
                 var service = new google.maps.places.PlacesService(map);
@@ -408,14 +444,14 @@ function initMap() {
                         content: ``
                     });
 
-                    console.log(place.photos[0].html_attributions[0])
+
 
                     google.maps.event.addListener(marker, 'click', function () {
-                        infoWindow.setContent(`${place.name} <br>${(place.opening_hours = true) ? "Open Now!" : "Closed"}
+                        infoWindow.setContent(`${place.name}
                         <br>
                         Rating: ${place.rating} / 5
                         <br>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank">View more info</a> ` );
+                        <a href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank">View more info</a> `);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -434,11 +470,11 @@ function initMap() {
                 }
             }
 
-            function museumMarker(location) {
+            function museumMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
                     location: center,
-                    radius: 5000,
+                    radius: radius,
                     types: ["museum"]
                 };
                 var service = new google.maps.places.PlacesService(map);
@@ -481,11 +517,11 @@ function initMap() {
                 }
             }
 
-            function hotelMarker(location) {
+            function hotelMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
                     location: center,
-                    radius: 1500,
+                    radius: radius,
 
                     types: ["lodging"]
                 };
@@ -530,11 +566,11 @@ function initMap() {
             }
 
 
-            function atmMarker(location) {
+            function atmMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
                     location: center,
-                    radius: 1500,
+                    radius: radius,
                     types: ["atm"]
                 };
                 var service = new google.maps.places.PlacesService(map);
@@ -584,7 +620,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
+                var airportInfoWindow = "Airport";
 
                 service.findPlaceFromQuery(airportRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -593,7 +629,7 @@ function initMap() {
                             scaledSize: new google.maps.Size(30, 30)
                         };
                         for (var i = 0; i < results.length; i++) {
-                            createMarker(results[i], airIcon);
+                            createMarker(results[i], airIcon, airportInfoWindow);
                         }
                         map.setZoom(10);
                     }
@@ -604,7 +640,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
+                var trainStationInfoWindow = "Train Station";
 
                 service.findPlaceFromQuery(trainRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -613,7 +649,7 @@ function initMap() {
                                 url: "assets/img/markers/train.png",
                                 scaledSize: new google.maps.Size(30, 30)
                             };
-                            createMarker(results[i], trainIcon);
+                            createMarker(results[i], trainIcon, trainStationInfoWindow);
                         }
                         map.setZoom(10);
                     }
@@ -624,7 +660,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
+                var busStationInfoWindow = "Bus Station";
 
                 service.findPlaceFromQuery(busRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -633,7 +669,7 @@ function initMap() {
                                 url: "assets/img/markers/bus.png",
                                 scaledSize: new google.maps.Size(30, 30)
                             };
-                            createMarker(results[i], busIcon);
+                            createMarker(results[i], busIcon, busStationInfoWindow);
                         }
                         map.setZoom(10);
                     }
@@ -641,7 +677,7 @@ function initMap() {
 
 
 
-                function createMarker(place, icon) {
+                function createMarker(place, icon, type) {
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -652,13 +688,16 @@ function initMap() {
                     var infoWindow = new google.maps.InfoWindow({
                         content: ''
                     });
-
+                    console.log(place)
                     google.maps.event.addListener(marker, 'click', function () {
-                        infoWindow.setContent(place.name);
+                        infoWindow.setContent(`${type}: ${place.name}
+                        `);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
                     });
+
+
                     transportMarkers.push(marker);
 
                 }
@@ -666,11 +705,11 @@ function initMap() {
             }
 
 
-            function barMarker(location) {
+            function barMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
                     location: center,
-                    radius: 1500,
+                    radius: radius,
                     types: ["bar"]
                 };
                 var service = new google.maps.places.PlacesService(map);
@@ -699,6 +738,9 @@ function initMap() {
                         activeInfoWindow = infoWindow;
                     });
                     barMarkers.push(marker);
+                    if (barMarkers === undefined || barMarkers.length == 0) {
+                        console.log("EMPTY");
+                    }
                 }
 
                 function callback(results, status) {
@@ -712,57 +754,130 @@ function initMap() {
                 }
             }
 
-
-            // $("#food-nl").on('change', function() {
-            //     $('#bars-nl').bootstrapToggle('off');
-            //     $('#hotel-nl').bootstrapToggle('off');
-            //     deleteMarkers();
-            //     map.setZoom(13);
-            //     foodMarker(stadiumCoords[0]);
-            // });
-
-            
-
-
-             $("#foodRadio-nl").change(function (e) {
-                 e.preventDefault();
-                 deleteMarkers();
-                 map.setZoom(14);
-                 foodMarker(stadiumCoords[0]);
-             });
-
-             $("#barRadio-nl").change(function (e) {
+            // Amsterdam Buttons
+            $("#foodRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 map.setZoom(14);
-                barMarker(stadiumCoords[0]);
+                foodMarker(stadiumCoords[0], defaultRadius);
+            });
+
+            $("#barRadio-nl").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[0],defaultRadius);
             });
 
             $("#hotelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 map.setZoom(14);
-                hotelMarker(stadiumCoords[0]);
+                hotelMarker(stadiumCoords[0],defaultRadius);
             });
 
             $("#atmRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 map.setZoom(14);
-                atmMarker(stadiumCoords[0]);
+                atmMarker(stadiumCoords[0],defaultRadius);
             });
 
             $("#travelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[0], "Amsterdam Train Station", "Amsertdam Bus Station");
+                transportMarker(airports[0], trainStation[0], busStation[0]);
             });
 
             $("#museumRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 map.setZoom(12);
-                museumMarker(stadiumCoords[0]);
+                museumMarker(stadiumCoords[0],5000);
+            });
+
+            // Baku Buttons
+            $("#foodRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                foodMarker(stadiumCoords[1],10000);
+            });
+
+            $("#barRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                barMarker(stadiumCoords[1],7500);
+            });
+
+            $("#hotelRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                hotelMarker(stadiumCoords[1],5000);
+            });
+
+            $("#atmRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                atmMarker(stadiumCoords[1],defaultRadius);
+            });
+
+            $("#travelRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[1], trainStation[1], busStation[1]);
+            });
+
+            $("#museumRadio-az").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                museumMarker(stadiumCoords[1],5000);
+            });
+
+            // Bilbao Buttons
+            $("#foodRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[2],defaultRadius);
+            });
+
+            $("#barRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[2],defaultRadius);
+            });
+
+            $("#hotelRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[2],defaultRadius);
+            });
+
+            $("#atmRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[2],defaultRadius);
+            });
+
+            $("#travelRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[2], trainStation[2], busStation[2]);
+            });
+
+            $("#museumRadio-es").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                museumMarker(stadiumCoords[2],5000);
             });
 
 
