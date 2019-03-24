@@ -430,8 +430,8 @@ function initMap() {
                 function createMarker(place) {
 
                     var foodIcon = {
-                        url: "assets/img/markers/food.png",
-                        scaledSize: new google.maps.Size(20, 20),
+                        url: "assets/img/markers/new-food.png",
+                        scaledSize: new google.maps.Size(20, 30),
                     };
                     marker = new google.maps.Marker({
                         map: map,
