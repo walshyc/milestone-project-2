@@ -417,6 +417,11 @@ function initMap() {
 
             }
 
+            var icon = {
+                url: "assets/img/markers/markerIcon.png",
+                scaledSize: new google.maps.Size(20, 30),
+            };
+
             function foodMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -429,14 +434,11 @@ function initMap() {
 
                 function createMarker(place) {
 
-                    var foodIcon = {
-                        url: "assets/img/markers/new-food.png",
-                        scaledSize: new google.maps.Size(20, 30),
-                    };
+                    
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon: foodIcon,
+                        icon: icon,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -481,15 +483,12 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    var museumIcon = {
-                        url: "assets/img/markers/museum.png",
-                        scaledSize: new google.maps.Size(20, 20),
-                    };
+                    
 
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon: museumIcon,
+                        icon:icon,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -529,15 +528,12 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    var hotelIcon = {
-                        url: "assets/img/markers/hotel.png",
-                        scaledSize: new google.maps.Size(20, 20),
-                    };
+                    
 
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon: hotelIcon,
+                        icon: icon,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -577,15 +573,12 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    var atmIcon = {
-                        url: "assets/img/markers/atm.png",
-                        scaledSize: new google.maps.Size(20, 20),
-                    };
+                
 
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon: atmIcon,
+                        icon: icon,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -716,14 +709,11 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    var barIcon = {
-                        url: "assets/img/markers/bar.png",
-                        scaledSize: new google.maps.Size(20, 20),
-                    };
+                   
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon: barIcon,
+                        icon: icon,
                         animation: google.maps.Animation.DROP
                     });
 
