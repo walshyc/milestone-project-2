@@ -14,12 +14,24 @@ body {
   background-color: #188c99 !important;
 }
 
-#countdown {
+#countdown, #days, #hours, #minutes, #seconds {
 color: #188c99;
 font-weight: bold;
 text-transform: uppercase;
+}
 
-} 
+#countdown {
+  font-size: 20px;
+}
+
+.countdown-box{
+  height: 50px;
+  width: 20%;
+  background-color: #d1dbdc;
+  margin: 5px;
+  text-align: center;
+  padding: 4px 0 0 0 !important;
+}
 
 /* Buttons */
 

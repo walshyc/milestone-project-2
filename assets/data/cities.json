@@ -65,6 +65,8 @@
         "stadiumLng": -2.9494,
         "capacity": "53,332",
         "airport" : "Bilbao Airport",
+        "train" :"Bilbao-Abando railway station",
+        "bus" :"TERMIBUS bus station",
         "flag": "assets/flags/4x3/es.svg",
         "flagIcon": "es",
         "facts": [
@@ -92,6 +94,8 @@
         "stadiumLng": 26.1526,
         "capacity": "55,600",
         "airport" : "Henri Coandă International Airport",
+        "train" :"Bucuresti Nord Gr B",
+        "bus" :"Central Bus Station Bucharest",
         "flag": "assets/flags/4x3/ro.svg",
         "flagIcon": "ro",
         "facts": [
@@ -119,6 +123,8 @@
         "stadiumLng": 19.0970,
         "capacity": "67,889",
         "airport" : "Budapest Airport",
+        "train" :"Budapest Keleti",
+        "bus" :"Népliget Bus Station",
         "flag": "assets/flags/4x3/hu.svg",
         "flagIcon": "hu",
         "facts": [
@@ -146,6 +152,8 @@
         "stadiumLng": 12.5716,
         "capacity": "38,065",
         "airport" : "Copenhagen Airport",
+        "train" :"Copenhagen Central Station",
+        "bus" :"Bus terminal Ingerslevsgade",
         "flag": "assets/flags/4x3/dk.svg",
         "flagIcon": "dk",
         "facts": [
@@ -173,6 +181,8 @@
         "stadiumLng": -6.2285,
         "capacity": "54,990",
         "airport" : "Dublin Airport",
+        "train" :"Heuston Station",
+        "bus" :"Busáras Central Station",
         "flag": "assets/flags/4x3/ie.svg",
         "flagIcon": "ie",
         "facts": [
@@ -200,6 +210,8 @@
         "stadiumLng": -4.252143,
         "capacity": "52,063",
         "airport" : "glasgow airport",
+        "train" :"Glasgow Central Station",
+        "bus" :"Buchanan Bus Station",
         "flag": "assets/flags/4x3/gb-sco.svg",
         "flagIcon": "gb-sct",
         "facts": [
@@ -227,6 +239,8 @@
         "stadiumLng": -0.2797552,
         "capacity": "90,000",
         "airport" : "Heathrow Airport",
+        "train" :"London Paddington",
+        "bus" :"London Victoria Coach Station",
         "flag": "assets/flags/4x3/gb-eng.svg",
         "flagIcon": "gb-eng",
         "facts": [
@@ -256,7 +270,9 @@
         "stadiumLat": 48.218828,
         "stadiumLng": 11.6245606,
         "capacity": "70,000",
-        "airport" : "Heydar Aliyev International Airport",
+        "airport" : "Munich International Airport",
+        "train" :"München Hauptbahnhof",
+        "bus" :"ZOB Munich",
         "flag": "assets/flags/4x3/de.svg",
         "flagIcon": "de",
         "facts": [
@@ -284,6 +300,8 @@
         "stadiumLng": 12.4546554,
         "capacity": "72,698",
         "airport" : "Leonardo da Vinci International Airport",
+        "train" :"Roma Termini railway station",
+        "bus" :"Rome Tiburtina bus station",
         "flag": "assets/flags/4x3/it.svg",
         "flagIcon": "it",
         "facts": [
@@ -311,6 +329,8 @@
         "stadiumLng": 30.2214,
         "capacity": "68,134",
         "airport" : "Pulkovo Airport",
+        "train" :"Moskovskiy Vokzal",
+        "bus" :"Avtobusnyy Vokzal Cherepovets",
         "flag": "assets/flags/4x3/ru.svg",
         "flagIcon": "ru",
         "facts": [

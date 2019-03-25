@@ -870,7 +870,384 @@ function initMap() {
                 museumMarker(stadiumCoords[2],5000);
             });
 
+            // Bucharest Buttons
+            $("#foodRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[3],defaultRadius);
+            });
 
+            $("#barRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[3],defaultRadius);
+            });
+
+            $("#hotelRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[3],defaultRadius);
+            });
+
+            $("#atmRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[3],defaultRadius);
+            });
+
+            $("#travelRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[3], trainStation[3], busStation[3]);
+            });
+
+            $("#museumRadio-ro").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[3],5000);
+            });
+
+            // Budapest Buttons
+            $("#foodRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[4],defaultRadius);
+            });
+
+            $("#barRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[4],defaultRadius);
+            });
+
+            $("#hotelRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[4],defaultRadius);
+            });
+
+            $("#atmRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[4],defaultRadius);
+            });
+
+            $("#travelRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[4], trainStation[4], busStation[4]);
+            });
+
+            $("#museumRadio-hu").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[4],5000);
+            });
+
+            // Copenhagen Buttons
+            $("#foodRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[5],defaultRadius);
+            });
+
+            $("#barRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[5],defaultRadius);
+            });
+
+            $("#hotelRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[5],defaultRadius);
+            });
+
+            $("#atmRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[5],defaultRadius);
+            });
+
+            $("#travelRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[5], trainStation[5], busStation[5]);
+            });
+
+            $("#museumRadio-dk").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[5],5000);
+            });
+            
+
+            // Dublin Buttons
+            $("#foodRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[6],defaultRadius);
+            });
+
+            $("#barRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[6],defaultRadius);
+            });
+
+            $("#hotelRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[6],defaultRadius);
+            });
+
+            $("#atmRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[6],defaultRadius);
+            });
+
+            $("#travelRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[6], trainStation[6], busStation[6]);
+            });
+
+            $("#museumRadio-ie").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[6],5000);
+            });
+
+            // Glasgow Buttons
+            $("#foodRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[7],defaultRadius);
+            });
+
+            $("#barRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[7],defaultRadius);
+            });
+
+            $("#hotelRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[7],defaultRadius);
+            });
+
+            $("#atmRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[7],defaultRadius);
+            });
+
+            $("#travelRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[7], trainStation[7], busStation[7]);
+            });
+
+            $("#museumRadio-gb-sct").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[7],5000);
+            });
+
+            // London Buttons
+            $("#foodRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[8],defaultRadius);
+            });
+
+            $("#barRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[8],defaultRadius);
+            });
+
+            $("#hotelRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[8],defaultRadius);
+            });
+
+            $("#atmRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[8],defaultRadius);
+            });
+
+            $("#travelRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[8], trainStation[8], busStation[8]);
+            });
+
+            $("#museumRadio-gb-eng").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[8],5000);
+            });
+
+            // Munich Buttons
+            $("#foodRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                foodMarker(stadiumCoords[9],4000);
+            });
+
+            $("#barRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                barMarker(stadiumCoords[9],3000);
+            });
+
+            $("#hotelRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                hotelMarker(stadiumCoords[9],4000);
+            });
+
+            $("#atmRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                atmMarker(stadiumCoords[9],3000);
+            });
+
+            $("#travelRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[9], trainStation[9], busStation[9]);
+            });
+
+            $("#museumRadio-de").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                museumMarker(stadiumCoords[9],10000);
+            });
+
+            // Rome Buttons
+            $("#foodRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                foodMarker(stadiumCoords[10],defaultRadius);
+            });
+
+            $("#barRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                barMarker(stadiumCoords[10],defaultRadius);
+            });
+
+            $("#hotelRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[10],defaultRadius);
+            });
+
+            $("#atmRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[10],defaultRadius);
+            });
+
+            $("#travelRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[10], trainStation[10], busStation[10]);
+            });
+
+            $("#museumRadio-it").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                museumMarker(stadiumCoords[10],5000);
+            });
+
+            // St. Petersburg Buttons
+            $("#foodRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                foodMarker(stadiumCoords[11],3000);
+            });
+
+            $("#barRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(13);
+                barMarker(stadiumCoords[11],3000);
+            });
+
+            $("#hotelRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                hotelMarker(stadiumCoords[11],defaultRadius);
+            });
+
+            $("#atmRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(14);
+                atmMarker(stadiumCoords[11],defaultRadius);
+            });
+
+            $("#travelRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                transportMarker(airports[11], trainStation[11], busStation[11]);
+            });
+
+            $("#museumRadio-ru").change(function (e) {
+                e.preventDefault();
+                deleteMarkers();
+                map.setZoom(12);
+                museumMarker(stadiumCoords[11],10000);
+            });
         }
 
 
