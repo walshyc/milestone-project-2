@@ -85,6 +85,10 @@ text-transform: uppercase;
   padding: 0 15px;
 }
 
+.blue-text {
+  color: #188c99;
+}
+
 .cities {
   padding: 0 !important;
 }
