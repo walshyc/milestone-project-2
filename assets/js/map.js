@@ -36,16 +36,12 @@ function initMap() {
                 trainStation.push(data[i].train);
                 busStation.push(data[i].bus);
 
-                console.log(airports[0]);
-                console.log(busStation[0]);
-                console.log(trainStation[0]);
             }
 
-            console.log(stadiumCoords);
+            
 
             $.each(data, function (key, value) {
-                console.log(value.name);
-                console.log(value.facts[0].one);
+               
                 cityName = value.name;
                 stadiumName = value.stadium;
                 stadiumCapacity = value.capacity
@@ -606,7 +602,7 @@ function initMap() {
                 }
             }
 
-            function transportMarker(airport, train, bus) {
+            function transportMarker(airport, train, bus, zoom) {
 
                 var airportRequest = {
                     query: airport,
@@ -618,13 +614,13 @@ function initMap() {
                 service.findPlaceFromQuery(airportRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         var airIcon = {
-                            url: "assets/img/markers/airport.png",
-                            scaledSize: new google.maps.Size(30, 30)
+                            url: "assets/img/markers/airportMarker.png",
+                            scaledSize: new google.maps.Size(20, 30)
                         };
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i], airIcon, airportInfoWindow);
                         }
-                        map.setZoom(10);
+                        map.setZoom(zoom);
                     }
                 });
 
@@ -639,12 +635,12 @@ function initMap() {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             var trainIcon = {
-                                url: "assets/img/markers/train.png",
-                                scaledSize: new google.maps.Size(30, 30)
+                                url: "assets/img/markers/trainMarker.png",
+                                scaledSize: new google.maps.Size(20, 30)
                             };
                             createMarker(results[i], trainIcon, trainStationInfoWindow);
                         }
-                        map.setZoom(10);
+                        map.setZoom(zoom);
                     }
                 });
 
@@ -659,12 +655,12 @@ function initMap() {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             var busIcon = {
-                                url: "assets/img/markers/bus.png",
-                                scaledSize: new google.maps.Size(30, 30)
+                                url: "assets/img/markers/busMarker.png",
+                                scaledSize: new google.maps.Size(20, 30)
                             };
                             createMarker(results[i], busIcon, busStationInfoWindow);
                         }
-                        map.setZoom(10);
+                        map.setZoom(zoom);
                     }
                 });
 
@@ -681,8 +677,7 @@ function initMap() {
                     var infoWindow = new google.maps.InfoWindow({
                         content: ''
                     });
-                    console.log(place)
-                    google.maps.event.addListener(marker, 'click', function () {
+                        google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`${type}: ${place.name}
                         `);
                         activeInfoWindow && activeInfoWindow.close();
@@ -728,9 +723,6 @@ function initMap() {
                         activeInfoWindow = infoWindow;
                     });
                     barMarkers.push(marker);
-                    if (barMarkers === undefined || barMarkers.length == 0) {
-                        console.log("EMPTY");
-                    }
                 }
 
                 function callback(results, status) {
@@ -776,7 +768,7 @@ function initMap() {
             $("#travelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[0], trainStation[0], busStation[0]);
+                transportMarker(airports[0], trainStation[0], busStation[0],10);
             });
 
             $("#museumRadio-nl").change(function (e) {
@@ -818,7 +810,7 @@ function initMap() {
             $("#travelRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[1], trainStation[1], busStation[1]);
+                transportMarker(airports[1], trainStation[1], busStation[1],10);
             });
 
             $("#museumRadio-az").change(function (e) {
@@ -860,7 +852,7 @@ function initMap() {
             $("#travelRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[2], trainStation[2], busStation[2]);
+                transportMarker(airports[2], trainStation[2], busStation[2],12);
             });
 
             $("#museumRadio-es").change(function (e) {
@@ -902,7 +894,7 @@ function initMap() {
             $("#travelRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[3], trainStation[3], busStation[3]);
+                transportMarker(airports[3], trainStation[3], busStation[3],11);
             });
 
             $("#museumRadio-ro").change(function (e) {
@@ -944,7 +936,7 @@ function initMap() {
             $("#travelRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[4], trainStation[4], busStation[4]);
+                transportMarker(airports[4], trainStation[4], busStation[4],10);
             });
 
             $("#museumRadio-hu").change(function (e) {
@@ -986,7 +978,7 @@ function initMap() {
             $("#travelRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[5], trainStation[5], busStation[5]);
+                transportMarker(airports[5], trainStation[5], busStation[5],11);
             });
 
             $("#museumRadio-dk").change(function (e) {
@@ -1029,7 +1021,7 @@ function initMap() {
             $("#travelRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[6], trainStation[6], busStation[6]);
+                transportMarker(airports[6], trainStation[6], busStation[6], 11);
             });
 
             $("#museumRadio-ie").change(function (e) {
@@ -1071,7 +1063,7 @@ function initMap() {
             $("#travelRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[7], trainStation[7], busStation[7]);
+                transportMarker(airports[7], trainStation[7], busStation[7],10);
             });
 
             $("#museumRadio-gb-sct").change(function (e) {
@@ -1113,7 +1105,7 @@ function initMap() {
             $("#travelRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[8], trainStation[8], busStation[8]);
+                transportMarker(airports[8], trainStation[8], busStation[8],10);
             });
 
             $("#museumRadio-gb-eng").change(function (e) {
@@ -1155,7 +1147,7 @@ function initMap() {
             $("#travelRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[9], trainStation[9], busStation[9]);
+                transportMarker(airports[9], trainStation[9], busStation[9],10);
             });
 
             $("#museumRadio-de").change(function (e) {
@@ -1197,7 +1189,7 @@ function initMap() {
             $("#travelRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[10], trainStation[10], busStation[10]);
+                transportMarker(airports[10], trainStation[10], busStation[10],10);
             });
 
             $("#museumRadio-it").change(function (e) {
@@ -1239,7 +1231,7 @@ function initMap() {
             $("#travelRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[11], trainStation[11], busStation[11]);
+                transportMarker(airports[11], trainStation[11], busStation[11],10);
             });
 
             $("#museumRadio-ru").change(function (e) {
