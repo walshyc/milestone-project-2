@@ -91,14 +91,6 @@ function initMap() {
                     activeInfoWindow = infoWindow;
                 });
 
-                // stadiumMarker.addListener('click', function () {
-                //     map.setZoom(12);
-                //     map.setCenter(stadiumMarker.getPosition());
-                //     infoWindow.close();
-
-                // });
-
-
                 $("#cityInfo")
 
                     .append(`
@@ -448,8 +440,9 @@ function initMap() {
                         infoWindow.setContent(`${place.name}
                         <br>
                         Rating: ${place.rating} / 5
-                        <br>
-                        <a href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank">View more info</a> `);
+                        <br>                     
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Get Directions</a>
+                        `);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -589,14 +582,16 @@ function initMap() {
                         activeInfoWindow = infoWindow;
                     });
                     atmMarkers.push(marker);
+                    
                 }
 
                 function callback(results, status) {
+                    
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-
+                       
 
                     }
                 }
@@ -621,6 +616,7 @@ function initMap() {
                             createMarker(results[i], airIcon, airportInfoWindow);
                         }
                         map.setZoom(zoom);
+                        
                     }
                 });
 
@@ -641,6 +637,7 @@ function initMap() {
                             createMarker(results[i], trainIcon, trainStationInfoWindow);
                         }
                         map.setZoom(zoom);
+                        
                     }
                 });
 
@@ -661,6 +658,7 @@ function initMap() {
                             createMarker(results[i], busIcon, busStationInfoWindow);
                         }
                         map.setZoom(zoom);
+                        
                     }
                 });
 
@@ -740,28 +738,28 @@ function initMap() {
             $("#foodRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
                 foodMarker(stadiumCoords[0], defaultRadius);
             });
 
             $("#barRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
                 barMarker(stadiumCoords[0],defaultRadius);
             });
 
             $("#hotelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
                 hotelMarker(stadiumCoords[0],defaultRadius);
             });
 
             $("#atmRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
                 atmMarker(stadiumCoords[0],defaultRadius);
             });
 
@@ -774,7 +772,7 @@ function initMap() {
             $("#museumRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 12);
                 museumMarker(stadiumCoords[0],5000);
             });
 
@@ -782,28 +780,28 @@ function initMap() {
             $("#foodRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 12);
                 foodMarker(stadiumCoords[1],10000);
             });
 
             $("#barRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
                 barMarker(stadiumCoords[1],7500);
             });
 
             $("#hotelRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
                 hotelMarker(stadiumCoords[1],5000);
             });
 
             $("#atmRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
                 atmMarker(stadiumCoords[1],defaultRadius);
             });
 
@@ -816,7 +814,7 @@ function initMap() {
             $("#museumRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 12);
                 museumMarker(stadiumCoords[1],5000);
             });
 
@@ -824,28 +822,28 @@ function initMap() {
             $("#foodRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
                 foodMarker(stadiumCoords[2],defaultRadius);
             });
 
             $("#barRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
                 barMarker(stadiumCoords[2],defaultRadius);
             });
 
             $("#hotelRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
                 hotelMarker(stadiumCoords[2],defaultRadius);
             });
 
             $("#atmRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                mzoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
                 atmMarker(stadiumCoords[2],defaultRadius);
             });
 
@@ -858,7 +856,7 @@ function initMap() {
             $("#museumRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 12);
                 museumMarker(stadiumCoords[2],5000);
             });
 
@@ -866,28 +864,28 @@ function initMap() {
             $("#foodRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
                 foodMarker(stadiumCoords[3],defaultRadius);
             });
 
             $("#barRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
                 barMarker(stadiumCoords[3],defaultRadius);
             });
 
             $("#hotelRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
                 hotelMarker(stadiumCoords[3],defaultRadius);
             });
 
             $("#atmRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
                 atmMarker(stadiumCoords[3],defaultRadius);
             });
 
@@ -900,7 +898,7 @@ function initMap() {
             $("#museumRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
                 museumMarker(stadiumCoords[3],5000);
             });
 
@@ -908,28 +906,28 @@ function initMap() {
             $("#foodRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
                 foodMarker(stadiumCoords[4],defaultRadius);
             });
 
             $("#barRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
                 barMarker(stadiumCoords[4],defaultRadius);
             });
 
             $("#hotelRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
                 hotelMarker(stadiumCoords[4],defaultRadius);
             });
 
             $("#atmRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
                 atmMarker(stadiumCoords[4],defaultRadius);
             });
 
@@ -942,7 +940,7 @@ function initMap() {
             $("#museumRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
                 museumMarker(stadiumCoords[4],5000);
             });
 
@@ -950,28 +948,28 @@ function initMap() {
             $("#foodRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
                 foodMarker(stadiumCoords[5],defaultRadius);
             });
 
             $("#barRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
                 barMarker(stadiumCoords[5],defaultRadius);
             });
 
             $("#hotelRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
                 hotelMarker(stadiumCoords[5],defaultRadius);
             });
 
             $("#atmRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
                 atmMarker(stadiumCoords[5],defaultRadius);
             });
 
@@ -984,7 +982,7 @@ function initMap() {
             $("#museumRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
                 museumMarker(stadiumCoords[5],5000);
             });
             
@@ -993,28 +991,28 @@ function initMap() {
             $("#foodRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
                 foodMarker(stadiumCoords[6],defaultRadius);
             });
 
             $("#barRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
                 barMarker(stadiumCoords[6],defaultRadius);
             });
 
             $("#hotelRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
                 hotelMarker(stadiumCoords[6],defaultRadius);
             });
 
             $("#atmRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
                 atmMarker(stadiumCoords[6],defaultRadius);
             });
 
@@ -1027,7 +1025,7 @@ function initMap() {
             $("#museumRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
                 museumMarker(stadiumCoords[6],5000);
             });
 
@@ -1035,28 +1033,28 @@ function initMap() {
             $("#foodRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
                 foodMarker(stadiumCoords[7],defaultRadius);
             });
 
             $("#barRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
                 barMarker(stadiumCoords[7],defaultRadius);
             });
 
             $("#hotelRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
                 hotelMarker(stadiumCoords[7],defaultRadius);
             });
 
             $("#atmRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
                 atmMarker(stadiumCoords[7],defaultRadius);
             });
 
@@ -1069,7 +1067,7 @@ function initMap() {
             $("#museumRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
                 museumMarker(stadiumCoords[7],5000);
             });
 
@@ -1077,28 +1075,28 @@ function initMap() {
             $("#foodRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
                 foodMarker(stadiumCoords[8],defaultRadius);
             });
 
             $("#barRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
                 barMarker(stadiumCoords[8],defaultRadius);
             });
 
             $("#hotelRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
                 hotelMarker(stadiumCoords[8],defaultRadius);
             });
 
             $("#atmRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
                 atmMarker(stadiumCoords[8],defaultRadius);
             });
 
@@ -1111,7 +1109,7 @@ function initMap() {
             $("#museumRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
                 museumMarker(stadiumCoords[8],5000);
             });
 
@@ -1119,28 +1117,28 @@ function initMap() {
             $("#foodRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 foodMarker(stadiumCoords[9],4000);
             });
 
             $("#barRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 barMarker(stadiumCoords[9],3000);
             });
 
             $("#hotelRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 hotelMarker(stadiumCoords[9],4000);
             });
 
             $("#atmRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 atmMarker(stadiumCoords[9],3000);
             });
 
@@ -1153,7 +1151,7 @@ function initMap() {
             $("#museumRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 12);
                 museumMarker(stadiumCoords[9],10000);
             });
 
@@ -1161,28 +1159,28 @@ function initMap() {
             $("#foodRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
                 foodMarker(stadiumCoords[10],defaultRadius);
             });
 
             $("#barRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
                 barMarker(stadiumCoords[10],defaultRadius);
             });
 
             $("#hotelRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
                 hotelMarker(stadiumCoords[10],defaultRadius);
             });
 
             $("#atmRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
                 atmMarker(stadiumCoords[10],defaultRadius);
             });
 
@@ -1195,7 +1193,7 @@ function initMap() {
             $("#museumRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
                 museumMarker(stadiumCoords[10],5000);
             });
 
@@ -1203,28 +1201,28 @@ function initMap() {
             $("#foodRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
                 foodMarker(stadiumCoords[11],3000);
             });
 
             $("#barRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(13);
+                zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
                 barMarker(stadiumCoords[11],3000);
             });
 
             $("#hotelRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 14);
                 hotelMarker(stadiumCoords[11],defaultRadius);
             });
 
             $("#atmRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(14);
+                zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 14);
                 atmMarker(stadiumCoords[11],defaultRadius);
             });
 
@@ -1237,7 +1235,7 @@ function initMap() {
             $("#museumRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                map.setZoom(12);
+                zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 12);
                 museumMarker(stadiumCoords[11],10000);
             });
         }
