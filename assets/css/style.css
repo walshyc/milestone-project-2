@@ -5,7 +5,7 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
-.material-icons{
+.material-icons {
   color: #F8FEFE;
 }
 
@@ -24,17 +24,21 @@ a:hover {
   background-color: #0E5E67 !important;
 }
 
-#countdown, #days, #hours, #minutes, #seconds {
-color: #0E5E67;
-font-weight: bold;
-text-transform: uppercase;
+#countdown,
+#days,
+#hours,
+#minutes,
+#seconds {
+  color: #0E5E67;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 #countdown {
   font-size: 20px;
 }
 
-.countdown-box{
+.countdown-box {
   height: 50px;
   width: 20%;
   background-color: #F8FEFE;
@@ -59,9 +63,22 @@ text-transform: uppercase;
   padding: 0;
 }
 
-#reset-btn{
+#reset-btn {
   color: #0E5E67;
   font-weight: bold
+}
+
+.btn-hide {
+  margin-top: 15px;
+  background-color: #F8FEFE !important;
+  margin-right: 30px;
+  color: #0E5E67;
+  font-weight: bold;
+}
+
+.btn-hide:hover {
+  color: #C7D64F;
+
 }
 
 /* Map*/
@@ -96,8 +113,12 @@ text-transform: uppercase;
 
   margin-bottom: 20px;
 }
+
 .card-header {
   font-size: 25px;
+  background-color: #0E5E67 !important;
+
+  margin: 0;
 }
 
 li {
@@ -112,15 +133,24 @@ li {
 }
 
 input {
-  visibility:hidden;
+  visibility: hidden;
 }
 
+.hide-column {
+  padding: 0 0 10px 0;
+}
+
+
 /* Media Queries */
-@media only screen and (min-width: 900px) {
+
+@media only screen and (min-width: 992px) {
   .btn-city {
-    width: 100px;
-    height: 75px;
-    font-size: 1em;
+    width: 120px;
+    height: 80px;
+    font-size: 1.05em;
+  }
+  .hide-button {
+    display: none;
   }
 
   .flag-icon {
@@ -128,31 +158,15 @@ input {
   }
 }
 
-@media only screen and (min-width: 1050px) {
-  .btn-city {
-    width: 120px;
-    height: 80px;
-    font-size: 1.05em;
-  }
-}
 
-@media only screen and (max-width: 1050px) {
-  #stpText {
-    font-size: 0.8em;
-  }
-}
-
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 992px) {
   .service-toggles-desktop {
     display: none;
   }
-}
 
-@media only screen and (min-width: 1051px) {
-  .service-toggles-mobile {
-    display: none;
+  #stpText {
+    font-size: 0.8em;
   }
 
- 
 }
 

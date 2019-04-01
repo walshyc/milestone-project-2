@@ -20,7 +20,7 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 3,
-        center: mapCenter       
+        center: mapCenter
     });
 
 
@@ -38,10 +38,10 @@ function initMap() {
 
             }
 
-            
+
 
             $.each(data, function (key, value) {
-               
+
                 cityName = value.name;
                 stadiumName = value.stadium;
                 stadiumCapacity = value.capacity
@@ -131,8 +131,16 @@ function initMap() {
                     </div>
                     </div>  
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
-                                                <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName}</div>
-                                                <div class="card-body">
+                                        <div class="row">
+                                        <div class="col-9">
+                                                <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName} </div> 
+                                        </div>
+                                        <div class="col-3 hide-column"> <button type="button" 
+                                        class="btn btn-hide hide-button">Hide Info
+                                </button>
+                                        </div>
+
+                                                <div class="card-body info"  >
                                                 <h4 class="card-title">${stadiumName}</h4>
                                                 <ul>
                                                         <li><span class="list-text">Capacity: ${stadiumCapacity}</span></li>
@@ -154,7 +162,8 @@ function initMap() {
                                                 </ul>
 
 
-
+                                    
+                                    </div>
                                     </div>
                                     </div>
 
@@ -211,7 +220,18 @@ function initMap() {
 
             function displayCity() {
 
-
+                $(".hide-button").click(function (e) {
+                    e.preventDefault();
+                    $(".info").slideToggle('slow');
+                    if($(this).text() == 'Show Info')
+                        {
+                            $(this).text('Hide Info');
+                        }
+                        else
+                        {
+                            $(this).text('Show Info');}
+                    
+                });
 
                 $("#reset-btn").click(function (e) {
                     e.preventDefault();
@@ -232,6 +252,7 @@ function initMap() {
                     $("#cityInfo").removeClass("col-lg-4 col-xs-12");
                     $("#reset-btn").text("Select a City");
                     $(".service-toggles").addClass("city-hide");
+                    $(".info").show();
                     zoomTo(50.7436337, 18.4208038, 3);
                     deleteMarkers();
                 });
@@ -421,7 +442,7 @@ function initMap() {
 
                 function createMarker(place) {
 
-                    
+
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -468,12 +489,12 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    
+
 
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
-                        icon:icon,
+                        icon: icon,
                         animation: google.maps.Animation.DROP
                     });
 
@@ -515,7 +536,7 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                    
+
 
                     marker = new google.maps.Marker({
                         map: map,
@@ -562,7 +583,7 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                
+
 
                     marker = new google.maps.Marker({
                         map: map,
@@ -583,16 +604,16 @@ function initMap() {
                         activeInfoWindow = infoWindow;
                     });
                     atmMarkers.push(marker);
-                    
+
                 }
 
                 function callback(results, status) {
-                    
+
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-                       
+
 
                     }
                 }
@@ -605,7 +626,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                
+
 
                 service.findPlaceFromQuery(airportRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -617,7 +638,7 @@ function initMap() {
                             createMarker(results[i], airIcon);
                         }
                         map.setZoom(zoom);
-                        
+
                     }
                 });
 
@@ -626,7 +647,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                
+
 
                 service.findPlaceFromQuery(trainRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -638,7 +659,7 @@ function initMap() {
                             createMarker(results[i], trainIcon);
                         }
                         map.setZoom(zoom);
-                        
+
                     }
                 });
 
@@ -647,7 +668,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                
+
 
                 service.findPlaceFromQuery(busRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -659,7 +680,7 @@ function initMap() {
                             createMarker(results[i], busIcon);
                         }
                         map.setZoom(zoom);
-                        
+
                     }
                 });
 
@@ -676,10 +697,10 @@ function initMap() {
                     var infoWindow = new google.maps.InfoWindow({
                         content: ''
                     });
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infoWindow.setContent(`<div class="blue-text"><h5>${place.name}</h5>
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infoWindow.setContent(`<div class="blue-text"><h5>${place.name}</h5>
                             <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
-                            activeInfoWindow && activeInfoWindow.close();
+                        activeInfoWindow && activeInfoWindow.close();
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -704,7 +725,7 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-                   
+
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -750,34 +771,34 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
-                barMarker(stadiumCoords[0],defaultRadius);
+                barMarker(stadiumCoords[0], defaultRadius);
             });
 
             $("#hotelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
-                hotelMarker(stadiumCoords[0],defaultRadius);
+                hotelMarker(stadiumCoords[0], defaultRadius);
             });
 
             $("#atmRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 14);
-                atmMarker(stadiumCoords[0],defaultRadius);
+                atmMarker(stadiumCoords[0], defaultRadius);
             });
 
             $("#travelRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[0], trainStation[0], busStation[0],10);
+                transportMarker(airports[0], trainStation[0], busStation[0], 10);
             });
 
             $("#museumRadio-nl").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 12);
-                museumMarker(stadiumCoords[0],5000);
+                museumMarker(stadiumCoords[0], 5000);
             });
 
             // Baku Buttons
@@ -785,41 +806,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 12);
-                foodMarker(stadiumCoords[1],10000);
+                foodMarker(stadiumCoords[1], 10000);
             });
 
             $("#barRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
-                barMarker(stadiumCoords[1],7500);
+                barMarker(stadiumCoords[1], 7500);
             });
 
             $("#hotelRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
-                hotelMarker(stadiumCoords[1],5000);
+                hotelMarker(stadiumCoords[1], 5000);
             });
 
             $("#atmRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
-                atmMarker(stadiumCoords[1],defaultRadius);
+                atmMarker(stadiumCoords[1], defaultRadius);
             });
 
             $("#travelRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[1], trainStation[1], busStation[1],10);
+                transportMarker(airports[1], trainStation[1], busStation[1], 10);
             });
 
             $("#museumRadio-az").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 12);
-                museumMarker(stadiumCoords[1],5000);
+                museumMarker(stadiumCoords[1], 5000);
             });
 
             // Bilbao Buttons
@@ -827,41 +848,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
-                foodMarker(stadiumCoords[2],defaultRadius);
+                foodMarker(stadiumCoords[2], defaultRadius);
             });
 
             $("#barRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
-                barMarker(stadiumCoords[2],defaultRadius);
+                barMarker(stadiumCoords[2], defaultRadius);
             });
 
             $("#hotelRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
-                hotelMarker(stadiumCoords[2],defaultRadius);
+                hotelMarker(stadiumCoords[2], defaultRadius);
             });
 
             $("#atmRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 mzoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 14);
-                atmMarker(stadiumCoords[2],defaultRadius);
+                atmMarker(stadiumCoords[2], defaultRadius);
             });
 
             $("#travelRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[2], trainStation[2], busStation[2],12);
+                transportMarker(airports[2], trainStation[2], busStation[2], 12);
             });
 
             $("#museumRadio-es").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 12);
-                museumMarker(stadiumCoords[2],5000);
+                museumMarker(stadiumCoords[2], 5000);
             });
 
             // Bucharest Buttons
@@ -869,41 +890,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
-                foodMarker(stadiumCoords[3],defaultRadius);
+                foodMarker(stadiumCoords[3], defaultRadius);
             });
 
             $("#barRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
-                barMarker(stadiumCoords[3],defaultRadius);
+                barMarker(stadiumCoords[3], defaultRadius);
             });
 
             $("#hotelRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
-                hotelMarker(stadiumCoords[3],defaultRadius);
+                hotelMarker(stadiumCoords[3], defaultRadius);
             });
 
             $("#atmRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 14);
-                atmMarker(stadiumCoords[3],defaultRadius);
+                atmMarker(stadiumCoords[3], defaultRadius);
             });
 
             $("#travelRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[3], trainStation[3], busStation[3],11);
+                transportMarker(airports[3], trainStation[3], busStation[3], 11);
             });
 
             $("#museumRadio-ro").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
-                museumMarker(stadiumCoords[3],5000);
+                museumMarker(stadiumCoords[3], 5000);
             });
 
             // Budapest Buttons
@@ -911,41 +932,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
-                foodMarker(stadiumCoords[4],defaultRadius);
+                foodMarker(stadiumCoords[4], defaultRadius);
             });
 
             $("#barRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
-                barMarker(stadiumCoords[4],defaultRadius);
+                barMarker(stadiumCoords[4], defaultRadius);
             });
 
             $("#hotelRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
-                hotelMarker(stadiumCoords[4],defaultRadius);
+                hotelMarker(stadiumCoords[4], defaultRadius);
             });
 
             $("#atmRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 14);
-                atmMarker(stadiumCoords[4],defaultRadius);
+                atmMarker(stadiumCoords[4], defaultRadius);
             });
 
             $("#travelRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[4], trainStation[4], busStation[4],10);
+                transportMarker(airports[4], trainStation[4], busStation[4], 10);
             });
 
             $("#museumRadio-hu").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
-                museumMarker(stadiumCoords[4],5000);
+                museumMarker(stadiumCoords[4], 5000);
             });
 
             // Copenhagen Buttons
@@ -953,71 +974,71 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
-                foodMarker(stadiumCoords[5],defaultRadius);
+                foodMarker(stadiumCoords[5], defaultRadius);
             });
 
             $("#barRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
-                barMarker(stadiumCoords[5],defaultRadius);
+                barMarker(stadiumCoords[5], defaultRadius);
             });
 
             $("#hotelRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
-                hotelMarker(stadiumCoords[5],defaultRadius);
+                hotelMarker(stadiumCoords[5], defaultRadius);
             });
 
             $("#atmRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 14);
-                atmMarker(stadiumCoords[5],defaultRadius);
+                atmMarker(stadiumCoords[5], defaultRadius);
             });
 
             $("#travelRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[5], trainStation[5], busStation[5],11);
+                transportMarker(airports[5], trainStation[5], busStation[5], 11);
             });
 
             $("#museumRadio-dk").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
-                museumMarker(stadiumCoords[5],5000);
+                museumMarker(stadiumCoords[5], 5000);
             });
-            
+
 
             // Dublin Buttons
             $("#foodRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
-                foodMarker(stadiumCoords[6],defaultRadius);
+                foodMarker(stadiumCoords[6], defaultRadius);
             });
 
             $("#barRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
-                barMarker(stadiumCoords[6],defaultRadius);
+                barMarker(stadiumCoords[6], defaultRadius);
             });
 
             $("#hotelRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
-                hotelMarker(stadiumCoords[6],defaultRadius);
+                hotelMarker(stadiumCoords[6], defaultRadius);
             });
 
             $("#atmRadio-ie").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 14);
-                atmMarker(stadiumCoords[6],defaultRadius);
+                atmMarker(stadiumCoords[6], defaultRadius);
             });
 
             $("#travelRadio-ie").change(function (e) {
@@ -1030,7 +1051,7 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
-                museumMarker(stadiumCoords[6],5000);
+                museumMarker(stadiumCoords[6], 5000);
             });
 
             // Glasgow Buttons
@@ -1038,41 +1059,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
-                foodMarker(stadiumCoords[7],defaultRadius);
+                foodMarker(stadiumCoords[7], defaultRadius);
             });
 
             $("#barRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
-                barMarker(stadiumCoords[7],defaultRadius);
+                barMarker(stadiumCoords[7], defaultRadius);
             });
 
             $("#hotelRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
-                hotelMarker(stadiumCoords[7],defaultRadius);
+                hotelMarker(stadiumCoords[7], defaultRadius);
             });
 
             $("#atmRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 14);
-                atmMarker(stadiumCoords[7],defaultRadius);
+                atmMarker(stadiumCoords[7], defaultRadius);
             });
 
             $("#travelRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[7], trainStation[7], busStation[7],10);
+                transportMarker(airports[7], trainStation[7], busStation[7], 10);
             });
 
             $("#museumRadio-gb-sct").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
-                museumMarker(stadiumCoords[7],5000);
+                museumMarker(stadiumCoords[7], 5000);
             });
 
             // London Buttons
@@ -1080,41 +1101,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
-                foodMarker(stadiumCoords[8],defaultRadius);
+                foodMarker(stadiumCoords[8], defaultRadius);
             });
 
             $("#barRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
-                barMarker(stadiumCoords[8],defaultRadius);
+                barMarker(stadiumCoords[8], defaultRadius);
             });
 
             $("#hotelRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
-                hotelMarker(stadiumCoords[8],defaultRadius);
+                hotelMarker(stadiumCoords[8], defaultRadius);
             });
 
             $("#atmRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 14);
-                atmMarker(stadiumCoords[8],defaultRadius);
+                atmMarker(stadiumCoords[8], defaultRadius);
             });
 
             $("#travelRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[8], trainStation[8], busStation[8],10);
+                transportMarker(airports[8], trainStation[8], busStation[8], 10);
             });
 
             $("#museumRadio-gb-eng").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
-                museumMarker(stadiumCoords[8],5000);
+                museumMarker(stadiumCoords[8], 5000);
             });
 
             // Munich Buttons
@@ -1122,41 +1143,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
-                foodMarker(stadiumCoords[9],4000);
+                foodMarker(stadiumCoords[9], 4000);
             });
 
             $("#barRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
-                barMarker(stadiumCoords[9],3000);
+                barMarker(stadiumCoords[9], 3000);
             });
 
             $("#hotelRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
-                hotelMarker(stadiumCoords[9],4000);
+                hotelMarker(stadiumCoords[9], 4000);
             });
 
             $("#atmRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
-                atmMarker(stadiumCoords[9],3000);
+                atmMarker(stadiumCoords[9], 3000);
             });
 
             $("#travelRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[9], trainStation[9], busStation[9],10);
+                transportMarker(airports[9], trainStation[9], busStation[9], 10);
             });
 
             $("#museumRadio-de").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 12);
-                museumMarker(stadiumCoords[9],10000);
+                museumMarker(stadiumCoords[9], 10000);
             });
 
             // Rome Buttons
@@ -1164,41 +1185,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
-                foodMarker(stadiumCoords[10],defaultRadius);
+                foodMarker(stadiumCoords[10], defaultRadius);
             });
 
             $("#barRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
-                barMarker(stadiumCoords[10],defaultRadius);
+                barMarker(stadiumCoords[10], defaultRadius);
             });
 
             $("#hotelRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
-                hotelMarker(stadiumCoords[10],defaultRadius);
+                hotelMarker(stadiumCoords[10], defaultRadius);
             });
 
             $("#atmRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 14);
-                atmMarker(stadiumCoords[10],defaultRadius);
+                atmMarker(stadiumCoords[10], defaultRadius);
             });
 
             $("#travelRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[10], trainStation[10], busStation[10],10);
+                transportMarker(airports[10], trainStation[10], busStation[10], 10);
             });
 
             $("#museumRadio-it").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
-                museumMarker(stadiumCoords[10],5000);
+                museumMarker(stadiumCoords[10], 5000);
             });
 
             // St. Petersburg Buttons
@@ -1206,41 +1227,41 @@ function initMap() {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
-                foodMarker(stadiumCoords[11],3000);
+                foodMarker(stadiumCoords[11], 3000);
             });
 
             $("#barRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
-                barMarker(stadiumCoords[11],3000);
+                barMarker(stadiumCoords[11], 3000);
             });
 
             $("#hotelRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 14);
-                hotelMarker(stadiumCoords[11],defaultRadius);
+                hotelMarker(stadiumCoords[11], defaultRadius);
             });
 
             $("#atmRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 14);
-                atmMarker(stadiumCoords[11],defaultRadius);
+                atmMarker(stadiumCoords[11], defaultRadius);
             });
 
             $("#travelRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
-                transportMarker(airports[11], trainStation[11], busStation[11],10);
+                transportMarker(airports[11], trainStation[11], busStation[11], 10);
             });
 
             $("#museumRadio-ru").change(function (e) {
                 e.preventDefault();
                 deleteMarkers();
                 zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 12);
-                museumMarker(stadiumCoords[11],10000);
+                museumMarker(stadiumCoords[11], 10000);
             });
         }
 
