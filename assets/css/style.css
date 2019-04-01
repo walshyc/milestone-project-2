@@ -5,17 +5,22 @@ body {
 }
 
 .material-icons{
-  color: #d1dbdc;
+  color: #F8FEFE;
+}
+
+a:hover {
+  color: #C7D64F;
+  text-decoration: none;
 }
 
 /* Nav Bar */
 
 .bg-primary {
-  background-color: #188c99 !important;
+  background-color: #0E5E67 !important;
 }
 
 #countdown, #days, #hours, #minutes, #seconds {
-color: #188c99;
+color: #0E5E67;
 font-weight: bold;
 text-transform: uppercase;
 }
@@ -27,7 +32,7 @@ text-transform: uppercase;
 .countdown-box{
   height: 50px;
   width: 20%;
-  background-color: #d1dbdc;
+  background-color: #F8FEFE;
   margin: 5px;
   text-align: center;
   padding: 4px 0 0 0 !important;
@@ -36,7 +41,7 @@ text-transform: uppercase;
 /* Buttons */
 
 .btn-grey {
-  background-color: #d1dbdc;
+  background-color: #F8FEFE;
 }
 
 .btn-city {
@@ -44,31 +49,36 @@ text-transform: uppercase;
   margin-bottom: 10px;
   font-size: 0.85em;
   height: 50px;
-  background: #188c99 !important;
-  color: #d1dbdc;
+  background: #0E5E67 !important;
+  color: #F8FEFE;
   padding: 0;
+}
+
+#resetBtn{
+  color: #0E5E67;
+  font-weight: bold
 }
 
 .btn-service {
   margin-bottom: 10px;
-  background: #188c99 !important;
-  color: #d1dbdc;
+  background: #0E5E67 !important;
+  color: #F8FEFE;
   width: 24.2%;
 }
 
 .onColor{
-  background-color: #188c99;
-  color: #d1dbdc;
+  background-color: #0E5E67;
+  color: #F8FEFE;
   font-weight: bold;
 }
 
 .offColor{
-  background-color: #d1dbdc;
-  color: #188c99;
+  background-color: #F8FEFE;
+  color: #0E5E67;
 }
 
 .onColor:hover {
-  color: #d1dbdc;
+  color: #F8FEFE;
 }
 /* Main Section */
 
@@ -86,7 +96,7 @@ text-transform: uppercase;
 }
 
 .blue-text {
-  color: #188c99;
+  color: #0E5E67;
   
 }
 
@@ -175,15 +185,3 @@ input {
  
 }
 
-/* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/
-.toggle-off {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-}
-.toggle.off {
-  border-color: rgba(0, 0, 0, .25);
-}
-
-.toggle-handle {
-  background-color: white;
-  border: thin rgba(0, 0, 0, .25) solid;
-}
