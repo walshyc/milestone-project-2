@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   background-color: #c7d64f;
-  background-image: url("https://www.transparenttextures.com/patterns/pool-table.png");
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
   font-family: "Roboto", sans-serif !important;
 }
 
@@ -22,6 +22,7 @@ a:hover {
 
 .bg-primary {
   background-color: #0E5E67 !important;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
 }
 
 #countdown,
