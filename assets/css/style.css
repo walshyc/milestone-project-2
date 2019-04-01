@@ -118,6 +118,7 @@ a:hover {
 .card-header {
   font-size: 25px;
   background-color: #0E5E67 !important;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
   padding: 18px 0 0 6px;
   margin: 0;
 }
@@ -144,6 +145,10 @@ input {
   padding: 0 0 10px 0;
 }
 
+input[type="radio"]:hover{
+  color: #C7D64F;
+}
+
 
 /* Media Queries */
 
@@ -159,6 +164,10 @@ input {
 
   .flag-icon {
     margin: 7px;
+  }
+
+  .service-toggles-mobile{
+    display:none;
   }
 }
 
