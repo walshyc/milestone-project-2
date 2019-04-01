@@ -83,8 +83,6 @@ a:hover {
 }
 
 /* Map*/
-
-
 #map {
   margin-top: 10px;
   height: 80vh;
@@ -111,7 +109,6 @@ a:hover {
 
 .card {
   margin-top: 10px;
-
   margin-bottom: 20px;
 }
 
@@ -137,18 +134,14 @@ li {
 input {
   visibility: hidden;
 }
-.header-column{
+
+.header-column {
   padding: 0px 0 0 16px;
 }
 
 .hide-column {
   padding: 0 0 10px 0;
 }
-
-input[type="radio"]:hover{
-  color: #C7D64F;
-}
-
 
 /* Media Queries */
 
@@ -158,6 +151,7 @@ input[type="radio"]:hover{
     height: 80px;
     font-size: 1.05em;
   }
+
   .hide-button {
     display: none;
   }
@@ -166,12 +160,10 @@ input[type="radio"]:hover{
     margin: 7px;
   }
 
-  .service-toggles-mobile{
-    display:none;
+  .service-toggles-mobile {
+    display: none;
   }
 }
-
-
 @media only screen and (max-width: 992px) {
   .service-toggles-desktop {
     display: none;
@@ -182,4 +174,3 @@ input[type="radio"]:hover{
   }
 
 }
-

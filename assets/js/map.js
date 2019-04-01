@@ -1,9 +1,13 @@
+// Function to creat Google Map
 function initMap() {
+    //Center of map so all 12 cities are shown
     var mapCenter = {
         lat: 50.7436337,
         lng: 18.4208039
     };
-    var amsterdam = new google.maps.LatLng(52.3143691, 4.9417);
+
+
+    // global variable declarations
     var activeInfoWindow;
     var stadiumCoords = [];
     var foodMarkers = [];
@@ -14,22 +18,14 @@ function initMap() {
     var trainStation = [];
     var busStation = [];
     var defaultRadius = 1500;
-
-
-
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 3,
         center: mapCenter
     });
-
-
-
-
-
+    // Load local JSON file
     $.getJSON('assets/data/cities.json', function (data) {
 
-
+            // Loop to create the data to create markers
             for (i = 0; i < data.length; i++) {
                 stadiumCoords.push([data[i].stadiumLat, data[i].stadiumLng]);
                 airports.push(data[i].airport);
@@ -38,10 +34,8 @@ function initMap() {
 
             }
 
-
-
+            // create variables for each city
             $.each(data, function (key, value) {
-
                 cityName = value.name;
                 stadiumName = value.stadium;
                 stadiumCapacity = value.capacity
@@ -62,7 +56,7 @@ function initMap() {
                 gameSeven = value.games[0].seven;
 
 
-
+                // create marker for each stadium
                 var stadiumMarker = new google.maps.Marker({
                     position: new google.maps.LatLng(cityLat, cityLng),
                     icon: "assets/img/marker-logo.png",
@@ -71,14 +65,11 @@ function initMap() {
                 });
 
 
-
+                // Create infowindow & marker for stadium
                 var infoWindowContent = `<div class="blue-text">
             <h3><span class="flag-icon flag-icon-${countryFlag}"></span> ${cityName}</h3>
             <h5>${stadiumName}</h5></div>
             `;
-
-
-
                 var infoWindow = new google.maps.InfoWindow({
                     position: new google.maps.LatLng(cityLat, cityLng),
                     content: infoWindowContent
@@ -90,9 +81,8 @@ function initMap() {
                     activeInfoWindow = infoWindow;
                 });
 
-                $("#cityInfo")
-
-                    .append(`
+                // create services and city information for both mobile and desktop
+                $("#cityInfo").append(`
                     <div id="serviceToggles-${countryFlag}-desktop" class= "city-hide service-toggles service-toggles-desktop" >
                     <div class="card text-white bg-primary pt-2">
                         <div class="row justify-content-center">
@@ -210,29 +200,27 @@ function initMap() {
                                     `);
             });
 
-
+            // function to zoom the map to a specified location
             function zoomTo(lat, lon, zoom) {
                 myLatLng = new google.maps.LatLng(lat, lon)
                 map.panTo(myLatLng);
                 map.setZoom(zoom);
             }
 
-
+            // function which deals with the buttons when clicked
             function displayCity() {
-
+                // Allows for city info to be hidden or displayed on mobile
                 $(".hide-button").click(function (e) {
                     e.preventDefault();
                     $(".info").slideToggle('slow');
-                    if($(this).text() == 'Show')
-                        {
-                            $(this).text('Hide');
-                        }
-                        else
-                        {
-                            $(this).text('Show');}
-                    
-                });
+                    if ($(this).text() == 'Show') {
+                        $(this).text('Hide');
+                    } else {
+                        $(this).text('Show');
+                    }
 
+                });
+                // Allows for the website to reset back to its original state
                 $("#reset-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").show();
@@ -256,7 +244,7 @@ function initMap() {
                     zoomTo(50.7436337, 18.4208038, 3);
                     deleteMarkers();
                 });
-
+                // Amsterdam button 
                 $("#ams-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -268,7 +256,7 @@ function initMap() {
                     $("#serviceToggles-nl-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 13);
                 })
-
+                // Baku button 
                 $("#bku-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -280,7 +268,7 @@ function initMap() {
                     $("#serviceToggles-az-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
                 })
-
+                // Bilbao button 
                 $("#bil-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -292,7 +280,7 @@ function initMap() {
                     $("#serviceToggles-es-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 13);
                 })
-
+                // Bucharest button 
                 $("#buc-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -304,7 +292,7 @@ function initMap() {
                     $("#serviceToggles-ro-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
                 })
-
+                // Budapest button 
                 $("#bud-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -316,7 +304,7 @@ function initMap() {
                     $("#serviceToggles-hu-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
                 })
-
+                // Copenhagen button 
                 $("#cop-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -328,7 +316,7 @@ function initMap() {
                     $("#serviceToggles-dk-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
                 })
-
+                // Dublin button 
                 $("#dub-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -340,7 +328,7 @@ function initMap() {
                     $("#serviceToggles-ie-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
                 })
-
+                // Glasgow button 
                 $("#gla-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -352,7 +340,7 @@ function initMap() {
                     $("#serviceToggles-gb-sct-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
                 })
-
+                // London button 
                 $("#ldn-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -364,7 +352,7 @@ function initMap() {
                     $("#serviceToggles-gb-eng-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
                 })
-
+                // Munich button 
                 $("#mun-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -376,7 +364,7 @@ function initMap() {
                     $("#serviceToggles-de-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
                 })
-
+                // Rome button
                 $("#rom-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -388,7 +376,7 @@ function initMap() {
                     $("#serviceToggles-it-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
                 })
-
+                // St Petersburg button
                 $("#stp-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").hide();
@@ -404,13 +392,10 @@ function initMap() {
 
             displayCity();
 
+            // function which clears the map of any markers
             function deleteMarkers() {
-
-
-
                 for (var i = 0; i < foodMarkers.length; i++) {
                     foodMarkers[i].setMap(null);
-
                 }
                 for (var i = 0; i < atmMarkers.length; i++) {
                     atmMarkers[i].setMap(null);
@@ -421,15 +406,13 @@ function initMap() {
                 for (var i = 0; i < barMarkers.length; i++) {
                     barMarkers[i].setMap(null);
                 }
-
-
             }
-
+            // create marker icon
             var icon = {
                 url: "assets/img/markers/markerIcon.png",
                 scaledSize: new google.maps.Size(20, 30),
             };
-
+            // Function to create markers for restaurants
             function foodMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -441,8 +424,6 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-
-
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -453,9 +434,6 @@ function initMap() {
                     var infoWindow = new google.maps.InfoWindow({
                         content: ``
                     });
-
-                    console.log(place)
-
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>local_dining</i> ${place.name}</h5>
                         <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
@@ -472,12 +450,10 @@ function initMap() {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-
-
                     }
                 }
             }
-
+            // Function to create markers for Museums
             function museumMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -489,8 +465,6 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-
-
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -518,12 +492,10 @@ function initMap() {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-
-
                     }
                 }
             }
-
+            // Function to create markers for hotels
             function hotelMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -536,8 +508,6 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-
-
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -565,13 +535,10 @@ function initMap() {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-
-
                     }
                 }
             }
-
-
+            // Function to create markers for ATM's
             function atmMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -583,8 +550,6 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-
-
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -604,11 +569,9 @@ function initMap() {
                         activeInfoWindow = infoWindow;
                     });
                     atmMarkers.push(marker);
-
                 }
 
                 function callback(results, status) {
-
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
@@ -618,7 +581,7 @@ function initMap() {
                     }
                 }
             }
-
+            // Function to create markers for transport hubs
             function transportMarker(airport, train, bus, zoom) {
 
                 var airportRequest = {
@@ -626,7 +589,6 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
 
                 service.findPlaceFromQuery(airportRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -638,7 +600,6 @@ function initMap() {
                             createMarker(results[i], airIcon);
                         }
                         map.setZoom(zoom);
-
                     }
                 });
 
@@ -647,7 +608,6 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
 
                 service.findPlaceFromQuery(trainRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -668,8 +628,6 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-
-
                 service.findPlaceFromQuery(busRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         for (var i = 0; i < results.length; i++) {
@@ -684,8 +642,6 @@ function initMap() {
                     }
                 });
 
-
-
                 function createMarker(place, icon) {
                     marker = new google.maps.Marker({
                         map: map,
@@ -693,7 +649,6 @@ function initMap() {
                         icon: icon,
                         animation: google.maps.Animation.DROP
                     });
-
                     var infoWindow = new google.maps.InfoWindow({
                         content: ''
                     });
@@ -713,7 +668,7 @@ function initMap() {
 
             }
 
-
+            // Function to create markers for bars
             function barMarker(location, radius) {
                 var center = new google.maps.LatLng(location[0], location[1]);
                 var request = {
@@ -725,18 +680,15 @@ function initMap() {
                 service.nearbySearch(request, callback)
 
                 function createMarker(place) {
-
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
                         icon: icon,
                         animation: google.maps.Animation.DROP
                     });
-
                     var infoWindow = new google.maps.InfoWindow({
                         content: ''
                     });
-
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>local_drink</i> ${place.name}</h5>
                         <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
@@ -753,8 +705,6 @@ function initMap() {
                         for (var i = 0; i < results.length; i++) {
                             createMarker(results[i]);
                         }
-
-
                     }
                 }
             }
@@ -1264,12 +1214,5 @@ function initMap() {
                 museumMarker(stadiumCoords[11], 10000);
             });
         }
-
-
-
-
     );
-
-
-
 }
