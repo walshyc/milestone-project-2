@@ -132,11 +132,11 @@ function initMap() {
                     </div>  
                                         <div id="city-info-${countryFlag}" class="card text-white bg-primary city-hide">
                                         <div class="row">
-                                        <div class="col-9">
-                                                <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${countryName} - ${cityName} </div> 
+                                        <div class="col-9 header-column">
+                                                <div class="card-header"><span class="flag-icon flag-icon-${countryFlag}"></span> ${cityName} </div> 
                                         </div>
                                         <div class="col-3 hide-column"> <button type="button" 
-                                        class="btn btn-hide hide-button">Hide Info
+                                        class="btn btn-hide hide-button">Hide 
                                 </button>
                                         </div>
 
@@ -223,13 +223,13 @@ function initMap() {
                 $(".hide-button").click(function (e) {
                     e.preventDefault();
                     $(".info").slideToggle('slow');
-                    if($(this).text() == 'Show Info')
+                    if($(this).text() == 'Show')
                         {
-                            $(this).text('Hide Info');
+                            $(this).text('Hide');
                         }
                         else
                         {
-                            $(this).text('Show Info');}
+                            $(this).text('Show');}
                     
                 });
 

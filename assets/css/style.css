@@ -117,7 +117,7 @@ a:hover {
 .card-header {
   font-size: 25px;
   background-color: #0E5E67 !important;
-
+  padding: 18px 0 0 6px;
   margin: 0;
 }
 
@@ -134,6 +134,9 @@ li {
 
 input {
   visibility: hidden;
+}
+.header-column{
+  padding: 0px 0 0 16px;
 }
 
 .hide-column {
