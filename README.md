@@ -37,21 +37,23 @@ None
 
 ## Technologies Used
 
-
-- [Bootstrap 4](https://getbootstrap.com/)
-    -  **Bootstrap 4.1.3** was used to help with the grid layout, navbar and footer. I also used a Bootstrap JavaScript file for the navbar and modal.
-
+- [Bootstrap 4 / Bootswatch Theme - Materia](https://bootswatch.com/materia/)
+    -  **Bootswatch Materia Theme** was used for the general styling and layout of the page.
+    
 - [jQuery](https://jquery.com)
-    -  **jQuery** was used to complement Bootstrap to allow the navbar to collapse and also for the modal.
+    -  **jQuery** was used to manupliate the website. It allowed the user to click the buttons to show the requested information on the map and also information about each city.
 
 - [Flag Icon](http://flag-icon-css.lip.is/)
-    -  **Flag Icon** was used to improve the display of each country on most pages.
+    -  **Flag Icon** was used to improve the look of the buttons.
+
+- [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/tutorial)
+    -  **Google Maps** was used to display the map and markers when a user selected a citt and a service. The Google Maps Places API was used to get the rating information and direction for each business and display this in the info window.
 
 ## Testing
 
 #### Validation
 
-I ran each HTML file through a HTMl validator on [HTML Validator](https://validator.w3.org). This showed up some issues with stray i tags around some of the Social Media icons in the footer. The validator also showed up the fact that I had px after the height and width in the attribute of some of my images that I hadn't realised wasn't required.
+I ran the single HTML file through a HTMl validator on [HTML Validator](https://validator.w3.org). This showed up no invalid HTML.
 
 I used [CSS Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file style.css, this proved to be all correct.
 

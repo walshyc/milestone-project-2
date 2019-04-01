@@ -437,8 +437,8 @@ function initMap() {
 
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>local_dining</i> ${place.name}</h5>
-                        <h6>Rating: ${place.rating} / 5</h6>
-                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Click Here for Directions</a></h6></div>`);
+                        <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
+                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -483,7 +483,8 @@ function initMap() {
 
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>place</i> ${place.name}</h5>
-                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Click Here for Directions</a></h6></div>`);
+                        <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
+                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -529,7 +530,8 @@ function initMap() {
 
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>hotel</i> ${place.name}</h5>
-                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Click Here for Directions</a></h6></div>`);
+                        <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
+                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -575,7 +577,7 @@ function initMap() {
 
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>euro_symbol</i> ${place.name}</h5>
-                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Click Here for Directions</a></h6></div>`);
+                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -603,7 +605,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                var airportInfoWindow = "Airport";
+                
 
                 service.findPlaceFromQuery(airportRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -612,7 +614,7 @@ function initMap() {
                             scaledSize: new google.maps.Size(20, 30)
                         };
                         for (var i = 0; i < results.length; i++) {
-                            createMarker(results[i], airIcon, airportInfoWindow);
+                            createMarker(results[i], airIcon);
                         }
                         map.setZoom(zoom);
                         
@@ -624,7 +626,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                var trainStationInfoWindow = "Train Station";
+                
 
                 service.findPlaceFromQuery(trainRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -633,7 +635,7 @@ function initMap() {
                                 url: "assets/img/markers/trainMarker.png",
                                 scaledSize: new google.maps.Size(20, 30)
                             };
-                            createMarker(results[i], trainIcon, trainStationInfoWindow);
+                            createMarker(results[i], trainIcon);
                         }
                         map.setZoom(zoom);
                         
@@ -645,7 +647,7 @@ function initMap() {
                     fields: ['name', 'geometry'],
                 };
                 var service = new google.maps.places.PlacesService(map);
-                var busStationInfoWindow = "Bus Station";
+                
 
                 service.findPlaceFromQuery(busRequest, function (results, status) {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -654,7 +656,7 @@ function initMap() {
                                 url: "assets/img/markers/busMarker.png",
                                 scaledSize: new google.maps.Size(20, 30)
                             };
-                            createMarker(results[i], busIcon, busStationInfoWindow);
+                            createMarker(results[i], busIcon);
                         }
                         map.setZoom(zoom);
                         
@@ -663,7 +665,7 @@ function initMap() {
 
 
 
-                function createMarker(place, icon, type) {
+                function createMarker(place, icon) {
                     marker = new google.maps.Marker({
                         map: map,
                         position: place.geometry.location,
@@ -675,8 +677,9 @@ function initMap() {
                         content: ''
                     });
                         google.maps.event.addListener(marker, 'click', function () {
-                        infoWindow.setContent(`${type}: ${place.name}
-                        `);
+                            infoWindow.setContent(`<div class="blue-text"><h5>${place.name}</h5>
+                            <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
+                            activeInfoWindow && activeInfoWindow.close();
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;
@@ -715,7 +718,8 @@ function initMap() {
 
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(`<div class="blue-text"><h5><i class='material-icons blue-text'>local_drink</i> ${place.name}</h5>
-                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank">Click Here for Directions</a></h6></div>`);
+                        <h6><a class="blue-text" href="https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>star_rate</i>Rating: ${place.rating} / 5</a></h6>
+                        <h6><a class="blue-text" href="https://www.google.com/maps/dir/?api=1&destination=${place.name}&destination_place_id=${place.place_id}" target="_blank"><i class='material-icons blue-text small-icon'>directions</i>Directions</a></h6></div>`);
                         activeInfoWindow && activeInfoWindow.close();
                         infoWindow.open(map, this);
                         activeInfoWindow = infoWindow;

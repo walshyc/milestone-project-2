@@ -87,6 +87,7 @@ text-transform: uppercase;
 
 .blue-text {
   color: #188c99;
+  
 }
 
 .cities {
@@ -99,6 +100,12 @@ text-transform: uppercase;
 
 #map-info-container {
   margin: 10px;
+}
+
+.small-icon {
+  width: 12px;
+  height: 12px;
+  padding-right: 25px;
 }
 
 /* Card */
