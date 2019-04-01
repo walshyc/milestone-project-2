@@ -213,7 +213,7 @@ function initMap() {
 
 
 
-                $("#resetBtn").click(function (e) {
+                $("#reset-btn").click(function (e) {
                     e.preventDefault();
                     $("#buttons-container").show();
                     $("#city-info-nl").addClass("city-hide");
@@ -230,7 +230,7 @@ function initMap() {
                     $("#city-info-ru").addClass("city-hide");
                     $("#map").removeClass("col-lg-8 col-xs-12");
                     $("#cityInfo").removeClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("Select a City");
+                    $("#reset-btn").text("Select a City");
                     $(".service-toggles").addClass("city-hide");
                     zoomTo(50.7436337, 18.4208038, 3);
                     deleteMarkers();
@@ -242,7 +242,7 @@ function initMap() {
                     $("#city-info-nl").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-nl-mobile").removeClass("city-hide");
                     $("#serviceToggles-nl-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[0][0], stadiumCoords[0][1], 13);
@@ -254,7 +254,7 @@ function initMap() {
                     $("#city-info-az").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-az-mobile").removeClass("city-hide");
                     $("#serviceToggles-az-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[1][0], stadiumCoords[1][1], 13);
@@ -266,7 +266,7 @@ function initMap() {
                     $("#city-info-es").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-es-mobile").removeClass("city-hide");
                     $("#serviceToggles-es-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[2][0], stadiumCoords[2][1], 13);
@@ -278,7 +278,7 @@ function initMap() {
                     $("#city-info-ro").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-ro-mobile").removeClass("city-hide");
                     $("#serviceToggles-ro-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[3][0], stadiumCoords[3][1], 13);
@@ -290,7 +290,7 @@ function initMap() {
                     $("#city-info-hu").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-hu-mobile").removeClass("city-hide");
                     $("#serviceToggles-hu-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[4][0], stadiumCoords[4][1], 13);
@@ -302,7 +302,7 @@ function initMap() {
                     $("#city-info-dk").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-dk-mobile").removeClass("city-hide");
                     $("#serviceToggles-dk-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[5][0], stadiumCoords[5][1], 13);
@@ -314,7 +314,7 @@ function initMap() {
                     $("#city-info-ie").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-ie-mobile").removeClass("city-hide");
                     $("#serviceToggles-ie-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[6][0], stadiumCoords[6][1], 13);
@@ -326,7 +326,7 @@ function initMap() {
                     $("#city-info-gb-sct").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-gb-sct-mobile").removeClass("city-hide");
                     $("#serviceToggles-gb-sct-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[7][0], stadiumCoords[7][1], 13);
@@ -338,7 +338,7 @@ function initMap() {
                     $("#city-info-gb-eng").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-gb-eng-mobile").removeClass("city-hide");
                     $("#serviceToggles-gb-eng-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[8][0], stadiumCoords[8][1], 13);
@@ -350,7 +350,7 @@ function initMap() {
                     $("#city-info-de").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-de-mobile").removeClass("city-hide");
                     $("#serviceToggles-de-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[9][0], stadiumCoords[9][1], 13);
@@ -362,7 +362,7 @@ function initMap() {
                     $("#city-info-it").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-it-mobile").removeClass("city-hide");
                     $("#serviceToggles-it-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[10][0], stadiumCoords[10][1], 13);
@@ -374,7 +374,7 @@ function initMap() {
                     $("#city-info-ru").removeClass("city-hide");
                     $("#map").addClass("col-lg-8 col-xs-12");
                     $("#cityInfo").addClass("col-lg-4 col-xs-12");
-                    $("#resetBtn").text("View All Cities");
+                    $("#reset-btn").text("View All Cities");
                     $("#serviceToggles-ru-mobile").removeClass("city-hide");
                     $("#serviceToggles-ru-desktop").removeClass("city-hide");
                     zoomTo(stadiumCoords[11][0], stadiumCoords[11][1], 13);
