@@ -113,7 +113,3 @@ The link to the homepage of the project is [here](https://walshyc.github.io/mile
 - I received help and guidance from my mentor Chris Zielinski with the implementation of the Google Maps Javascript API.
 
 - I used stackoverflow to help with some of the jQuery problems I had.
-
-
-
-

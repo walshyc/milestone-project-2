@@ -5,10 +5,6 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
-.material-icons {
-  color: #F8FEFE;
-}
-
 a:hover {
   color: #C7D64F;
   text-decoration: none;
@@ -64,6 +60,22 @@ a:hover {
   padding: 0;
 }
 
+.btn-service {
+  min-width: 80px;
+  max-width: 80px;
+  height: 60px;
+  font-size: 12px;
+  background-color: #F8FEFE;
+  color: #0E5E67;
+  font-weight: 900;
+}
+
+.btn-service:hover{
+  color: #0e5e67;
+  background-color: #c7d64f;
+}
+
+
 #reset-btn {
   color: #0E5E67;
   font-weight: bold
@@ -118,6 +130,10 @@ a:hover {
   background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
   padding: 18px 0 0 6px;
   margin: 0;
+}
+
+.form-check-label:hover{
+  cursor: pointer;
 }
 
 li {
