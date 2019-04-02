@@ -2,7 +2,7 @@
 body {
   background-color: #c7d64f;
   background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", sans-serif;
 }
 
 a:hover {
@@ -16,8 +16,13 @@ a:hover {
 
 /* Nav Bar */
 
+#header-background {
+  background-color: #0E5E67;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+}
+
 .bg-primary {
-  background-color: #0E5E67 !important;
+  background-color: #0E5E67!important;
   background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
 }
 
@@ -41,7 +46,7 @@ a:hover {
   background-color: #F8FEFE;
   margin: 5px;
   text-align: center;
-  padding: 4px 0 0 0 !important;
+  padding: 4px 0 0 0;
 }
 
 /* Buttons */
@@ -55,14 +60,21 @@ a:hover {
   margin-bottom: 10px;
   font-size: 0.85em;
   height: 50px;
-  background: #0E5E67 !important;
+  background: #0E5E67;
   color: #F8FEFE;
   padding: 0;
+  font-weight: 500;
+
+}
+
+.btn-city:hover {
+  background-color: #f8fefe;
+  color: #0E5E67;
 }
 
 .btn-service {
-  min-width: 80px;
-  max-width: 80px;
+  width: 100px;
+
   height: 60px;
   font-size: 12px;
   background-color: #F8FEFE;
@@ -70,22 +82,21 @@ a:hover {
   font-weight: 900;
 }
 
-.btn-service:hover{
+.btn-service:hover {
   color: #0e5e67;
   background-color: #c7d64f;
 }
 
 .btn-service-mobile {
-  min-width: 70x;
-  max-width: 100x;
   height: 60px;
   font-size: 12px;
   background-color: #F8FEFE;
   color: #0E5E67;
   font-weight: 900;
+  min-width: 70px;
 }
 
-.btn-service-mobile:hover{
+.btn-service-mobile:hover {
   color: #0e5e67;
   background-color: #c7d64f;
 }
@@ -98,15 +109,15 @@ a:hover {
 
 .btn-hide {
   margin-top: 15px;
-  background-color: #F8FEFE !important;
+  background-color: #F8FEFE;
   margin-right: 30px;
   color: #0E5E67;
   font-weight: bold;
 }
 
 .btn-hide:hover {
-  color: #C7D64F;
-
+  background-color: #C7D64F;
+  color: #0E5E67;
 }
 
 /* Map*/
@@ -137,18 +148,24 @@ a:hover {
 .card {
   margin-top: 10px;
   margin-bottom: 20px;
+
 }
+
 
 .card-header {
   font-size: 25px;
-  background-color: #0E5E67 !important;
+  background-color: #0E5E67;
   background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
   padding: 18px 0 0 6px;
   margin: 0;
 }
 
-.form-check-label:hover{
+.form-check-label:hover {
   cursor: pointer;
+}
+
+.form-check-input {
+  width: 0px;
 }
 
 li {
@@ -183,9 +200,7 @@ input {
     font-size: 1.05em;
   }
 
-  .hide-button {
-    display: none;
-  }
+
 
   .flag-icon {
     margin: 7px;
@@ -195,6 +210,7 @@ input {
     display: none;
   }
 }
+
 @media only screen and (max-width: 992px) {
   .service-toggles-desktop {
     display: none;
@@ -202,6 +218,30 @@ input {
 
   #stpText {
     font-size: 0.8em;
+  
   }
 
+}
+
+@media only screen and (min-width:500px) {
+  .btn-service-mobile {
+    min-width: 100px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .btn-service-mobile {
+    min-width: 140px;
+  }
+}
+
+@media only screen and (max-width:340px) {
+  .btn-service-mobile {
+    min-width: 64px;
+    font-size: 11px;
+  }
+
+  .material-icon {
+    font-size: 20px;
+  }
 }
