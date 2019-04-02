@@ -25,7 +25,7 @@ A countdown to the start date of the tournament is also shown on the site.
 ## Features
 
 ### Existing Features
-- Facts about the stadium and city are disaplyed to the user
+- Facts about the stadium and city are displayed to the user
 - A full list of the fixtures that the city is due to hold during the tournament including the fixture date and round.
 - The user can select from 6 services (Food, Bars, Hotels, ATM's, Travel & Museums) to find information/location details on these local services. This includes key Bus, Train and Air transport links.
 - Countdown timer that displays the time left until the tournament starts.
@@ -37,13 +37,13 @@ A countdown to the start date of the tournament is also shown on the site.
     -  **Bootswatch Materia Theme** was used for the general styling and layout of the page.
     
 - [jQuery](https://jquery.com)
-    -  **jQuery** was used to manupliate the website. It allowed the user to click the buttons to show the requested information on the map and also information about each city.
+    -  **jQuery** was used to manipulate the website. It allowed the user to click the buttons to show the requested information on the map and also information about each city.
 
 - [Flag Icon](http://flag-icon-css.lip.is/)
     -  **Flag Icon** was used to improve the look of the buttons.
 
 - [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/tutorial)
-    -  **Google Maps** was used to display the map and markers when a user selected a citt and a service. The Google Maps Places API was used to get the rating information and direction for each business and display this in the info window.
+    -  **Google Maps** was used to display the map and markers when a user selected a city and a service. The Google Maps Places API was used to get the rating information and direction for each business and display this in the info window.
 
 ## Testing
 
@@ -57,8 +57,8 @@ I used [CSS Validator](https://jigsaw.w3.org/css-validator) to validate my CSS f
 1. Select a City:
     1. Click any of the 12 city buttons
     2. The map then zooms to the stadium in that city.
-    3. An information box appears to give some facts abput the city/stadium along with a list of each game taking place at the stadium.
-    4.  On screens smaller then 992px the infotmation box and map are stacked on top of each other, so a hide/show button is used to collapse the information to make it easier to see the map.
+    3. An information box appears to give some facts about the city/stadium along with a list of each game taking place at the stadium.
+    4.  On screens smaller than 992px the information box and map are stacked on top of each other, so a hide/show button is used to collapse the information to make it easier to see the map.
 
 2. Select a service:
     1. Click on any of the 6 service options.
@@ -81,7 +81,7 @@ I loaded each page on the following browsers:
 
 The website & its features worked as expected on the above browsers at the Large, Medium, Small and Extra Small viewpoints where applicable.
 
-I had to check the zoom level for each city and for each service within a city to make sure that the markers were visable to users across all viewports.
+I had to check the zoom level for each city and for each service within a city to make sure that the markers were visible to users across all viewports.
 
 
 
@@ -91,7 +91,7 @@ I used [GTMetrix](https://gtmetrix.com) to test the load speed the website. The 
 
 ## Deployment
 
-I have hosted this project on GitHub pages and regularly committed to the GitHib repository for this project.
+I have hosted this project on GitHub pages and regularly committed to the GitHub repository for this project.
 
 I created the Github repository called milestone-project-2 in my [GitHub Page](https://github.com/walshyc).
 
@@ -102,16 +102,18 @@ The link to the homepage of the project is [here](https://walshyc.github.io/mile
 
 ### Content & Media
 
-- [UEFA Euro 2020](https://www.uefa.com/uefaeuro-2020/) - I sourced stadium/city information from the official Euro 2020 site aswell as the Euro 2020 logos used in the header and for the stadium markers on the map. The breakdown of the games in each city was also sourced from here.
+- [UEFA Euro 2020](https://www.uefa.com/uefaeuro-2020/) - I sourced stadium/city information from the official Euro 2020 site as well as the Euro 2020 logos used in the header and for the stadium markers on the map. The breakdown of the games in each city was also sourced from here.
 
 - [Google's Material Icons](https://material.io/tools/icons) - I used Google's Material Icons for the service icons across the website. I created the blue and green coloured markers in photoshop by using the 'Place' icon in this library as the template.
 
-- [Transparent Textures](https://www.transparenttextures.com/) - I used this website to souce the background effect for the page.
+- [Transparent Textures](https://www.transparenttextures.com/) - I used this website to source the background effect for the page.
 
 ### Acknowledgements
 
-- I received help and guidance from my mentor Chris Zielinski with the implmentation of the Google Maps Javascript API.
+- I received help and guidance from my mentor Chris Zielinski with the implementation of the Google Maps Javascript API.
 
 - I used stackoverflow to help with some of the jQuery problems I had.
+
+
 
 
