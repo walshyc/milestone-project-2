@@ -31,10 +31,6 @@ A countdown to the start date of the tournament is also shown on the site.
 - Countdown timer that displays the time left until the tournament starts.
 
 
-
-### Features Left to Implement
-None
-
 ## Technologies Used
 
 - [Bootstrap 4 / Bootswatch Theme - Materia](https://bootswatch.com/materia/)
@@ -58,12 +54,39 @@ I ran the single HTML file through a HTMl validator on [HTML Validator](https://
 I used [CSS Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file style.css, this proved to be all correct.
 
 #### Usability
+1. Select a City:
+    1. Click any of the 12 city buttons
+    2. The map then zooms to the stadium in that city.
+    3. An information box appears to give some facts abput the city/stadium along with a list of each game taking place at the stadium.
+    4.  On screens smaller then 992px the infotmation box and map are stacked on top of each other, so a hide/show button is used to collapse the information to make it easier to see the map.
+
+2. Select a service:
+    1. Click on any of the 6 service options.
+    2. The map then zooms in or out if required so that the markers can be seen.
+    3. A number of markers appear on the map
+    4. Clicking on one of the markers presents an info window which has the service rating if applicable and a link to directions to that service which the user can click on.
+
+3. Reset Button - The reset button once clicked brings the user back to the start of the website, where they can select another city.
+
+4. The countdown timer at the top of the page is a visual element only, counting down the time until the tournament starts.
+
+
+#### Browser Support
+I used the Google Chrome Dev Tools to ensure that each page appears correctly at the most common screen sizes from large desktop to tablet to smartphone. The website was built using mobile first design as this site will mostly be used by people who are travelling.
+
+I loaded each page on the following browsers:
+- Google Chrome (Windows & Android)
+- Firefox
+- Safari (iOS)
+
+The website & its features worked as expected on the above browsers at the Large, Medium, Small and Extra Small viewpoints where applicable.
+
+I had to check the zoom level for each city and for each service within a city to make sure that the markers were visable to users across all viewports.
 
 
 
 #### Speed Test
-
-
+I used [GTMetrix](https://gtmetrix.com) to test the load speed the website. The page had a load speed of 1.3 seconds and a total page size of 643kb.
 
 
 ## Deployment
@@ -75,8 +98,20 @@ I created the Github repository called milestone-project-2 in my [GitHub Page](h
 The link to the homepage of the project is [here](https://walshyc.github.io/milestone-project-2/).
 
 
-### Content
+## Credits
 
+### Content & Media
 
-### Media
+- [UEFA Euro 2020](https://www.uefa.com/uefaeuro-2020/) - I sourced stadium/city information from the official Euro 2020 site aswell as the Euro 2020 logos used in the header and for the stadium markers on the map. The breakdown of the games in each city was also sourced from here.
+
+- [Google's Material Icons](https://material.io/tools/icons) - I used Google's Material Icons for the service icons across the website. I created the blue and green coloured markers in photoshop by using the 'Place' icon in this library as the template.
+
+- [Transparent Textures](https://www.transparenttextures.com/) - I used this website to souce the background effect for the page.
+
+### Acknowledgements
+
+- I received help and guidance from my mentor Chris Zielinski with the implmentation of the Google Maps Javascript API.
+
+- I used stackoverflow to help with some of the jQuery problems I had.
+
 
