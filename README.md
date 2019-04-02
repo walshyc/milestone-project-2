@@ -3,6 +3,10 @@ This site allows a user to pick one of the 12 host cities for the UEFA European 
 
 ## UX
 
+#### User Stories
+
+
+
 #### Wireframes
 
 [Desktop - Start](assets/images/wireframes/desktop-start.png)
@@ -14,7 +18,7 @@ This site allows a user to pick one of the 12 host cities for the UEFA European 
 [Mobile - End](assets/images/wireframes/mobile-end.png)
 
 
-#### About The Site
+#### About the Site
 
 This website is for anyone who wishes to travel to the UEFA Euro 2020 football tournament taking place in the June & July 2020. Once a user clicks on a host city the Google Map zooms into that city. Some information about the stadium that will host games is also displayed along with the fixtures that are due to be played at that venue.
 
@@ -24,11 +28,16 @@ A countdown to the start date of the tournament is also shown on the site.
 
 ## Features
 
-### Existing Features
+#### Existing Features
 - Facts about the stadium and city are displayed to the user
 - A full list of the fixtures that the city is due to hold during the tournament including the fixture date and round.
 - The user can select from 6 services (Food, Bars, Hotels, ATM's, Travel & Museums) to find information/location details on these local services. This includes key Bus, Train and Air transport links.
 - Countdown timer that displays the time left until the tournament starts.
+
+#### Features to add
+- Once the final 24 teams are known UEFA will release the full schedule for the tournament. I will then update each city to show which teams are playing in this city.
+- Were possible I would like to translate the website into as many of the European languages that will be used by the competing countries.
+- When the fanzone locations in each city are confirmed I will add these to the maps for each city.
 
 
 ## Technologies Used
@@ -42,14 +51,14 @@ A countdown to the start date of the tournament is also shown on the site.
 - [Flag Icon](http://flag-icon-css.lip.is/)
     -  **Flag Icon** was used to improve the look of the buttons.
 
-- [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/tutorial)
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial)
     -  **Google Maps** was used to display the map and markers when a user selected a city and a service. The Google Maps Places API was used to get the rating information and direction for each business and display this in the info window.
 
 ## Testing
 
 #### Validation
 
-I ran the single HTML file through a HTMl validator on [HTML Validator](https://validator.w3.org). This showed up no invalid HTML.
+I ran the single HTML file through a HTML validator on [HTML Validator](https://validator.w3.org). This showed up no invalid HTML.
 
 I used [CSS Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file style.css, this proved to be all correct.
 
@@ -91,11 +100,9 @@ I used [GTMetrix](https://gtmetrix.com) to test the load speed the website. The 
 
 ## Deployment
 
-I have hosted this project on GitHub pages and regularly committed to the GitHub repository for this project.
+I created the Github repository called milestone-project-2 in my [GitHub Page](https://github.com/walshyc). After I had completed each minor step on the website such as getting the Google Map to appear, getting the country buttons aligned correctly I committed the changes to the Github repository along with a short message. This made it easy to fall back on old commits when needed.
 
-I created the Github repository called milestone-project-2 in my [GitHub Page](https://github.com/walshyc).
-
-The link to the homepage of the project is [here](https://walshyc.github.io/milestone-project-2/).
+I have hosted the website using Github pages. This was done under the settings of my repository under the GitHub Pages section. I selected the master branch as the source. The site is then hosted [here](https://walshyc.github.io/milestone-project-2/).
 
 
 ## Credits
@@ -110,6 +117,6 @@ The link to the homepage of the project is [here](https://walshyc.github.io/mile
 
 ### Acknowledgements
 
-- I received help and guidance from my mentor Chris Zielinski with the implementation of the Google Maps Javascript API.
+- I received help and guidance from my mentor Chris Zielinski with the implementation of the Google Maps JavaScript API.
 
-- I used stackoverflow to help with some of the jQuery problems I had.
+- I used stack overflow to help with some of the jQuery problems I had.
