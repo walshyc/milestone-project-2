@@ -75,6 +75,21 @@ a:hover {
   background-color: #c7d64f;
 }
 
+.btn-service-mobile {
+  min-width: 70x;
+  max-width: 100x;
+  height: 60px;
+  font-size: 12px;
+  background-color: #F8FEFE;
+  color: #0E5E67;
+  font-weight: 900;
+}
+
+.btn-service-mobile:hover{
+  color: #0e5e67;
+  background-color: #c7d64f;
+}
+
 
 #reset-btn {
   color: #0E5E67;

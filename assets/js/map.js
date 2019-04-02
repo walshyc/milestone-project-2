@@ -159,6 +159,44 @@ function initMap() {
                                     </div>
 
                                     <div id="serviceToggles-${countryFlag}-mobile" class= "city-hide service-toggles service-toggles-mobile" >
+                    <div class="card text-white bg-primary pt-2">
+                        <div class="row">
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="foodRadio-${countryFlag}" value="food">
+                                <label class="form-check-label btn p-2 mb-2 btn-small  btn-service-mobile" for="foodRadio-${countryFlag}"><i class='material-icons'>local_dining</i>  Food</label>
+                            </div>
+
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="barRadio-${countryFlag}" value="bar">
+                                <label class="form-check-label btn p-2 mb-2 btn-small btn-service-mobile" for="barRadio-${countryFlag}"><i class='material-icons'>local_drink</i>  Bars</label>
+                            </div>
+
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hotelRadio-${countryFlag}" value="hotel">
+                                <label class="form-check-label btn p-2 mb-2 btn-small btn-service-mobile" for="hotelRadio-${countryFlag}"><i class='material-icons'>hotel</i>  Hotel</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="atmRadio-${countryFlag}" value="cash">
+                                <label class="form-check-label btn p-2 mb-2 btn-service-mobile" for="atmRadio-${countryFlag}"><i class='material-icons'>euro_symbol</i>  ATM's</label>
+                            </div>
+
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="travelRadio-${countryFlag}" value="travel">
+                                <label class="form-check-label btn p-2 mb-2 btn-service-mobile" for="travelRadio-${countryFlag}"><i class='material-icons'>flight</i>  Travel</label>
+                            </div>
+
+                            <div class="col-3 mr-2 ml-2  form-check form-check-inline text-center">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="museumRadio-${countryFlag}" value="museum">
+                                <label class="form-check-label btn p-2 mb-2 btn-service-mobile" for="museumRadio-${countryFlag}"><i class='material-icons'>place</i>  Museum</label>
+                            </div>
+                      </div>
+                    </div>
+                    </div>
+                                    <div id="serviceToggles-${countryFlag}-mobile" class= "city-hide service-toggles service-toggles-mobile" >
                                     <div class="card text-white bg-primary pt-2">
                                         <div class="row justify-content-center">
                                             <div class="col-3 m-0 mb-2 p-0 form-check form-check-inline text-center">
