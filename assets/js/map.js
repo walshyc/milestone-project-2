@@ -59,7 +59,7 @@ function initMap() {
             // create marker for each stadium
             var stadiumMarker = new google.maps.Marker({
                 position: new google.maps.LatLng(cityLat, cityLng),
-                icon: "assets/img/marker-logo.png",
+                icon: "assets/img/markers/marker-logo.png",
                 map: map,
                 title: `${cityName}`
             });
@@ -412,7 +412,7 @@ function initMap() {
         }
         // create marker icon
         var icon = {
-            url: "assets/img/markers/markerIcon.png",
+            url: "assets/img/markers/marker-icon.png",
             scaledSize: new google.maps.Size(20, 30),
         };
         // Function to create markers for restaurants
@@ -596,7 +596,7 @@ function initMap() {
             service.findPlaceFromQuery(airportRequest, function (results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     var airIcon = {
-                        url: "assets/img/markers/airportMarker.png",
+                        url: "assets/img/markers/airport-marker.png",
                         scaledSize: new google.maps.Size(20, 30)
                     };
                     for (var i = 0; i < results.length; i++) {
@@ -614,7 +614,7 @@ function initMap() {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         var trainIcon = {
-                            url: "assets/img/markers/trainMarker.png",
+                            url: "assets/img/markers/train-marker.png",
                             scaledSize: new google.maps.Size(20, 30)
                         };
                         createMarker(results[i], trainIcon);
@@ -632,7 +632,7 @@ function initMap() {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
                         var busIcon = {
-                            url: "assets/img/markers/busMarker.png",
+                            url: "assets/img/markers/bus-marker.png",
                             scaledSize: new google.maps.Size(20, 30)
                         };
                         createMarker(results[i], busIcon);
