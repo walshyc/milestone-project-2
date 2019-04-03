@@ -4,6 +4,11 @@ This site allows a user to pick one of the 12 host cities for the UEFA European 
 ## UX
 
 #### User Stories
+A football fan who is following my nation, might want to check out the city they will be travelling to, so that they can book a hotel close to the stadium for when they travel to the city for Euro 2020.
+
+A football fan who wishes to travel to a few of the cities during the tournament, would want to check the main transport hubs in each city, so that they can plan routes to and from each city.
+
+A football fan who is not travelling to the tournament and is just interest in football, would want to know where and when the games are on, so that they could plan to watch the big games that interest them the most.
 
 
 
@@ -62,6 +67,8 @@ I ran the single HTML file through a HTML validator on [HTML Validator](https://
 
 I used [CSS Validator](https://jigsaw.w3.org/css-validator) to validate my CSS file style.css, this proved to be all correct.
 
+I also used [Color.review](https://color.review/) to refine the main green and blue colours that I had. This site allowed me to pick the best two main colours for my site so that the contrast was correct. The two main colours I ended up with were #0E5E67 and #c7d64f.
+
 #### Usability
 1. Select a City:
     1. Click any of the 12 city buttons
@@ -101,6 +108,8 @@ I used [GTMetrix](https://gtmetrix.com) to test the load speed the website. The 
 ## Deployment
 
 I created the Github repository called milestone-project-2 in my [GitHub Page](https://github.com/walshyc). After I had completed each minor step on the website such as getting the Google Map to appear, getting the country buttons aligned correctly I committed the changes to the Github repository along with a short message. This made it easy to fall back on old commits when needed.
+
+After I deployed the site to Github pages, I had to make sure any file paths contained in the were absolute so that the correct image/file was loaded.
 
 I have hosted the website using Github pages. This was done under the settings of my repository under the GitHub Pages section. I selected the master branch as the source. The site is then hosted [here](https://walshyc.github.io/milestone-project-2/).
 
